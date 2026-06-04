@@ -1,0 +1,6 @@
+https://drive.google.com/thumbnail?id=1IDrIdKWEWSWbt9egCg4Mf5QytAtCexp5&sz=w1086
+
+"medsos": [
+            { "platform": "facebook", "url": "https://www.instagram.com/sambal_iboetoetiek?igsh=cGVyMDlkY2J0Ynh1" },
+            { "platform": "instagram", "url": "https://www.instagram.com/sambal_iboetoetiek?igsh=cGVyMDlkY2J0Ynh1" }
+        ]

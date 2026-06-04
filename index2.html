@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk Ber-SNI - BSN</title>
+    <link rel="icon" type="image/png" href="logobsn.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        :root {
+            --bsn-blue: #1d70b8;
+            --bsn-blue-dark: #124b7d;
+            --bsn-orange: #f39223;
+            --bsn-orange-light: #fbe6ce;
+            --bsn-gradient: linear-gradient(135deg, #1d70b8 0%, #2482cc 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #fcfcfc;
+            color: #333;
+        }
+
+        /* PREMIUM NAVBAR */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #555 !important;
+            padding: 0.6rem 1rem !important;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--bsn-blue) !important;
+            background: var(--bsn-orange-light);
+            border-radius: 8px;
+        }
+
+        /* HERO SECTION */
+        /* HERO SECTION STYLE DENGAN OPTIMASI GELOMBANG */
+        .hero-section {
+            min-height: 560px; /* Ditambah sedikit tingginya untuk ruang gelombang */
+            background-color: #0b2c4d;
+            background-position: 75% center; 
+            background-repeat: no-repeat;
+            background-size: 115%; /* Tingkat zoom gambar yang sudah pas sesuai keinginan Anda */
+            position: relative;
+            overflow: hidden;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Wadah Pengunci Gelombang SVG di Bagian Bawah */
+        /* Wadah Pengunci Gelombang */
+        .wave-container {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 2;
+        }
+
+        /* Mengatur tinggi liukan gelombang berlapis */
+        .wave-container svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 120px; /* Ditinggikan ke 120px agar liukan banyak gelombangnya terlihat jelas */
+        }
+
+
+        /* KONDISI RESPONSIF LAYAR HP (MOBILE) */
+        @media (max-width: 767.98px) {
+            .hero-section {
+                min-height: 480px;
+                background-image: linear-gradient(to bottom, #0b2c4d 45%, rgba(11, 44, 77, 0.8) 75%, rgba(11, 44, 77, 0.3) 100%), url('fotohero.png') !important;
+                background-position: center center;
+                background-size: cover;
+            }
+            .wave-container svg {
+                height: 60px; /* Di HP tinggi gelombang dikecilkan sedikit agar proporsional */
+            }
+        } 
+
+        /* MODERN CARDS */
+        .custom-card {
+            background: white;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        /* WHY SECTION */
+        .why-section {
+            background-color: #f8fafd;
+            padding: 80px 0;
+        }
+        .accent-border-left {
+            border-left: 5px solid var(--bsn-orange);
+        }
+
+        /* BENEFIT SECTION */
+        .benefit-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--bsn-orange-light);
+            color: var(--bsn-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        /* SMART CONSUMER SECTION */
+        .smart-section {
+            background: linear-gradient(135deg, #fffcf7 0%, #fff5e6 100%);
+            padding: 80px 0;
+            border-top: 2px dashed var(--bsn-orange);
+        }
+        .step-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .step-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* PRODUCT STYLING */
+        .product-card img {
+            height: 220px;
+            object-fit: cover;
+        }
+        .badge-sni {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: var(--bsn-orange);
+            color: white;
+            font-weight: bold;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(243, 146, 35, 0.4);
+        }
+        .nav-pills .nav-link.active {
+            background-color: var(--bsn-blue) !important;
+            color: white !important;
+        }
+
+        /* PREMIUM FOOTER */
+        footer {
+            background: #11141a;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--bsn-blue);
+        }
+        footer h5 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        footer a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        footer a:hover {
+            color: var(--bsn-orange);
+        }
+        .social-icons a {
+            width: 38px;
+            height: 38px;
+            background: #1e2330;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 8px;
+            color: #fff;
+        }
+        .social-icons a:hover {
+            background: var(--bsn-blue);
+        }
+
+        
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home" onclick="navigateToPage('home')">
+                <img src="logobsn.png" alt="Logo BSN" class="d-inline-block align-text-top" style="height: 35px; width: auto;">
+                <span class="d-none d-md-block text-muted border-start ms-3 ps-3 fw-normal" style="font-size: 0.85rem;">
+                    Badan Standardisasi<br>Nasional
+                </span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center mt-3 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link active" id="nav-home" onclick="navigateToPage('home')">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-produk" onclick="navigateToPage('produk')">Katalog Produk Ber-SNI</a></li>
+                    <li class="nav-item"><a class="nav-link" id="nav-kunjungi" onclick="navigateToPage('kunjungi')">Kunjungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1">
+        
+        <div id="page-home">
+           <!-- HERO SECTION BACKGROUND MENYATU PENH -->
+            <section class="hero-section text-center text-md-start d-flex align-items-center position-relative" style="background-image: linear-gradient(to right, #0b2c4d 35%, rgba(11, 44, 77, 0.75) 65%, rgba(11, 44, 77, 0.2) 100%), url('fotohero.png');">
+                
+                <div class="container py-5 position-relative" style="z-index: 5; margin-bottom: 50px;">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-8 col-lg-7">
+                            <span class="badge bg-warning text-dark mb-3 fw-bold px-3 py-2 text-uppercase">Direktorat PPSPK BSN</span>
+                            <h1 class="hero-title text-uppercase display-4 mb-3 fw-bold text-white" style="line-height: 1.2;">
+                                Katalog<br>Produk Binaan<br><span style="color: var(--bsn-orange)">Ber-SNI</span>
+                            </h1>
+                            <p class="lead text-white-50 mb-4" style="max-width: 500px;">
+                                Wujud nyata peningkatan daya saing dan jaminan mutu komoditas produk dalam negeri.
+                            </p>
+                            <button class="btn btn-warning btn-lg fw-bold px-4 shadow text-uppercase" onclick="navigateToPage('produk')">
+                                Jelajahi Produk <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GELOMBANG BESAR BERTUMPUK -->
+                <div class="wave-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                        <path fill="#f8fafd" fill-opacity="0.2" d="M0,224L30,213.3C60,203,120,181,180,181C240,181,300,203,360,202.7C420,203,480,181,540,160C600,139,660,117,720,117.3C780,117,840,139,900,165.3C960,192,1020,224,1080,218.7C1140,213,1200,171,1260,149.3C1320,128,1380,128,1410,128L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+                        
+                        <path fill="#f8fafd" fill-opacity="0.4" d="M0,128L30,144C60,160,120,192,180,186.7C240,181,300,139,360,138.7C420,139,480,181,540,197.3C600,213,660,203,720,181C780,160,840,128,900,122.7C960,117,1020,139,1080,138.7C1140,139,1200,117,1260,112C1320,107,1380,117,1410,122.7L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+                        
+                        <path fill="#f8fafd" fill-opacity="0.6" d="M0,192L30,192C60,192,120,192,180,176C240,160,300,128,360,112C420,96,480,96,540,117.3C600,139,660,181,720,186.7C780,192,840,160,900,149.3C960,139,1020,149,1080,165.3C1140,181,1200,203,1260,202.7C1320,203,1380,192,1410,186.7L1440,181L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+                        
+                        <path fill="#f8fafd" fill-opacity="1" d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,160C420,160,480,192,540,208C600,224,660,224,720,202.7C780,181,840,139,900,117.3C960,96,1020,96,1080,122.7C1140,149,1200,203,1260,213.3C1320,224,1380,192,1410,176L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+                    </svg>
+                </div>
+            </section>
+
+
+            <section class="why-section">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold text-uppercase">Mengapa Harus <span style="color: var(--bsn-blue)">SNI?</span></h2>
+                        <div class="mx-auto bg-warning" style="width: 60px; height: 4px; border-radius: 2px;"></div>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-5">
+                            <div class="card custom-card h-100 p-4 accent-border-left">
+                                <h5 class="fw-bold text-primary mb-3"><i class="bi bi-info-circle-fill"></i> Regulasi Nasional</h5>
+                                <p class="text-muted mb-0"><strong>SNI (Standar Nasional Indonesia)</strong> adalah satu-satunya standar yang berlaku secara nasional di Indonesia, dirumuskan oleh Komite Teknis dan ditetapkan oleh <strong>Badan Standardisasi Nasional (BSN)</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="card custom-card h-100 p-4 accent-border-left">
+                                <h5 class="fw-bold text-warning mb-3"><i class="bi bi-shield-lock-fill"></i> Jaminan Keamanan</h5>
+                                <p class="text-muted mb-0">Produk yang berlogo <strong>SNI</strong> telah melewati serangkaian pengujian laboratorium dan audit konsistensi mutu yang ketat, guna menjamin keselamatan bagi pengguna.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="benefit-section">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold text-uppercase">Manfaat SNI Bagi Konsumen</h2>
+                        <p class="text-muted">Perlindungan mutlak untuk masyarakat konsumen Indonesia</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card custom-card h-100 p-4 text-center">
+                                <div class="icon-circle mx-auto"><i class="bi bi-shield-check"></i></div>
+                                <h5 class="fw-bold">Aman</h5>
+                                <p class="small text-muted mb-0">Meminimalisir risiko penggunaan produk karena telah lolos uji aspek keselamatan dasar.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card custom-card h-100 p-4 text-center">
+                                <div class="icon-circle mx-auto" style="background:#e3f2fd; color:#1e88e5;"><i class="bi bi-star"></i></div>
+                                <h5 class="fw-bold">Kualitas</h5>
+                                <p class="small text-muted mb-0">Mutu produk terjamin konsisten karena produsen diawasi secara berkala.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card custom-card h-100 p-4 text-center">
+                                <div class="icon-circle mx-auto" style="background:#e8f5e9; color:#43a047;"><i class="bi bi-heart-pulse"></i></div>
+                                <h5 class="fw-bold">Melindungi</h5>
+                                <p class="small text-muted mb-0">Melindungi hak-hak konsumen dari kecurangan barang tiruan berbahaya.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card custom-card h-100 p-4 text-center">
+                                <div class="icon-circle mx-auto" style="background:#f3e5f5; color:#8e24aa;"><i class="bi bi-graph-up-arrow"></i></div>
+                                <h5 class="fw-bold">Daya Saing</h5>
+                                <p class="small text-muted mb-0">Meningkatkan kepercayaan pasar global terhadap komoditas asli buatan Indonesia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="smart-section">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <span class="text-uppercase fw-bold text-warning tracking-wide d-block mb-2">Panduan Pintar Belanja</span>
+                        <h2 class="fw-bold text-uppercase m-0" style="color: var(--bsn-blue-dark)">Yuk, Jadi Konsumen Cerdas!</h2>
+                        <div class="mx-auto bg-primary mt-3" style="width: 80px; height: 3px;"></div>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card custom-card h-100 p-3 bg-white">
+                                <div class="step-img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400" alt="Teliti">
+                                </div>
+                                <h6 class="fw-bold mb-2 text-primary">1. Teliti Sebelum Membeli</h6>
+                                <p class="small text-muted mb-0">Biasakan mengecek detail kemasan dan deskripsi dengan baik. Jangan terburu-buru mengambil keputusan belanja.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card custom-card h-100 p-3 bg-white">
+                                <div class="step-img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400" alt="Pilih Produk">
+                                </div>
+                                <h6 class="fw-bold mb-2 text-success">2. Pilih Produk Aman & Berstandar</h6>
+                                <p class="small text-muted mb-0">Pastikan terdapat logo resmi tanda SNI untuk menjamin kepastian mutu kualitas dan ketahanan barang.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card custom-card h-100 p-3 bg-white">
+                                <div class="step-img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400" alt="Hak Kewajiban">
+                                </div>
+                                <h6 class="fw-bold mb-2 text-danger">3. Tahu Hak & Kewajiban</h6>
+                                <p class="small text-muted mb-0">Memahami perlindungan hukum yang mengikat sebagai hak konsumen apabila barang tidak sesuai spesifikasi.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card custom-card h-100 p-3 bg-white">
+                                <div class="step-img-wrapper">
+                                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400" alt="Harga Murah">
+                                </div>
+                                <h6 class="fw-bold mb-2 text-warning">4. Tidak Tergiur Harga Murah</h6>
+                                <p class="small text-muted mb-0">Selalu mengutamakan aspek kualitas jangka panjang serta keamanan penggunaan dibanding harga yang miring.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="page-produk" class="d-none py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold text-uppercase text-primary">Katalog Produk Ber-SNI</h2>
+                    <p class="text-muted">Temukan produk berkualitas tinggi bersertifikasi Standar Nasional Indonesia</p>
+                </div>
+
+                <div class="row g-3 mb-5 align-items-center">
+                    <div class="col-md-7">
+                        <div class="nav nav-pills" id="categoryTabs">
+                            <button class="nav-link active" onclick="filterCategory('ALL', this)">Semua Kategori</button>
+                            <button class="nav-link" onclick="filterCategory('Produk Pangan', this)">Produk Pangan</button>
+                            <button class="nav-link" onclick="filterCategory('Produk Non Pangan', this)">Non Pangan</button>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="input-group shadow-sm rounded-3 overflow-hidden">
+                            <span class="input-group-text bg-white border-0"><i class="bi bi-search text-muted"></i></span>
+                            <input type="text" id="searchInput" class="form-control border-0" placeholder="Ketik kata kunci produk..." onkeyup="searchProduct()">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="paginationContainerTop" class="d-flex justify-content-center mb-4"></div>
+                <div class="row g-4" id="productGrid"></div>
+            </div>
+        </div>
+
+        <div id="page-kunjungi" class="d-none container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-uppercase" style="color: var(--bsn-blue-dark); letter-spacing: 1px;">Layanan Teknis SPK Di Daerah</h2>
+                <p class="text-muted fst-italic">"LTSPK Mendekatkan SNI Kepada Masyarakat, Untuk Indonesia Lebih Baik"</p>
+                <hr class="mx-auto" style="width: 80px; height: 3px; background-color: var(--bsn-gold); opacity: 1;">
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 bg-white p-4">
+                        <h5 class="fw-bold mb-3 border-bottom pb-2 text-primary"><span class="badge bg-primary me-2">1</span> LTSPK Sumatera Selatan</h5>
+                        <p class="small text-muted mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> Jl. Jend. Basuki Rachmat No.20 Talang Aman, Kemuning, Palembang, Sumatera Selatan 30128</p>
+                        <p class="small text-muted mb-2"><i class="bi bi-envelope-fill text-secondary"></i> klt_palembang@bsn.go.id</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-telephone-fill text-success"></i> (0711) 5733317</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 bg-white p-4">
+                        <h5 class="fw-bold mb-3 border-bottom pb-2 text-primary"><span class="badge bg-primary me-2">2</span> LTSPK Riau</h5>
+                        <p class="small text-muted mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> Jl. Hang Tuah, Rejosari, Kec. Tenayan Raya, Kota Pekanbaru, Riau 28281</p>
+                        <p class="small text-muted mb-2"><i class="bi bi-envelope-fill text-secondary"></i> klt_pekanbaru@bsn.go.id</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-telephone-fill text-success"></i> (0761) 8557505</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 bg-white p-4">
+                        <h5 class="fw-bold mb-3 border-bottom pb-2 text-primary"><span class="badge bg-primary me-2">3</span> LTSPK Jabar</h5>
+                        <div class="small text-muted mb-2">
+                            <i class="bi bi-geo-alt-fill text-danger"></i> 
+                            <span class="fw-semibold">DPMPTSP Jabar:</span> Jl. Windu No.26, Lengkong, Kota Bandung<br>
+                            <span class="fw-semibold">PLUT KUMKM Kab. Bandung:</span> Jl. Raya Soreang No.Km 17, Soreang, Kab. Bandung
+                        </div>
+                        <p class="small text-muted mb-2"><i class="bi bi-envelope-fill text-secondary"></i> klt_jabar@bsn.go.id</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-telephone-fill text-success"></i> (022) 20530828</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 bg-white p-4">
+                        <h5 class="fw-bold mb-3 border-bottom pb-2 text-primary"><span class="badge bg-primary me-2">4</span> LTSPK Jogja</h5>
+                        <p class="small text-muted mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> Jl. HOS Cokroaminoto No.152, Tegalrejo, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 bg-white p-4">
+                        <h5 class="fw-bold mb-3 border-bottom pb-2 text-primary"><span class="badge bg-primary me-2">5</span> LTSPK Jatim</h5>
+                        <p class="small text-muted mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> Jl. Pagesangan II, Pagesangan, Kec. Jambangan, Kota Surabaya, Jawa Timur 60233</p>
+                        <p class="small text-muted mb-2"><i class="bi bi-envelope-fill text-secondary"></i> klt_surabaya@bsn.go.id</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-telephone-fill text-success"></i> (031) 8287174</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 bg-white p-4">
+                        <h5 class="fw-bold mb-3 border-bottom pb-2 text-primary"><span class="badge bg-primary me-2">6</span> LTSPK Sulawesi Selatan</h5>
+                        <p class="small text-muted mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> Gedung BRMP Sulawesi Selatan, Jl. Perintis Kemerdekaan KM 17.5, Biringkanaya, Kota Makassar, Sulawesi Selatan 90231</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-envelope-fill text-secondary"></i> klt_makassar@bsn.go.id</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mx-auto">
+                    <div class="card h-100 border-0 shadow-sm rounded-3 bg-white p-4">
+                        <h5 class="fw-bold mb-3 border-bottom pb-2 text-primary"><span class="badge bg-primary me-2">7</span> LTSPK Nusa Tenggara Barat</h5>
+                        <p class="small text-muted mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> Gedung PLUT KUMKM, Jl. Bypass Bandara Internasional Lombok, Penujak, Kec. Praya Barat, Lombok Tengah</p>
+                        <p class="small text-muted mb-0"><i class="bi bi-envelope-fill text-secondary"></i> snicornerntb@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 pt-4 border-top">
+                <div class="col-12 col-md-7">
+                    <h5 class="fw-bold text-uppercase mb-3 text-dark"><i class="bi bi-building"></i> BSN Pusat Jakarta</h5>
+                    <p class="small text-muted mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> Jl. Kuningan Barat Raya No. 01A, Kuningan, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12710</p>
+                    <p class="small text-muted mb-2"><i class="bi bi-telephone-fill text-success"></i> Telp/Fax : 021 39250007</p>
+                    <p class="small text-muted mb-2"><i class="bi bi-envelope-fill text-secondary"></i> bsn@bsn.go.id , dokinfo@bsn.go.id</p>
+                    <p class="small text-muted mb-0"><i class="bi bi-whatsapp text-success"></i> WhatsApp Layanan Informasi : 081317761112</p>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <h5 class="fw-bold text-uppercase mb-3 text-dark"><i class="bi bi-share-fill"></i> Media Sosial BSN</h5>
+                    <div class="row small g-2">
+                        <div class="col-6"><a href="https://instagram.com/bsn_sni" target="_blank" class="text-decoration-none text-muted"><i class="bi bi-instagram text-danger me-1"></i> @bsn_sni</a></div>
+                        <div class="col-6"><a href="https://twitter.com/bsn_sni" target="_blank" class="text-decoration-none text-muted"><i class="bi bi-twitter-x text-dark me-1"></i> @bsn_sni</a></div>
+                        <div class="col-6"><a href="https://www.tiktok.com/@bsn_sni" target="_blank" class="text-decoration-none text-muted"><i class="bi bi-tiktok text-dark me-1"></i> @bsn_sni</a></div>
+                        <div class="col-6"><a href="https://youtube.com/@snibsn" target="_blank" class="text-decoration-none text-muted"><i class="bi bi-youtube text-danger me-1"></i> @snibsn</a></div>
+                        <div class="col-12"><a href="#" target="_blank" class="text-decoration-none text-muted"><i class="bi bi-facebook text-primary me-1"></i> BadanStandardisasiNasional</a></div>
+                        <div class="col-12"><a href="https://www.bsn.go.id" target="_blank" class="text-decoration-none text-primary fw-semibold"><i class="bi bi-globe me-1"></i> www.bsn.go.id</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg">
+                <div class="position-relative">
+                    <img id="modalImg" src="" class="w-100" style="height: 250px; object-fit: cover;" alt="">
+                    <button type="button" class="btn-close bg-white p-2 rounded-circle position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <span id="modalCat" class="badge bg-secondary mb-2"></span>
+                    <h4 id="modalNama" class="fw-bold mb-1"></h4>
+                    <p id="modalUkm" class="text-primary small fw-semibold mb-2"></p>
+                    
+                    <!-- Detail Standar & Alamat -->
+                    <div class="bg-light p-3 rounded-3 mb-3 small">
+                        <p class="mb-1"><strong><i class="bi bi-patch-check-fill text-warning"></i> Standar:</strong> <span id="modalSni"></span></p>
+                        <p class="mb-0"><strong><i class="bi bi-geo-alt-fill text-danger"></i> Alamat:</strong> <span id="modalAlamat"></span></p>
+                    </div>
+                    
+                    <!-- Tempat Tombol Medsos Dinamis -->
+                    <div id="modalMedsosContainer" class="border-top pt-3">
+                        <span class="small text-muted d-block mb-2">Hubungi Mitra:</span>
+                        <div id="modalLinks" class="d-flex flex-wrap gap-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-5 col-md-12">
+                    <h5 class="mb-3 text-uppercase" style="letter-spacing:1px; color: var(--bsn-blue);">Badan Standardisasi Nasional</h5>
+                    <p class="small text-white-50">Lembaga Pemerintah Non-Kementerian (LPNK) Indonesia yang mempunyai tugas melaksanakan tugas pemerintahan di bidang standardisasi and penilaian kesesuaian.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/bsn_sni"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/bsn_sni"><i class="bi bi-instagram"></i></a>
+                        <a href="https://youtube.com/@snibsn"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-3 text-white text-uppercase">Tautan Pintar</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#home" onclick="navigateToPage('home')">Beranda</a></li>
+                        <li class="mb-2"><a href="#produk" onclick="navigateToPage('produk')">Katalog Produk Ber-SNI</a></li>
+                        <li class="mb-2"><a href="#kunjungi" onclick="navigateToPage('kunjungi')">Kunjungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-3 text-white text-uppercase">Kontak Hubung</h5>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i>  021 39250007</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> bsn@bsn.go.id , dokinfo@bsn.go.id</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> Jl. Kuningan Barat Raya No. 01A, Kuningan, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12710</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary opacity-25">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="col-md-6 small text-white-50">
+                    &copy; <span id="currentYear"></span> Badan Standardisasi Nasional (BSN). All Rights Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end small text-white-50 mt-2 mt-md-0">
+                    Direktorat PPSPK BSN
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Variabel penampung data dari file eksternal produk.json
+        let productsData = []; 
+        let filteredProducts = []; // Variabel baru untuk menampung hasil filter/search
+        let currentCategory = "ALL";
+        
+        // KONFIGURASI PAGINATION
+        let currentPage = 1;
+        const itemsPerPage = 6; // Ubah angka ini untuk mengatur jumlah card per halaman
+
+        // Mendapatkan instance collapse menu bootstrap
+        function getNavbarCollapseInstance() {
+            const navbarCollapse = document.getElementById('navbarNav');
+            return bootstrap.Collapse.getOrCreateInstance(navbarCollapse, { toggle: false });
+        }
+
+        // FUNGSI UTAMA: Mengambil data dari file eksternal produk.json
+        async function loadProductsData() {
+            try {
+                const response = await fetch('produk.json');
+                if (!response.ok) {
+                    throw new Error(`Gagal memuat file JSON (Status: ${response.status})`);
+                }
+                
+                // 1. Simpan data asli dari JSON
+                productsData = await response.json();
+                
+                // 2. Duplikat data asli ke data filter/pencarian (Wajib untuk Pagination)
+                filteredProducts = [...productsData];
+                
+                // 3. Ambil hash saat ini
+                const hash = window.location.hash;
+                
+                // 4. Jika user sedang berada di halaman produk, eksekusi filter & search dulu agar pagination menggambar card
+                if (hash === '#produk') {
+                    executeFilterAndSearch(); 
+                }
+                
+                // 5. Baru jalankan pengecekan rute untuk memunculkan/menyembunyikan halaman
+                checkUrlHash();
+                
+            } catch (error) {
+                console.error("Waduh, terjadi masalah saat memuat data:", error);
+                const grid = document.getElementById('productGrid');
+                if(grid) {
+                    grid.innerHTML = `<div class="col-12 text-center text-danger py-5"><h5>Gagal memuat data produk eksternal.</h5></div>`;
+                }
+            }
+        }
+
+        // Routing Navigasi Internal
+        // Routing Navigasi Internal
+        function navigateToPage(pageId) {
+            // Sembunyikan semua halaman terlebih dahulu
+            document.getElementById('page-home').classList.add('d-none');
+            document.getElementById('page-produk').classList.add('d-none');
+            document.getElementById('page-kunjungi').classList.add('d-none');
+            
+            // Matikan semua status aktif di navbar menu
+            document.getElementById('nav-home').classList.remove('active');
+            document.getElementById('nav-produk').classList.remove('active');
+            document.getElementById('nav-kunjungi').classList.remove('active');
+
+            // Munculkan halaman yang dipilih beserta mengaktifkan menu navbar-nya
+            const pageNode = document.getElementById('page-' + pageId);
+            const navNode = document.getElementById('nav-' + pageId);
+            if(pageNode) pageNode.classList.remove('d-none');
+            if(navNode) navNode.classList.add('active');
+
+            window.location.hash = pageId;
+
+            // Tutup otomatis menu mobile (jika sedang terbuka)
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                getNavbarCollapseInstance().hide();
+            }
+
+            // Jika masuk ke halaman produk, render card-nya dari pagination halaman 1
+            if(pageId === 'produk') {
+                currentPage = 1;
+                executeFilterAndSearch();
+            }
+        }
+        // Render Card Produk Berdasarkan Halaman (Pagination aktif)
+        function renderProducts(data) {
+            
+            const grid = document.getElementById('productGrid');
+            if(!grid) return;
+            grid.innerHTML = "";
+
+            if(data.length === 0) {
+                grid.innerHTML = `<div class="col-12 text-center text-muted py-5"><h5>Produk tidak ditemukan.</h5></div>`;
+                renderPagination(0); // Sembunyikan pagination jika kosong
+                return;
+            }
+
+            // HITUNG INDEKS DATA UNTUK HALAMAN AKTIF
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedData = data.slice(startIndex, endIndex);
+
+            paginatedData.forEach(prod => {
+                let medsosButtonsHTML = "";
+                
+                if (prod.medsos && prod.medsos.length > 0) {
+                    prod.medsos.forEach(item => {
+                        let iconClass = "bi-globe"; 
+                        let btnClass = "btn-outline-secondary"; 
+                        let platformName = item.platform.charAt(0).toUpperCase() + item.platform.slice(1);
+
+                        switch (item.platform.toLowerCase()) {
+                            case 'instagram':
+                            case 'ig':
+                                iconClass = "bi-instagram";
+                                btnClass = "btn-outline-danger";
+                                break;
+                            case 'facebook':
+                            case 'fb':
+                                iconClass = "bi-facebook";
+                                btnClass = "btn-outline-primary";
+                                break;
+                            case 'website':
+                            case 'web':
+                                iconClass = "bi-globe";
+                                btnClass = "btn-outline-success";
+                                break;
+                            case 'whatsapp':
+                            case 'wa':
+                                iconClass = "bi-whatsapp";
+                                btnClass = "btn-outline-success";
+                                break;
+                        }
+
+                        if(item.url) {
+                            medsosButtonsHTML += `
+                                <a href="${item.url}" target="_blank" class="btn btn-sm ${btnClass} d-inline-flex align-items-center">
+                                    <i class="bi ${iconClass} me-1"></i> ${platformName}
+                                </a>`;
+                        }
+                    });
+                }
+
+                grid.innerHTML += `
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                        <div class="card h-100 custom-card product-card position-relative bg-white d-flex flex-column shadow-sm">
+                            <span class="badge-sni"><i class="bi bi-check-circle-fill"></i> SNI</span>
+                            <img src="${prod.image}" class="card-img-top" alt="${prod.nama}">
+                            
+                            <div class="card-body d-flex flex-column p-4">
+                                <span class="badge bg-light text-secondary mb-2 align-self-start border">${prod.kategori}</span>
+                                <h4 class="card-title fw-bold mb-1" style="color: var(--bsn-blue-dark);">${prod.nama}</h4>
+                                <p class="text-primary small mb-3 fw-bold"><i class="bi bi-building"></i> ${prod.ukm}</p>
+                                
+                                <div class="bg-light p-3 rounded-3 mb-3 small flex-grow-1">
+                                    <p class="mb-2 text-dark">
+                                        <strong><i class="bi bi-patch-check-fill text-warning me-1"></i> Menerapkan:</strong><br>
+                                        <span class="text-muted">${prod.judulSni || "-"}</span>
+                                    </p>
+                                    <p class="mb-0 text-dark">
+                                        <strong><i class="bi bi-geo-alt-fill text-danger me-1"></i> Alamat:</strong><br>
+                                        <span class="text-muted">${prod.alamat || "-"}</span>
+                                    </p>
+                                </div>
+                                
+                                ${medsosButtonsHTML ? `
+                                    <div class="border-top pt-3 mt-auto">
+                                        <span class="small text-muted d-block mb-2">Hubungi Mitra:</span>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            ${medsosButtonsHTML}
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Jalankan penggambaran tombol navigasi halaman bawah
+            renderPagination(data.length);
+        }
+
+        // FUNGSI BARU: Membuat nomor-nomor halaman (Pagination) di bawah Grid
+        // FUNGSI: Membuat nomor-nomor halaman (Pagination) di ATAS dan BAWAH Grid
+        function renderPagination(totalItems) {
+            let topContainer = document.getElementById('paginationContainerTop');
+            let bottomContainer = document.getElementById('paginationContainer');
+            
+            // 1. Jika container bawah belum ada, buat otomatis seperti logika awal Anda
+            if (!bottomContainer) {
+                const grid = document.getElementById('productGrid');
+                if(!grid) return;
+                bottomContainer = document.createElement('div');
+                bottomContainer.id = 'paginationContainer';
+                bottomContainer.className = 'd-flex justify-content-center mt-4';
+                grid.parentNode.insertBefore(bottomContainer, grid.nextSibling);
+            }
+
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            
+            // Jika total data sedikit (hanya 1 halaman atau 0), kosongkan kedua container
+            if (totalPages <= 1) {
+                if (topContainer) topContainer.innerHTML = "";
+                bottomContainer.innerHTML = "";
+                return;
+            }
+
+            // 2. Bangun HTML untuk Pagination
+            let paginationHTML = `<nav aria-label="Navigasi Halaman"><ul class="pagination mb-0 gap-1">`;
+
+            // Tombol Previous
+            paginationHTML += `
+                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <button class="page-link rounded-3" onclick="changePage(${currentPage - 1})" aria-label="Sebelumnya">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                </li>`;
+
+            // Tombol Angka Halaman
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHTML += `
+                    <li class="page-item ${currentPage === i ? 'active' : ''}">
+                        <button class="page-link rounded-3 fw-semibold" onclick="changePage(${i})">${i}</button>
+                    </li>`;
+            }
+
+            // Tombol Next
+            paginationHTML += `
+                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <button class="page-link rounded-3" onclick="changePage(${currentPage + 1})" aria-label="Selanjutnya">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </li>`;
+
+            paginationHTML += `</ul></nav>`;
+            
+            // 3. Masukkan HTML yang sama ke kedua wadah (Top & Bottom)
+            if (topContainer) {
+                topContainer.innerHTML = paginationHTML;
+            }
+            bottomContainer.innerHTML = paginationHTML;
+        }
+
+        // FUNGSI BARU: Berpindah halaman
+        function changePage(pageNumber) {
+            currentPage = pageNumber;
+            renderProducts(filteredProducts);
+            
+            // Otomatis scroll halus kembali ke atas bagian list produk saat ganti halaman
+            const productPage = document.getElementById('page-produk');
+            if(productPage) {
+                productPage.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Filter & Live Search Pencarian
+        function filterCategory(category, element) {
+            currentCategory = category;
+            const buttons = document.querySelectorAll('#categoryTabs .nav-link');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            
+            currentPage = 1; // Reset kembali ke halaman 1 saat ganti kategori
+            executeFilterAndSearch();
+        }
+
+        // Trigger live search
+        function searchProduct() {
+            currentPage = 1; // Reset kembali ke halaman 1 saat mengetik pencarian baru
+            executeFilterAndSearch();
+        }
+
+        // Eksekusi penyaringan gabungan (Kategori + Search)
+        function executeFilterAndSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const searchValue = searchInput ? searchInput.value.toLowerCase() : "";
+            
+            // Simpan hasil filter ke variabel global filteredProducts
+            filteredProducts = productsData.filter(prod => {
+                const matchCategory = (currentCategory === "ALL" || prod.kategori === currentCategory);
+                const matchSearch = prod.nama.toLowerCase().includes(searchValue) || prod.ukm.toLowerCase().includes(searchValue);
+                return matchCategory && matchSearch;
+            });
+
+            renderProducts(filteredProducts);
+        }
+
+        // PENDETEKSI LINK LANGSUNG HALAMAN UTAMA
+        function checkUrlHash() {
+            const hash = window.location.hash;
+            if (hash === '#produk') {
+                navigateToPage('produk');
+            } else if (hash === '#kunjungi') {
+                navigateToPage('kunjungi');
+            } else {
+                navigateToPage('home');
+            }
+        }
+
+        // INISIALISASI UTAMA JALAN SEJAK HALAMAN DIBUKA
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // BARIS BARU: Membuat tahun hak cipta menjadi dinamis
+            document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+            // Jalankan pengambilan data dari file eksternal produk.json
+            loadProductsData();
+            
+            window.addEventListener('hashchange', checkUrlHash);
+
+            // Deteksi klik area mana pun pada halaman untuk menutup otomatis menu mobile
+            document.addEventListener('click', function (event) {
+                const navbarCollapse = document.getElementById('navbarNav');
+                const toggleButton = document.querySelector('.navbar-toggler');
+                
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    if (!navbarCollapse.contains(event.target) && !toggleButton.contains(event.target)) {
+                        getNavbarCollapseInstance().hide();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
