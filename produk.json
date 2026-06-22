@@ -578,19 +578,19 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI CXC 1-1969 Hazard Analysis and Critical control Point (HACCP)",
         "alamat": "Jl. Jayagiri,No.17,Lembang,Kabupaten Bandung Barat,Jawa Barat",
-        "image": "foto_produk/Minuman serbuk.webp",
+        "image": "foto_produk/Minuman Serbuk Herbal Ultimate Drink.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/ultimate.drink/?hl=en" }
         ]
     },
     { 
         "id": 51, 
-        "nama": "Kopi bubuk sentosa", 
+        "nama": "Kopi Bubuk Sentosa", 
         "ukm": "CV GALERIA SINAR SENTOSA", 
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 8964:2021 Kopi Sangrai Dan Kopi Bubuk,",
         "alamat": "Jl. Bayan-Pucangagung,Bayan,Purworejo, Jawa Tengah",
-        "image": "foto_produk/Kopi bubuk.webp",
+        "image": "foto_produk/Kopi Bubuk PIT.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/kopipitindonesia.id?igsh=cmQ1eWN0bmxtNTJ5" }
         ]
@@ -602,7 +602,7 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 8964:2021 Kopi Sangrai Dan Kopi Bubuk",
         "alamat": "Perum. Griya Prima Srigunting Blok G No. 20, Sunggal,Deli Serdang,Sumatera Utara",
-        "image": "foto_produk/Bubuk coffe.webp",
+        "image": "foto_produk/Kopi Bubuk Togato Coffee.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/togatocoffee?igsh=MWQydmh5b3dtZW42aw==" }
         ]
@@ -614,19 +614,19 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 2973:2022 Biskuit",
         "alamat": "Jl. Betet XIII No. 61,Cibodasari,Cibodas,Kota Tangerang, Banten ",
-        "image": "foto_produk/FD Bakery.webp",
+        "image": "foto_produk/Biskuit Soes Kering FD Bakery.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/fd.bakery?igsh=YzlzaXk0MXFvbm1x" }
         ]
     },
     { 
         "id": 54, 
-        "nama": "Kelapa parut kering dan minyak goreng kelapa", 
+        "nama": "Kelapa Parut Kering dan Minyak Goreng Kelapa", 
         "ukm": "CV Indococo Pasific", 
         "kategori": "Produk Pangan", 
-        "judulSni": "SNI 3715:2021 kelapa parut kering, SNI 8904:2020 minyak goreng kelapa",
+        "judulSni": "SNI 3715:2021 Kelapa Parut Kering, SNI 8904:2020 Minyak Goreng Kelapa",
         "alamat": "Jl. M Yamin 286 A, Kel. Karangklesem, Kec. Purwokerto Selatan, Kab. Banyumas,Jawa Tengah",
-        "image": "foto_produk/Kelapa parut.webp",
+        "image": "foto_produk/Kelapa Parut Kering Minyak Kelapa Nucifera.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/nucifera.co.id?igsh=MWRtYm1rYmh1MWRoaw==" }
         ]
@@ -638,7 +638,7 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 8375:2017 Bandeng isi/Otak-otak bandeng",
         "alamat": "Jl. Rogojembangan Barat I No. 31,Kecamatan Tembalang, Kota Semarang,Provinsi Jawa Tengah",
-        "image": "foto_produk/Otak Bandeng.webp",
+        "image": "foto_produk/Bandeng Citra.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/newcitra.indonesia/" }
         ]
@@ -648,33 +648,33 @@
         "nama": "Kunyit Kering Sumber Rizqy", 
         "ukm": "CV SRI SUMBER RIZQY", 
         "kategori": "Produk Pangan", 
-        "judulSni": "SNI 7953:2024 Kunyit kering",
+        "judulSni": "SNI 7953:2024 Kunyit Kering",
         "alamat": "Perum Puri BSI Permai Blok B30, Rangkapan Jaya, Pancoran Mas, Depok, Jawa Barat",
-        "image": "foto_produk/Kunyit kering.webp",
+        "image": "foto_produk/Kunyit Kering Patani.webp",
         "medsos": [
             { "platform": "website", "url": "https://www.indotrading.com/srisumberrizqy" }
         ]
     },
     { 
         "id": 57, 
-        "nama": " Minuman Serbuk Berperisa", 
-        "ukm": "PT MANNA PANNA INDONESIA", 
+        "nama": "KEPITING ISI WIJAYA CRAB", 
+        "ukm": "WIJAYA CRAB", 
         "kategori": "Produk Pangan", 
-        "judulSni": "SNI 3722:2018 Minuman serbuk berperisa",
-        "alamat": "Jl. Dokol No. 31, RT. 03/08, Paninggilan Utara, Ciledug, Kota Tangerang, Banten",
-        "image": "foto_produk/Bubuk drink.webp",
+        "judulSni": "SNI CXC 1-1969 Hazard Analysis Critical Control Point (HACCP)",
+        "alamat": "Jl. Gatot Subroto No. 36 RT. 024 RW. 012, Kel. Tanjung Pendam, Kec. Tanjung Pandan, Belitung, Kepulauan,Bangka Belitung",
+        "image": "foto_produk/Wijaya Crab Belitung.webp",
         "medsos": [
-            { "platform": "website", "url": "https://mannapanna.com/" }
+            { "platform": "instagram", "url": "https://www.instagram.com/wijayacrab.belitung?igsh=MWhrOWNueDZ3ZG9hMQ==" }
         ]
     },
     { 
         "id": 58, 
-        "nama": "Puding Serbuk, Minuman Serbuk Berperisa, Minuman Serbuk Berperisa dengan Kolagen, dan Minuman Serbuk Cokelat", 
+        "nama": " Minuman serbuk “drinkit”", 
         "ukm": "PT MANNA PANNA INDONESIA", 
         "kategori": "Produk Pangan", 
-        "judulSni": "SNI CXC 1-1969 Hazard Analysis and Critical control Point (HACCP) ",
+        "judulSni": "SNI 3722:2018 Minuman Serbuk Berperisa",
         "alamat": "Jl. Dokol No. 31, RT. 03/08, Paninggilan Utara, Ciledug, Kota Tangerang, Banten",
-        "image": "foto_produk/Bakso Ikan Tenggiri.webp",
+        "image": "foto_produk/Minuman Serbuk Drinkit.webp",
         "medsos": [
             { "platform": "website", "url": "https://mannapanna.com/" }
         ]
@@ -686,7 +686,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI ISO 8124:2010 Keamanan Mainan untuk produk papercraft",
         "alamat": "Jl. Kemanggisan Utama I No 20 RT. 2/ RW 7, Kemanggisan, Palmerah, Jakarta Barat",
-        "image": "foto_produk/Mainan anak.webp",
+        "image": "foto_produk/Mainan Anak Papercraft Ichinogami.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/ichinogami/" }
         ]
@@ -698,7 +698,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": " SNI 8098:2017 Tekstil Kerudung.",
         "alamat": "Taman Pinang Indah Blok A No. 7, Nerogtog,Pinang,Tangerang, Banten",
-        "image": "foto_produk/Jilbab.webp",
+        "image": "foto_produk/Kerudung Salameena.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/salameena.id?igsh=MWJ5anhtb2JtYnh3Yg==" }
         ]
@@ -710,7 +710,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI ISO 9001:2015 Sistem Manajemen Mutu, SNI ISO 14001:2015 Sistem Manajemen Lingkungan",
         "alamat": "Graha Mahardika, Jl. Semangka C.27, Selang, Kebumen, Jawa Tengah",
-        "image": "foto_produk/Kerajinan tangan.webp",
+        "image": "foto_produk/Home Decor Craft Agrominafiber.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/agrominafiber.handicraft/" }
         ]
@@ -722,7 +722,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI 8303:2016/Amd.1:2019 Batik Cap - Kain - Ciri, syarat mutu dan metode uji Amandemen 1 untuk produk kain batik cap",
         "alamat": "Bogor Baru, Jl.Citarum Blok XI No. 6, Tegal Gundil, Bogor Utara, Bogor, Jawa Barat",
-        "image": "foto_produk/Kain Batik Cap.webp",
+        "image": "foto_produk/Batik Cap Handayani Geulis.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/handayani.geulis?igsh=MW1jbGNjNG5yejlzcQ==" }
         ]
@@ -734,7 +734,7 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI CXC 1-1969 Hazard Analysis and Critical control Point (HACCP) ",
         "alamat": "Jl. Ceger Raya Gg. Buntu No.48, Jurang Manggu Tim., Pd. Aren, Tangerang Selatan, Banten",
-        "image": "foto_produk/OAT protein.webp",
+        "image": "foto_produk/Biskuit Protein oat.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/miniesq.official/" }
         ]
@@ -744,7 +744,7 @@
         "nama": "Pasta lacasa", 
         "ukm": "LACASA DIPASTA", 
         "kategori": "Produk Pangan", 
-        "judulSni": "SNI 8777:2019 pasta pertama di indonesia",
+        "judulSni": "SNI 8777:2019 Pasta",
         "alamat": "JL.Gunung Patas I No.2 Banjar Abasan, Padangsambian Kelod, Denpasar Barat, Kota Denpasar, Bali",
         "image": "foto_produk/Lacasta Dipasta.webp",
         "medsos": [
@@ -758,19 +758,19 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": " SNI 2942.1:2009 Sepatu Kulit Sistem Lem Wanita",
         "alamat": "Kp Krajan No. 12A RT 005 / RW 003, Tegalmunjul, Purwakarta, Jawa Barat",
-        "image": "foto_produk/Shoetira.webp",
+        "image": "foto_produk/Sepatu Sasoku Shoes.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/sasokushoes?igsh=MTB3ZmY2eXdsZTJrdA==" }
         ]
     },
     { 
         "id": 66, 
-        "nama": "Pakaian jadi Indonesia group", 
+        "nama": "Pakaian Jadi Indonesia group", 
         "ukm": "PT Fadsan Indonesia Group", 
         "kategori": "Produk Non Pangan", 
-        "judulSni": "SNI 8101:2017 pakaian jadi",
+        "judulSni": "SNI 8101:2017 Pakaian Jadi",
         "alamat": "Jl. Padasuka RT. 003/RW 010, Sukamaju Kaler, Indihiang, Tasikmalaya, Jawa Barat",
-        "image": "foto_produk/Fadsan indonesia.webp",
+        "image": "foto_produk/PT Fadsan Indonesia Group.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/fadsanofficial?igsh=MXBxam03OTRnNHNzOQ==" }
         ]
@@ -782,7 +782,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI 4075-2:2017 Detergen Cuci Cair – Bagian 2: Untuk Alat Dapur",
         "alamat": "Jl. Wibawa Mukti II, Jatisari, Jatiasih, Bekasi, Jawa Barat",
-        "image": "foto_produk/Gilda putra.webp",
+        "image": "foto_produk/Sabun Cuci Shilow PT Gilda.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/shilowclean?igsh=MTZsc3d6anRvY2FsYw==" }
         ]
@@ -794,7 +794,7 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 2973:2022 Biskuit",
         "alamat": "Jl. Angsoka, No.14, Gomong Timur, Selaprang, Mataram, Nusa Tenggara Barat",
-        "image": "foto_produk/Safir Indo.webp",
+        "image": "foto_produk/Biskuit Nutsafir.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/nutsafircookies?igsh=ejB3MzIxZmg3anF2" }
         ]
@@ -806,7 +806,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI ISO 9001:2015 sistem manajemen mutu",
         "alamat": "Jl. Lestari Gg. Manalagi XIII, No.7, Pejeruk, Ampenan, Mataram, Nusa Tenggara Barat",
-        "image": "foto_produk/Skincare Naturale.webp",
+        "image": "foto_produk/FATIMA NATURALE.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/delacoralindonesia?igsh=MTlyZTFhN2t2eHVzNQ==" }
         ]
@@ -818,7 +818,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI 8303:2016 Batik Cap",
         "alamat": "Buluran Kenali no. 70, Buluran Kenali, Telanaipura, Jambi",
-        "image": "foto_produk/Nilawati Batik.webp",
+        "image": "foto_produk/Nilawati batik cikla.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/batikjambiduoserangkai?igsh=aTMzdDU4MDd1NmMy" }
         ]
@@ -842,7 +842,7 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI ISO 9001:2015 sistem manajemen mutu",
         "alamat": "Bogor, Jawa Barat",
-        "image": "foto_produk/Kreasi Krispi.webp",
+        "image": "foto_produk/PT Kreasi Krispi Indonesia.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/sunkrisps.id?igsh=M3hqbndpbnd6eXJ0" }
         ]
@@ -854,7 +854,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI 7763:2024 Pupuk organik padat",
         "alamat": "Dusun Dasan Luah, Desa Bebuak, Kec. Kopang, Lombok Tengah, NTB.",
-        "image": "foto_produk/Pupuk organik.webp",
+        "image": "foto_produk/Pupuk Organik Sakina.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/_sakinah.id?igsh=MTR5c3JicGE1amVpYw==" }
         ]
@@ -864,9 +864,9 @@
         "nama": "Person Perbankan/ Transaction Bangking", 
         "ukm": "PT Global Transaksi Bersama Sejahtera", 
         "kategori": "Produk Non Pangan", 
-        "judulSni": "SNI ISO/IEC 17024:2012 Kesesuaian – Persyaratan untuk Lembaga Sertifikasi Person",
+        "judulSni": "SNI ISO/IEC 17024:2012 Kesesuaian - Persyaratan untuk Lembaga Sertifikasi Person",
         "alamat": "Sampoerna Strategic Square, North Tower 24ᵗʰ, Jl. Jend. Sudirman No.45 - 46, Karet Semanggi, Setiabudi, Jakarta Selatan",
-        "image": "foto_produk/PT.Global transaksi.webp",
+        "image": "foto_produk/LSP PT Global TBS.webp",
         "medsos": [
             { "platform": "website", "url": "https://www.globaltbs.org/" }
         ]
@@ -875,10 +875,10 @@
         "id": 75, 
         "nama": "Naget Ayam Nusantara ", 
         "ukm": "NUFOOD SOLUSI NUSANTARA", 
-        "kategori": "Produk Non Pangan", 
-        "judulSni": "SNI 6683:2024 naget ayam",
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 6683:2024 Naget Ayam",
         "alamat": "Perum Amarapura Blok E-4/2, Kademangan, Setu, Tangerang Selatan",
-        "image": "foto_produk/Nugget ayam.webp",
+        "image": "foto_produk/NUFOOD SOLUSI NUSANTARA.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/by_nufood?igsh=dDcyMHdneG9oeTRu" }
         ]
@@ -886,10 +886,10 @@
         "id": 76, 
         "nama": "Abon Daging lieng House", 
         "ukm": "Gleshies Lieng House", 
-        "kategori": "Produk Non Pangan", 
-        "judulSni": "SNI 3707:2021 abon daging",
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3707:2021 Abon Daging",
         "alamat": "Sarongsong satu, Kel. Saronsong I, Kec. Airmadidi, Kab. Minahasa Utara, Provinsi Sulawesi Utara",
-        "image": "foto_produk/Abon ayam.webp",
+        "image": "foto_produk/Abon Daging Gleshies..webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/julienwaroh?igsh=MWV1bjVqMzNvMWVpZA==" }
         ]
@@ -901,7 +901,7 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 2942.1:2009 Sepatu Kulit Sistem Lem Wanita",
         "alamat": "Jl. Tanjung Tutur, Ketewel, Sukawati, Gianyar, Bali",
-        "image": "foto_produk/Bubuk vanilla.webp",
+        "image": "foto_produk/Conservana Spices.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/conservanaspices_store?igsh=ejV1MzBoYXU2ejlh" }
         ]
@@ -913,7 +913,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI 8303:2016/Amd.1:2019 batik cap",
         "alamat": "Komplek Perumda 1 No. A4, Cipaku, Bogor Selatan, Bogor, Jawa Barat",
-        "image": "foto_produk/Karya satu rumah.webp",
+        "image": "foto_produk/Batik Cap Organik.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/batikorganik?igsh=NzU1bWJ3MGZtcmd5" }
         ]
@@ -925,7 +925,7 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI 8302:2016/Amd.1:2019 batik tulis",
         "alamat": "Perum Asabri A5 H-14, Sawojajar, Kedungkandang, Malang, Jawa Timur",
-        "image": "foto_produk/Batik.webp",
+        "image": "foto_produk/Batik Tulis Bengkel Batik.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/bengkelbatik_malang?igsh=MWlmczI0dDJ3Y2VmbA==" }
         ]
@@ -937,9 +937,109 @@
         "kategori": "Produk Non Pangan", 
         "judulSni": "SNI 8303:2016/Amd.1:2019 Batik Cap",
         "alamat": "Jl. PTP II Permata Soekarno-Hatta A-2, Mojolangu, Lowokwaru, Malang, Jawa Timur",
-        "image": "foto_produk/Batik Cap.webp",
+        "image": "foto_produk/Batik Cap Soendari.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/soendari_batikart?igsh=ZmFvZHFqaGdrd2U4" }
+        ]
+    },
+    { 
+        "id": 81, 
+        "nama": " Mi Instan & Kaldu Bubuk", 
+        "ukm": "PT LANGKAH HIJAU BERSAMA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI ISO 22000:2018 Sistem Manajemen, Keamanan Pangan",
+        "alamat": "Jl. Jend. Sudirman No: 468, Kel. Wonorejo, Kec. Marpoyan Damai, Kota Pekanbaru, Prov. Riau, 28125",
+        "image": "foto_produk/MI INSTAN DAN KALDU BUBUK.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/organiccenterproduct?igsh=Zjkyd2J4bG05ZDB3" }
+        ]
+    },
+    { 
+        "id": 82, 
+        "nama": "Bakso Ikan Beku “SHANAYA FOOD” ",
+        "ukm": "CV. Satu Wahana Jaya Sentosa", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 7266:2023 Bakso ikan beku",
+        "alamat": "Jl. Lobak Gg. Amal Komplek Griya Amal Blok No. 1, Kel. Mentangor, Kec. Kulim, Kota Pekanbaru, Prov. Riau",
+        "image": "foto_produk/Bakso Ikan Beku.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/shanayafood.id?igsh=b3V3Y2N0dmd6MThi" }
+        ]
+    },
+    { 
+        "id": 83, 
+        "nama": "Keripik Pisang & Keripik Ubi", 
+        "ukm": "DAPUR ANDIST", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI CXC 1:1969 Revision 2022",
+        "alamat": "Kompleks Perumahan Klaster Graha Inayah Blok A No.6 Kel. Sudiang Raya, Kec. Biringkanaya, Kota Makassar, Prov. Sulawesi Selatan",
+        "image": "foto_produk/Keripik Pisang dan Keripik Ubi.webp", 
+        "medsos": [  
+            { "platform": "instagram", "url": "https://www.instagram.com/dapurandist?igsh=MWFuMDM2M2ltbW00Ng==" }
+        ]
+    },
+    { 
+        "id": 84, 
+        "nama": "Minyak Balur Nusantara", 
+        "ukm": "PT. NIAGA ALAM INDONESIA", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI ISO 9001:2015, Sistem manajemen mutu",
+        "alamat": "Allangkarakenge, Desa Tinco, Kec. Citta, Kab. Soppeng, Prov. Sulawesi Selatan",
+        "image": "foto_produk/Minyak Balur Nusantara.webp",
+        "medsos": []
+    },
+    { 
+        "id": 85, 
+        "nama": "Air Minum Dalam Kemasan", 
+        "ukm": "PT CIKAS UTAMA SUKSES", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNl 3553:2023 Air Mineral",
+        "alamat": " Borong Loe Timur, Desa Benteng Gattareng, Kec. Gantarang, Kab. Bulukumba, Prov. Sulawesi Selatan",
+        "image": "foto_produk/Cikas Water.webp",
+        "medsos": []
+    },
+    { 
+        "id": 86, 
+        "nama": "Kopi Bubuk “Kopi 1000 Nurhidayah", 
+        "ukm": "UMKM KOPI 1000 NURHIDAYAH", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 8964:2021 Kopi Sangrai dan Kopi Bubuk",
+        "alamat": "Malaleo, Desa Gandangbatu, Kec. Gandangbatu Sillanan, Kab. Tana Toraja, Prov. Sulawesi Selatan",
+        "image": "foto_produk/Kopi 1000 Nurhidayah.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/umkm_kopi_1000_nurhidayah?igsh=MWJlYjVjOTY0MXh4ZA==" }
+        ]
+    },
+    { 
+        "id": 87, 
+        "nama": "Benih Padi Inbrida merk “HTGW-88“", 
+        "ukm": "UD. HARAPAN TANI", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 6233:2015",
+        "alamat": "Pekang Labbu, Kel.Tetebatu, Kec. Pallangga, Kab. Gowa, Prov. Sulawesi Selatan, Indonesia ",
+        "image": "foto_produk/Benih Padi Inbrida.webp",
+        "medsos": []
+    },
+    { 
+        "id": 88, 
+        "nama": "Air Minum Dalam Kemasan “LRS”", 
+        "ukm": "CV LARIS ABADI PERKASA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3553:2023 Air Mineral",
+        "alamat": "Poros Bandara Aroeppala, Kel. Bontotangnga, Kec. Bontoharu, Kab. Kepulauan Selayar, Prov. Sulawesi Selatan",
+        "image": "foto_produk/Air Minum LRS.webp",
+        "medsos": []
+    },
+    { 
+        "id": 89, 
+        "nama": "Pati Sagu “sago one”", 
+        "ukm": "PT. SAGO ONE TEPUNG SAGU ", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI CXC 1:1969 Revision 2022",
+        "alamat": " Jl. KH. Abd. Jabbar Ashiry, Kec. Biringkanaya, Kota Makassar, Sulawesi Selatan, 90243",
+        "image": "foto_produk/Tepung Sagu.webp",
+        "medsos": [
+             { "platform": "instagram", "url": "https://www.instagram.com/sago_one?igsh=amszbmZwdTQybWZh" }
         ]
     }
 ]
