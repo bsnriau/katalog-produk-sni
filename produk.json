@@ -1041,5 +1041,65 @@
         "medsos": [
              { "platform": "instagram", "url": "https://www.instagram.com/sago_one?igsh=amszbmZwdTQybWZh" }
         ]
+    },
+    { 
+        "id": 90, 
+        "nama": "CV Aqso Honey Bee “GOPRIMA”", 
+        "ukm": "CV Aqso Honey Bee", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 8664:2024 Madu",
+        "alamat": "Gg. H. Abeng Rt 02/13, No. 2, Pancoran Mas, Depok, Jawa Barat",
+        "image": "foto_produk/Madu “GOPRIMA”.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/alaqsohoneybee?igsh=bHgzcjB6a241b21l" }
+        ]
+    },
+    { 
+        "id": 91, 
+        "nama": "CV Citra Walet Persada Mandiri “Ong Birdnest”", 
+        "ukm": "CV Citra Walet Persada Mandiri", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "Hazard Analysis Critical Control Point (HACCP) sesuai dengan SNI CXC 1:1969 (2024)",
+        "alamat": "Jl. Perdana Ruko Bali Agung Tiga, No.AA5, Pontianak",
+        "image": "foto_produk/minuman sarang burung walet .webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/ong.birdnest.id?igsh=MXNicGtnY3UzMHVtdw==" }
+        ]
+    },
+    { 
+        "id": 92, 
+        "nama": "PT Sila Agri Inovasi “SILA”", 
+        "ukm": "PT Sila Agri Inovasi", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 4324:2014 Teh Hijau Celup, SNI 3753:2014 Teh Hitam Celup, dan SNI 3836:2013 Teh Kering dalam Kemasan",
+        "alamat": "Jl. Jatiluhur VII G2, No.26, Katulampa, Bogor Timur, Bogor, Jawa Barat",
+        "image": "foto_produk/PT Sila Agri Inovasi.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/silateahouse?igsh=MWd6NmV1bnp0eWYybA==" }
+        ]
+    },
+    { 
+        "id": 93, 
+        "nama": "CV Sundoro Indonesia", 
+        "ukm": "CV Sundoro Indonesia", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3551:2018 Mi Instan",
+        "alamat": "Jl. Amarta II No. 21, Cangkiran, Mijen, Semarang, Jawa Tengah",
+        "image": "foto_produk/Mie instant sundoro.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/sundoroindonesia?igsh=Y2syMDhyMTFtNjJ5" }
+        ]
+    },
+    { 
+        "id": 94, 
+        "nama": "Ghawean Dewe “Pajangan boneka batik”", 
+        "ukm": "Ghawean Dewe", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI ISO 9001:2015 sistem manajemen mutu",
+        "alamat": "Jl. Kramat Kwitang 1B No.23E, RT.4/RW.7, Kwitang, Senen, Jakarta Pusat, DKI Jakarta",
+        "image": "foto_produk/Pajangan boneka batik.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/ghawean_dewe?igsh=Y295dDlnMjJ0ZGVl" }
+        ]
     }
 ]
