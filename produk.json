@@ -1,7 +1,9 @@
 [
     { 
         "id": 1, 
-        "nama": "GULA PALMA CLEMIRA", 
+        "nama": "GULA PALMA",
+        "merek": "CLEMIRA",
+        "tahun":"2024", 
         "ukm": "PT Clemira Sukses Bersama", 
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 3743:2021 Gula Palma",
