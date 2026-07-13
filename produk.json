@@ -1282,5 +1282,201 @@
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/ghawean_dewe?igsh=Y295dDlnMjJ0ZGVl" }
         ]
+    },
+    { 
+        "id": 95, 
+        "nama": "Rendang Daging Dalam Kemasan", 
+        "merek": "THELAMAK",
+        "tahun": "2024",
+        "ukm": "Thelamak", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 7474:2020 Rendang daging Dalam kemasan",
+        "alamat": "Perum Peputra Indah II Blok H No. 203, Kelurahan Simpang Tiga, Kecamatan Bukit Raya Kota Pekanbaru Prov. Riau",
+        "image": "foto_produk/Rendang Daging Thelamak.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/thelamak?igsh=MW14ZWNnZXZ0ZDFraw==" }
+        ]
+    },
+    { 
+        "id": 96, 
+        "nama": "Air Mineral", 
+        "merek": "MINEFUL",
+        "tahun": "2024",
+        "ukm": "CV. PUTRA MAKMUR ABADI", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3553:2015 Air Mineral",
+        "alamat": "Jln. Antara Gg. Bandes, RT 002 RW 001, Desa Wonosari Kec. Bengkalis, kab. Bengkalis, prov. Riau",
+        "image": "foto_produk/Air Mineral Mineful.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/mineful.id?igsh=ZjZ1bnZpNmxvYmJ4" }
+        ]
+    },
+    { 
+        "id": 97, 
+        "nama": "Batik Cap", 
+        "merek": "BATIK BUJANG",
+        "tahun": "2026",
+        "ukm": "BATIK BUJANG", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI 8303:2016/Amd.1:2019 Batik Cap",
+        "alamat": "Jl. Pinang Merah No. 10 B, Kel.Pematangkapau,Kec. Kulim, Kota Pekanbaru, Provinsi Riau",
+        "image": "foto_produk/Batik Cap Bujang.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/batik_bujang?igsh=MTc2enlyNmI2MDE5cA==" }
+        ]
+    },
+    { 
+        "id": 98, 
+        "nama": "Beras Putih Medium", 
+        "merek": "BERAS DUA SAUDARA FIRSKIA",
+        "tahun": "2026",
+        "ukm": "ABD WAHAB", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 6128:2020 Beras",
+        "alamat": "Parit Rumbia Kel. Seberang Pabenaan Kec. Kerintang Indiragiri Hilir Riau",
+        "image": "foto_produk/Beras Dua Saudara Firskia.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "-belum ada" }
+        ]
+    },
+    { 
+        "id": 99, 
+        "nama": "Sambal", 
+        "merek": "SAMBAL EMPAT SUNGAI",
+        "tahun": "2026",
+        "ukm":  "CV. PANGAN SARI JAYA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI CXC 1:1969 (HACCP)",
+        "alamat": "Jl. Mulia Indah 4, Tangkerang Labuai, Pekanbaru, Riau",
+        "image": "foto_produk/Sambal Empat Sungai.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/saripangansetia?igsh=MTBwYmgwdWRqYWM0aQ==" }
+        ]
+    },
+    { 
+        "id": 100, 
+        "nama": "Tepung Daun Kelor Dan Daun Kelor Celup", 
+        "merek": "KELORAS",
+        "tahun": "2026",
+        "ukm": "PT MOND NATURE LESTARII", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI CXC 1:1969 (HACCP)",
+        "alamat": "Jln. Lukman Dusun Kampung Baru RT.001/RW.002 Desa Salo Timur Kec. Salo Kab. Kampar Prov. Riau",
+        "image": "foto_produk/Tepung Daun Kelor.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/dapur_aru?igsh=MWh6MDE2MjlsbDg1cw==" }
+        ]
+    },
+    { 
+        "id": 101, 
+        "nama": "Minuman Sari Buah", 
+        "merek": "PINALOKA",
+        "tahun": "2026",
+        "ukm": "PT. SWARNABHUMI LESTARI FOOD", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3719:2022 Minuman sari buah",
+        "alamat": "Jln. Raja Kecik 002/001, Kel Kampung Rempak, Kec. Siak Provinsi Riau",
+        "image": "foto_produk/Minuman Buah Pinaloka.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/pinaloka.id?igsh=dGE5NmxoZ21mc3Qy" }
+        ]
+    },
+    { 
+        "id": 102, 
+        "nama": "Dodos dan Egrek", 
+        "merek": "MMB RC",
+        "tahun": "2026",
+        "ukm": "CV MOLA MAJU BASAMO", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI 4874:2023 Egrek, SNI 8205:2016 Dodos",
+        "alamat": "Dusun III Pasubilah Barat, Kel. Teratak, Kec. Rumbio Jaya, Kab. Kampar, Provinsi Riau",
+        "image": "foto_produk/Egrek Dan Dodos.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "-belum ada" }
+        ]
+    },
+    { 
+        "id": 103, 
+        "nama": "Batik Cap ", 
+        "merek": "PUTRI YUNNALY",
+        "tahun": "2026",
+        "ukm": "putriyana", 
+        "kategori": "Produk NonPangan", 
+        "judulSni": "SNI 8303:2016/Amd.1:2019 Batik Cap",
+        "alamat": "Jln. Kenanga Perum BMP 2, Kel.Mentangor, Kec. Kulim, Kota Pekanbaru, Provinsi Riau",
+        "image": "foto_produk/Batik Cap Putriyana.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/putriyunnalybatik?igsh=MWs5Y2k5cHA3MGR6bg==" }
+        ]
+    },
+    { 
+        "id": 104, 
+        "nama": "Beras putih medium", 
+        "merek": "BERAS BENTENG SHAKEZA",
+        "tahun": "2026",
+        "ukm": "MISBAR", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 6128:2020 Beras",
+        "alamat": "Jln. H. Sandrang 002/006 Kel. Benteng. Kec. Sungai Batang Indragiri Hilir Riau",
+        "image": "foto_produk/Beras Benteng Shakeza.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "-belum ada" }
+        ]
+    },
+    { 
+        "id": 105, 
+        "nama": "Gula Palma", 
+        "merek": "GELORA MINANGKABAU",
+        "tahun": "2026",
+        "ukm": "MILA  RAHMI", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3743:2021 Gula Palma",
+        "alamat": "Lingkungan Jorong Baruah Bukik, Kel. Andaleh Baruh Bukik, Kec. Sungayang, Kab. Tanah Datar, Provinsi Sumatera Barat",
+        "image": "foto_produk/Gula Palma Mila Rahmi.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/gelora_minangkabau?igsh=MWM1bjA5Z3J1anVscg==" }
+        ]
+    },
+    { 
+        "id": 106, 
+        "nama": "Bandeng isi dan Bandeng Duri Lunak", 
+        "merek": "BERKAH",
+        "tahun": "2026",
+        "ukm": "UKM Bekasi Presto", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 8375:2017 Bandeng isi dan SNI 4106:2017 Bandeng duri lunak",
+        "alamat": "Jl. Raya Pasar Babelan No.46 RT.01/RW.01, Babelan, Kabupaten Bekasi, Jawa Barat",
+        "image": "foto_produk/Bandeng Isi Berkah.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "-belum ada" }
+        ]
+    },
+    { 
+        "id": 107, 
+        "nama": "Beras Putih Medium", 
+        "merek": "BERAS PURBAYA",
+        "tahun": "2026",
+        "ukm": "Purbaya Tani Mandiri", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 6128:2020 Beras",
+        "alamat": "Kp. Cipamubutan, Kel. Purwabakti, Kec. Pamijahan, Kab. Bogor, Provinsi Jawa Barat",
+        "image": "foto_produk/Beras Purbaya.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/purbaya_tani?igsh=MXExdXQzczh5a3F2ZA==" }
+        ]
+    },
+    { 
+        "id": 108, 
+        "nama": "Tepung mokaf", 
+        "merek": "MOCAFAPIK",
+        "tahun": "2026",
+        "ukm": "KELOMPOK WANITA TANI (KWT) BAROKAH", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 7622:2011 Tepung mokaf",
+        "alamat": "Kp. Gunung Leutik RT.06/RW.03, Kel. Benteng, Kec. Ciampea, Kab. Bogor, Provinsi Jawa Barat",
+        "image": "foto_produk/Tepung Mokaf Mocafapik.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/mocaf_cassava.id?igsh=MW9ubmFod3dsdDl4YQ==" }
+        ]
     }
 ]
