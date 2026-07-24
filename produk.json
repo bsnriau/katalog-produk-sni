@@ -1478,5 +1478,250 @@
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/mocaf_cassava.id?igsh=MW9ubmFod3dsdDl4YQ==" }
         ]
+    },
+    { 
+        "id": 109, 
+        "nama": "Hair Removal", 
+        "merek": "FIRSTY BEAUTY",
+        "tahun": "2024",
+        "ukm": "PO FIRSTY BEAUTY", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI ISO 9001:2015 Sistem Manejemen Mutu",
+        "alamat": "Jln. Paus No.65A, Tangkerang Tengah, Kec. Marpoyan Damai, Kota Pekanbaru, Prov. Riau",
+        "image": "foto_produk/Hair Removal.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/firstybeauty?igsh=bXdtbjNtOTBsc3Nw" }
+        ]
+    },
+    { 
+        "id": 110, 
+        "nama": "Kosmetik", 
+        "merek": "SRI TANJUNG",
+        "tahun": "2024",
+        "ukm": "PO SRI TANJUNG", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI ISO 9001:2015 Sistem Manejemen Mutu",
+        "alamat": "Jln. Sekuntum, Gg. mawar II, RT 01 RW 06, Sialangsakti, Tenayan Raya, Pekanbaru, Riau",
+        "image": "foto_produk/Kosmetik Sri Tanjung .webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/sritanjung_kosmetik?igsh=MWRoa3JlMnF3cHI5dA==" }
+        ]
+    },
+     { 
+        "id": 111, 
+        "nama": "Garam Konsumsi Beriodium", 
+        "merek":  "3K BERSAUDARA",
+        "tahun": "2024",
+        "ukm": "PT. ALFEYZA TIGA BERSAUDARA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3555:2016 Garam Konsumsi Beriodium",
+        "alamat": "Jln. Mahoni Indah Blok 88 No. 23, Kel. Tangkerang Timur, Kec. Tenayan Raya, Kota pekanbaru, Prov.Riau",
+        "image": "foto_produk/Garam 3k Bersaudara.webp",
+        "medsos": []
+    },
+    { 
+        "id": 112, 
+        "nama": "Garam Konsumsi Beriodium", 
+        "merek":  "ORGANIC CENTER",
+        "tahun": "2025",
+        "ukm": "PT. LANGKAH HIJAU BERSAMA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3555:2016 Garam Konsumsi Beriodium",
+        "alamat": "Jln. Jend. Sudirman No. 468, Kel. Wonorejo, Kec. Marpoyan Damai, Kota Pekanbaru, Prov. Riau, 28125",
+        "image": "foto_produk/ORGANIC CENTER.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/organiccenterproduct?igsh=N21iYjI4eTRsbmgx" }
+        ]
+    },
+    { 
+        "id": 113, 
+        "nama": "Dodos dan Egrek", 
+        "merek": "RJS",
+        "tahun": "2025",
+        "ukm": "KOPERASI RUMBIO JAYA STEEL", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI 8205:2016 Dodos, SNI 4874:2023 Egrek",
+        "alamat": "Dusun III Pasubilah Barat, Kel. Teratak, Kec. Rumbio Jaya, Kab. Kampar, Provinsi Riau",
+        "image": "foto_produk/KOPERASI RUMBIO JAYA STEEL.webp",
+        "medsos":[]
+    },
+     { 
+        "id": 114, 
+        "nama": "KAKAO BUBUK", 
+        "merek": "CHOKATO BY CTB",
+        "tahun": "2025",
+        "ukm": "PT. CHOKATO TUMBUH BERSAMA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": " SNI3747:2013 Kakao Bubuk",
+        "alamat": "Jl. KH Dewantara No.21, Kel. Kapalo Koto Ampangan, Kec. Payakumbuh Selatan, Kota Payakumbuh, Prov. Sumatera Barat",
+        "image": "foto_produk/KAKAO BUBUK.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/chokatopayakumbuh?igsh=OWtpYXZpc29mODgw" }
+        ]
+    },
+    { 
+        "id": 115, 
+        "nama": "Selai Buah Nanas", 
+        "merek": "HANISUN",
+        "tahun": "2025",
+        "ukm": "CV HANISUN GULDEN RIAU", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3746:2008 Selai Buah",
+        "alamat": "Jl. KH Dewantara No.21, Kel. Kapalo Koto Ampangan, Kec. Payakumbuh Selatan, Kota Payakumbuh, Prov. Sumatera Barat",
+        "image": "foto_produk/Selai Buah.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/hanisuncake.pekanbaru?igsh=cWN3eHRmMjR2bWh1" }
+        ]
+    },
+    { 
+        "id": 116, 
+        "nama": "Keripik Singkong dan Keripik Kulit Ikan", 
+        "merek": "EMAC CW",
+        "tahun": "2025",
+        "ukm": "EMAK CW", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 4305:2018 Keripik Singkong dan SNI CXC 1:1969 Rev. 2020 Prinsip Umum Higiene Pangan (HACCP)",
+        "alamat": "Jl. Pesantren Gg. Angrela No. 1B, Kel. Tangkerang Timur, Kec.Tenayan Raya, Kota Pekanbaru,Prov. Riau",
+        "image": "foto_produk/Keripik Emak CW.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/emakcw?igsh=MTN5c3RuZzZqbjcxbQ==" }
+        ]
+    },
+    { 
+        "id": 117, 
+        "nama": "Keripik Kulit Ikan Goreng", 
+        "merek": "MELAKERS",
+        "tahun": "2025",
+        "ukm": "PT. MELAYU CRACKERS INDONESIA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 9013:2021 Kerupuk Kulit Ikan Goreng dan SNI CXC 1:1969 Rev. 2020 Prinsip Umum Higiene Pangan (HACCP)",
+        "alamat": "Jl. Serasi, Gg. Serasi II, No.16, Kel. Tobekgodang, Kec.Binawidya, Kota Pekanbaru, Prov. Riau",
+        "image": "foto_produk/Keripik Kulit Ikan Goreng.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/melayucrackers?igsh=MXJkM3o3MHdocXFreg==" }
+        ]
+    },
+     { 
+        "id": 118, 
+        "nama": "Rendang Daging dan Bumbu Instan", 
+        "merek": "PUTI BUANA",
+        "tahun": "2025",
+        "ukm": "PT. PUTI BUANA MAJU JAYA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI CXC 1:1969 Rev. 2020 Prinsip Umum Higiene Pangan",
+        "alamat": "Jl. Jendral sudirman No 11 E-F, Pekanbaru, Prov. Riau, Indonesia",
+        "image": "foto_produk/Rendang dan Bumbu Instan.webp",
+        "medsos": [
+            { "platform": "instagram", "url": "https://www.instagram.com/putibuana?igsh=d2tremlicXp1cWh5" }
+        ]
+    },
+    { 
+        "id": 119, 
+        "nama": "Tangki Air Silinder Vertikal - Polietilena (PE)", 
+        "merek": "BANGAU PUTIH",
+        "tahun": "2025",
+        "ukm": "PT. RAAFI AISKOTO FAMILI", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI ISO 9001:2015 Sistem Manajemen Mutu",
+        "alamat": "Komplek Agro Lestari Lubuk Kilangan,Kota Padang, Sumatera Barat",
+        "image": "foto_produk/tangki air silinder vertikal.webp",
+        "medsos": []
+    },
+    { 
+        "id": 120, 
+        "nama": "Madu", 
+        "merek": "BLOOMING SEVEN",
+        "tahun": "2026",
+        "ukm": "PT TUJUH ASA BERSEMI", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 8664:2024 Madu",
+        "alamat": "Jl. Delima No. 7 RT. 004 RW. 008 Pondok Kelapa, Duren Sawit,Kota Adm. Jakarta Timur, DKI Jakarta",
+        "image": "foto_produk/Madu Blooming.webp",
+        "medsos": [ { "platform": "instagram", "url": "https://www.instagram.com/blooming_seven?igsh=MTRxNmcyaTJiNGxwNQ==" }
+        ]
+    },
+    { 
+        "id": 121, 
+        "nama": "Dendeng Daging", 
+        "merek": "GEMPAL",
+        "tahun": "2026",
+        "ukm": "GEMPAL MAJU SEJAHTERA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 2908:2020 Dendeng Daging Dalam Kemasan",
+        "alamat": "JL. M SAIDI RT 05/01, Desa Petukangan Selatan, Kec. Pesanggrahan,Kota Adm. Jakarta Selatan, Prov. DKI Jakarta",
+        "image": "foto_produk/Rendang Daging Gempal.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/gempal.empal?igsh=bGFzNGhpM2VpaWk2" }]
+    },
+    { 
+        "id": 122, 
+        "nama": "RENDANG DAGING IRIS dan SUWIR", 
+        "merek": "RENDANG GADIH",
+        "tahun": "2026",
+        "ukm": "PT GADIH MINANG ANUGERAH", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 7474:2020 Rendang Daging Dalam Kemasan",
+        "alamat": "Perumahan Taman Firdaus, Jalan Anturium Nomor : A1, Kel. Payolansek, Kec. Payakumbuh Barat, Kota Payakumbuh, Prov. Sumatera Barat",
+        "image": "foto_produk/Rendang Daging Gadih.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/rendanggadih.official?igsh=MXkxd3V1YWgwb2Rzeg==" }]
+    },
+    { 
+        "id": 123, 
+        "nama": "Rendang Daging", 
+        "merek": "YO RANDANG",
+        "tahun": "2026",
+        "ukm": "YO RANDANG", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 7474:2020 Rendang Daging Dalam Kemasan",
+        "alamat": "Tanjuanggodang SungaiPinago, Kel. Tanjuanggodang Sungaipinago, Kec. Payakumbuh Barat, Kota Payakumbuh, Prov.Sumatera Barat",
+        "image": "foto_produk/Rendang Daging Yo Randang.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/yo.randang?igsh=MTY3NXJnY3ZqNWUwZA==" }]
+    },
+    { 
+        "id": 124, 
+        "nama": "Kecap Kedelai Manis", 
+        "merek": "OISHII",
+        "tahun": "2024",
+        "ukm": "CV IKAPEKSI AGRO INDUSTRI", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 3543.1:2013 Kecap Kedelai",
+        "alamat": "Jl. Raya Karangsatria No.16 RT 003 RW 002, Karangsatria, Tambun Utara, Kab. Bekasi, Prov. Jawa Barat",
+        "image": "foto_produk/Kecap Oishii.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/kecapkuoishii?igsh=ZHE1YnF0NThxNzRs" }]
+    },
+    { 
+        "id": 125, 
+        "nama": "Sambal", 
+        "merek": "APB",
+        "tahun": "2025",
+        "ukm": "ERNA SARI", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 4865:2018 Sambal",
+        "alamat": "Palem Ganda Asri 2 Cluster DD Bloki No.3,Kel. Karang Mulya, Kec. Karang Tengah, Kota Tangerang, Prov. Banten",
+        "image": "foto_produk/APB sambal.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/apbsambal?igsh=a2RxOHBhcXg0dmRn" }]
+    },
+    { 
+        "id": 126, 
+        "nama": "Layanan Pengiriman", 
+        "merek": "SUPERKUL",
+        "tahun": "2025",
+        "ukm": "PT SUPERKUL AMERTA INDONESIA", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI ISO 23412:2020 Layanan Pengiriman Berpendingin Suhu Terkontrol",
+        "alamat": "JI. Panjang Arteri Kelapa Dua Raya No. 8, Kedoya Utara, Kec. Kebon Jeruk Kota Adm. Jakarta Barat Prov. DKI Jakarta",
+        "image": "foto_produk/Superkul.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/superkul.id?igsh=MWxscW1jdTJkMHJyMw==" }]
+    },
+    { 
+        "id": 127, 
+        "nama": "PT SOVWARE DATA MANDIRI", 
+        "merek": "SOVWARE",
+        "tahun": "2026",
+        "ukm": "PT SOVWARE DATA MANDIRI", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI ISO/IEC 27001:2022 Sistem Manajemen Keamanan Informasi",
+        "alamat": "Magna Commercial Summarecon Blok MD No 02, Gedebage, Bandung, Jawa Barat",
+        "image": "foto_produk/PT SOVWARE DATA MANDIRI.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/sovware?igsh=a256ZGh1NzY1Mngw" }]
     }
 ]
