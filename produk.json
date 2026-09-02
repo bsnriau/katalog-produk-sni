@@ -1772,5 +1772,77 @@
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/kingkaf_indonesia?igsh=MWNhcTVkaTA5ZGNkbw==" }
         ]
+    },
+    { 
+        "id": 131, 
+        "nama": "Kerupuk Ikan, Udang Dan Moluska", 
+        "merek": "BERKAH PADI KAPAS",
+        "tahun": "2026",
+        "ukm": "UD. BERKAH PADI KAPAS", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 8272:2016 Kerupuk Ikan, Udang Dan Moluska",
+        "alamat": "Blok Dukuh, Kel. Kenanga, Kec. Sindang, Kab. Indramayu, Provinsi Jawa Barat",
+        "image": "foto_produk/BERKAH PADI KAPAS.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/aquuena.shop?igsh=MTBsNGl0ZjhxZDdtOA==" }]
+    },
+    { 
+        "id": 132, 
+        "nama": "Brownies Panggang", 
+        "merek": "BROWNIES BITES",
+        "tahun": "2026",
+        "ukm": "PT BATTENBERG TIGA INDONESIA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI CXC 1:1969 Rev. 2022, IDT Prinsip Umum Higiene Pangan (HACCP)",
+        "alamat": "Mustika Hegar Regency MHB-03 Kel. Margasari, Kec. Buah Batu 40286, Bandung-Indonesia",
+        "image": "foto_produk/BROWNIES PANGGANG.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/battenberg3?igsh=MWk3aThxZWplZ2s4Yw==" }]
+    },
+    { 
+        "id": 133, 
+        "nama": "Nasi Liwet, Nasi Uduk Dan Nasi Kuning Instant", 
+        "merek": "1001",
+        "tahun": "2026",
+        "ukm": "CV SERIBUSATU 1001", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI CXC 1:1969 Rev. 2022, IDT Prinsip Umum Higiene Pangan (HACCP)",
+        "alamat": "Jln. Raya Kamojang No.KM 1, Kec. Semarang, Kab. Garut, Prov.Jawa Barat 44161",
+        "image": "foto_produk/CV SERIBUSATU 1001.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/liwetinstan1001_id?igsh=bWdla2Z0bHJleTBk" }]
+    },
+    { 
+        "id": 134, 
+        "nama": "Kapas Serap / Kapas Putih", 
+        "merek": "RSPRO Medical",
+        "tahun": "2026",
+        "ukm": "PT. BUNGSU JAYA NIAGA", 
+        "kategori": "Produk Non Pangan", 
+        "judulSni": "SNI ISO 9001:2015 Sistem Manajemen Mutu",
+        "alamat": "Jln. Cigentur RT.02 RW.03 Kp.Bojong, Kel. cigentur, Kec. Paseh, Kab. Bandung, Prov. Jawa Barat",
+        "image": "foto_produk/PT. Bungsu Jaya Niaga.webp",
+        "medsos": [{ "platform": "instagram", "url": "belum ada" }]
+    },
+    { 
+        "id": 135, 
+        "nama": "Madu Dan Olahan Bawang Fermentasi", 
+        "merek": "ALAMME",
+        "tahun": "2026",
+        "ukm": "PT. SEMUA DARI ALAM", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI ISO 9001:2015 Sistem Manajemen Mutu",
+        "alamat": "Jl. Cigondewah Kaler RT.002/RW.003, Kel.Cigondewah Kaler, Kec.Bandung Kulon, Kota Bandung",
+        "image": "foto_produk/PT. Semua Dari Alam.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/alamme_nutrientfood?igsh=ZWpjNTdiZGowZ2Rt" }]
+    },
+    { 
+        "id": 136, 
+        "nama": "Cokelat", 
+        "merek": "XI U-JANK",
+        "tahun": "2026",
+        "ukm": "RONI FAHRONI", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 7934:2014 Cokelat dan Produk-Produk cokelat",
+        "alamat": "Pasir Tilil Mekar, Kel.Ciwidey, kec.ciwidey, Kab.Bandung, Prov.Jawa Barat",
+        "image": "foto_produk/RONI FAHRONI.webp",
+        "medsos": [{ "platform": "instagram", "url": "belum ada" }]
     }
 ]
