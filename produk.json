@@ -1559,7 +1559,7 @@
         "ukm": "CV HANISUN GULDEN RIAU", 
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 3746:2008 Selai Buah",
-        "alamat": "Jl. KH Dewantara No.21, Kel. Kapalo Koto Ampangan, Kec. Payakumbuh Selatan, Kota Payakumbuh, Prov. Sumatera Barat",
+        "alamat": "Jl. Utama ruko no. 1, Rejosari, Tenayan Raya, Kota Pekanbaru, Prov. Riau",
         "image": "foto_produk/Selai Buah.webp",
         "medsos": [
             { "platform": "instagram", "url": "https://www.instagram.com/hanisuncake.pekanbaru?igsh=cWN3eHRmMjR2bWh1" }
@@ -1819,7 +1819,7 @@
         "judulSni": "SNI ISO 9001:2015 Sistem Manajemen Mutu",
         "alamat": "Jln. Cigentur RT.02 RW.03 Kp.Bojong, Kel. cigentur, Kec. Paseh, Kab. Bandung, Prov. Jawa Barat",
         "image": "foto_produk/PT. Bungsu Jaya Niaga.webp",
-        "medsos": [{ "platform": "instagram", "url": "belum ada" }]
+        "medsos": []
     },
     { 
         "id": 135, 
@@ -1842,7 +1842,55 @@
         "kategori": "Produk Pangan", 
         "judulSni": "SNI 7934:2014 Cokelat dan Produk-Produk cokelat",
         "alamat": "Pasir Tilil Mekar, Kel.Ciwidey, kec.ciwidey, Kab.Bandung, Prov.Jawa Barat",
-        "image": "foto_produk/RONI FAHRONI.webp",
-        "medsos": [{ "platform": "instagram", "url": "belum ada" }]
+        "image": "foto_produk/Cokelat XI U-Jank.webp",
+        "medsos": []
+    },
+    { 
+        "id": 137, 
+        "nama": "Sambal", 
+        "merek": "SAMBAL EMPAT SUNGAI",
+        "tahun": "2026",
+        "ukm": "CV PANGAN SARI JAYA", 
+        "kategori": "Produk Pangan", 
+        "judulSni": " SNI 4865:2018 Sambal",
+        "alamat": "MULIA INDAH 4, PARIT INDAH, Kel. Tangkerang Labuai, Kec. Bukit Raya, Kota Pekanbaru, Provinsi Riau",
+        "image": "foto_produk/CV Pangan Sari (Sambal Empat Sungai).webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.sambalempatsungai.com/" }]
+    },
+    { 
+        "id": 138, 
+        "nama": "Madu", 
+        "merek": "AL MUBAROKAH",
+        "tahun": "2026",
+        "ukm": "PT AL MUBAROKAH HERBAL JAKARTA ", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 8664:2024 Madu",
+        "alamat": "JI. H. Icang RT 13 RW 02 No. 3, Kel. Lenteng Agung, Kec. Jagakarsa, Jakarta Selatan,Provinsi DKI Jakarta",
+        "image": "foto_produk/PT Almubarokah Madu.webp",
+        "medsos": []
+    },
+    { 
+        "id": 139, 
+        "nama": "Pempek", 
+        "merek": "JEOL",
+        "tahun": "JABAR",
+        "ukm": "PT. Jiva Mandala Dharma", 
+        "kategori": "Produk Pangan", 
+        "judulSni": "SNI 7661:2019, Pempek",
+        "alamat": "Jl. Rereng Wulung No. 23, Kel. Sukaluyu, Kec. Cibeunying Kaler, Kota Bandung, Provinsi Jawa Barat",
+        "image": "foto_produk/Pempek Jeol.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/jeolfood.id/" }]
+    },
+    { 
+        "id": 140, 
+        "nama": "Sambal Ikan", 
+        "merek": "LAFIZAN",
+        "tahun": "JABAR",
+        "ukm": "UKM LAFIZAN", 
+        "kategori": "Produk Pangan", 
+        "judulSni": " SNI 9106:2022 Sambal ikan. ",
+        "alamat": "Jl. Adi Soka No.21 Adipura RT.001 RW.006, Kel. Rancabolang, Kec. Gedebage, Kota Bandung, Provinsi Jawa Barat ",
+        "image": "foto_produk/Sambal Ikan Lafizan.webp",
+        "medsos": [{ "platform": "instagram", "url": "https://www.instagram.com/lafizanstore/reels/" }]
     }
 ]
