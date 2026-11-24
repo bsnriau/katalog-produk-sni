@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,755 +5,391 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalog Produk Ber-SNI - BSN</title>
     <link rel="icon" type="image/png" href="logobsn.png">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <style>
+        /* ═════════ PALET: navy institusi + biru kobalt + emas hangat ═════════ */
         :root {
-            --bsn-blue:         #1A4FA0;
-            --bsn-blue-dark:    #0F2F62;
-            --bsn-blue-mid:     #2563EB;
-            --bsn-orange:       #F59E0B;
-            --bsn-orange-dark:  #D97706;
-            --bsn-orange-light: #FEF3C7;
-            --bsn-gradient:     linear-gradient(135deg, #0F2F62 0%, #1A4FA0 60%, #2563EB 100%);
+            --navy:      #0A1F44;
+            --navy-2:    #12306A;
+            --blue:      #1F4FB2;
+            --blue-2:    #3B6FE0;
+            --sky:       #EAF1FF;
+            --sky-line:  #C9DAFB;
+            --gold:      #E9A820;
+            --gold-dark: #B7791F;
+            --gold-soft: #FFF4D6;
+            --teal:      #0F766E;
+            --teal-soft: #E3F5F2;
 
-            --ink:      #0B1829;
-            --ink-soft: #1E3A5F;
-            --text-1:   #111827;
-            --text-2:   #4B5563;
-            --text-3:   #9CA3AF;
+            --ink:    #0B1730;
+            --text-1: #1A2236;
+            --text-2: #4A5568;
+            --text-3: #8A94A6;
 
-            --bg-page:  #F0F4FA;
-            --bg-card:  #FFFFFF;
-            --line:     #E5EAF2;
+            --bg:      #F5F7FB;
+            --card:    #FFFFFF;
+            --line:    #E3E8F0;
 
-            --radius-sm: 10px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
+            --r-sm: 12px;
+            --r-md: 18px;
+            --r-lg: 26px;
+            --shadow-sm: 0 2px 10px rgba(10,31,68,.05);
+            --shadow-md: 0 16px 44px rgba(10,31,68,.12);
         }
 
         * { box-sizing: border-box; }
-
+        html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-page);
-            color: var(--text-1);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg); color: var(--text-1); -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
+        img { max-width: 100%; }
 
-        /* ════════════════════════════
-           NAVBAR
-        ════════════════════════════ */
+        /* ═════════ NAVBAR ═════════ */
         .navbar {
-            background: rgba(255,255,255,0.97);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--line);
-            padding: 10px 0;
-            box-shadow: 0 1px 20px rgba(15,47,98,0.06);
+            background: rgba(255,255,255,.88);
+            backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px);
+            border-bottom: 1px solid var(--line); padding: 10px 0;
         }
-        .navbar-brand { gap: 12px; text-decoration: none; }
-        .navbar-brand-text {
-            font-size: 0.8rem;
-            color: var(--text-2);
-            border-left: 1px solid var(--line);
-            padding-left: 12px;
-            margin-left: 4px;
-            line-height: 1.4;
+        .navbar-brand { gap: 12px; margin-right: 0; }
+        .navbar-brand-text { font-size: .76rem; font-weight: 700; color: var(--navy); border-left: 1px solid var(--line); padding-left: 12px; line-height: 1.35; }
+        .navbar .nav-link {
+            font-weight: 600; font-size: .86rem; color: var(--text-2) !important;
+            padding: 9px 16px !important; border-radius: 100px; transition: all .18s ease; cursor: pointer;
         }
-        .nav-link {
-            font-weight: 500;
-            font-size: 0.875rem;
-            color: var(--text-2) !important;
-            padding: 8px 14px !important;
-            border-radius: var(--radius-sm);
-            transition: all 0.18s ease;
-            cursor: pointer;
-        }
-        .nav-link:hover {
-            color: var(--bsn-blue) !important;
-            background: #EFF4FF;
-        }
-        .nav-link.active {
-            color: var(--bsn-blue) !important;
-            background: #EFF4FF;
-            font-weight: 600;
-        }
+        .navbar .nav-link:hover { color: var(--blue) !important; background: var(--sky); }
+        .navbar .nav-link.active { color: #fff !important; background: var(--navy); }
 
-        /* ════════════════════════════
-           HERO SECTION
-        ════════════════════════════ */
-        .hero-section {
-            min-height: 560px;
-            background-color: #0b2c4d;
-            background-position: 75% center;
-            background-repeat: no-repeat;
-            background-size: 115%;
-            position: relative;
-            overflow: hidden;
-            border: none;
-            margin: 0;
-            padding: 0;
+        /* ═════════ HERO ═════════ */
+        .hero {
+            position: relative; overflow: hidden; color: #fff;
+            background-color: var(--navy);
+            background-image: url('fotohero.png');
+            background-size: cover; background-position: 70% center;
+            border-radius: 0 0 44px 44px;
+            padding: 96px 0 130px;
         }
-
-        /* Overlay gradient brand */
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                105deg,
-                rgba(10, 30, 70, 0.96) 0%,
-                rgba(15, 47, 98, 0.88) 45%,
-                rgba(26, 79, 160, 0.55) 70%,
-                transparent 100%
-            );
-            z-index: 1;
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(600px 400px at 90% 10%, rgba(233,168,32,.22), transparent 70%),
+                linear-gradient(100deg, rgba(10,31,68,.97) 0%, rgba(10,31,68,.9) 42%, rgba(18,48,106,.6) 72%, rgba(18,48,106,.3) 100%);
         }
-
-        /* Dekorasi lingkaran glow */
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            top: -120px; right: -120px;
-            width: 520px; height: 520px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
-            z-index: 1;
-        }
-
-        .hero-content { position: relative; z-index: 5; }
-
+        .hero > .container { position: relative; z-index: 2; }
         .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            background: rgba(245,158,11,0.18);
-            border: 1px solid rgba(245,158,11,0.4);
-            color: #FCD34D;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            border-radius: 100px;
-            margin-bottom: 22px;
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(233,168,32,.14); border: 1px solid rgba(233,168,32,.45); color: #FFD36B;
+            font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+            padding: 7px 15px; border-radius: 100px; margin-bottom: 22px;
+        }
+        .hero-title { font-size: clamp(2.1rem, 5.4vw, 3.7rem); font-weight: 800; line-height: 1.1; letter-spacing: -.03em; margin-bottom: 18px; }
+        .hero-title .accent { background: linear-gradient(90deg, #F5B93A, #FFE08A); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero-desc { color: rgba(255,255,255,.75); font-size: 1.02rem; max-width: 520px; line-height: 1.7; margin-bottom: 28px; }
+
+        .hero-search {
+            display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 100px;
+            padding: 6px 6px 6px 20px; max-width: 540px; box-shadow: 0 20px 50px rgba(0,0,0,.28);
+        }
+        .hero-search i { color: var(--text-3); }
+        .hero-search input { flex: 1; min-width: 0; border: none; outline: none; background: transparent; padding: 11px 6px; font-size: .92rem; color: var(--ink); }
+        .btn-gold {
+            background: var(--gold); color: var(--ink); font-weight: 800; border: none; border-radius: 100px;
+            padding: 12px 24px; font-size: .84rem; white-space: nowrap; transition: all .18s ease;
+            display: inline-flex; align-items: center; gap: 8px; text-decoration: none; cursor: pointer;
+        }
+        .btn-gold:hover { background: #F5B93A; transform: translateY(-2px); color: var(--ink); box-shadow: 0 10px 24px rgba(233,168,32,.4); }
+        .btn-ghost {
+            background: rgba(255,255,255,.1); color: #fff; font-weight: 700; border: 1px solid rgba(255,255,255,.28);
+            border-radius: 100px; padding: 12px 22px; font-size: .84rem; display: inline-flex; align-items: center; gap: 8px; transition: all .18s ease; cursor: pointer;
+        }
+        .btn-ghost:hover { background: rgba(255,255,255,.2); color: #fff; }
+        .quick-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: center; }
+        .quick-row .lbl { font-size: .76rem; color: rgba(255,255,255,.6); font-weight: 600; }
+        .quick-chip {
+            background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); color: #fff;
+            font-size: .78rem; font-weight: 600; padding: 6px 14px; border-radius: 100px; cursor: pointer; transition: all .15s ease;
+        }
+        .quick-chip:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+        .hero-glass {
+            background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-radius: var(--r-md); padding: 22px 24px; box-shadow: 0 20px 50px rgba(0,0,0,.2);
+        }
+        .hero-glass + .hero-glass { margin-top: 14px; margin-left: 40px; }
+        .hero-glass .big { font-size: 2.2rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
+        .hero-glass .sm { font-size: .78rem; color: rgba(255,255,255,.72); font-weight: 600; margin-top: 6px; }
+        .hero-glass .ic { width: 44px; height: 44px; border-radius: 13px; background: var(--gold); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+
+        @media (max-width: 991.98px) { .hero { padding: 72px 0 120px; background-position: 60% center; } }
+        @media (max-width: 575.98px) {
+            .hero { padding: 56px 0 110px; border-radius: 0 0 28px 28px; }
+            .hero-search { padding-left: 16px; }
+            .hero-search .btn-gold { padding: 11px 16px; }
+            .hero-search .btn-gold .t { display: none; }
         }
 
-        .hero-title {
-            font-size: clamp(2rem, 5vw, 3.25rem);
-            font-weight: 800;
-            color: #fff;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 20px;
-        }
-        .hero-title .accent { color: var(--bsn-orange); }
+        /* ═════════ STATS ═════════ */
+        .stats-strip { margin-top: -64px; position: relative; z-index: 6; }
+        .stats-box { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--shadow-md); padding: 22px 8px; }
+        .stat-item { text-align: center; padding: 6px 8px; }
+        .stat-num { font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 800; color: var(--blue); letter-spacing: -.02em; line-height: 1.1; }
+        .stat-label { font-size: .7rem; font-weight: 700; color: var(--text-2); text-transform: uppercase; letter-spacing: .07em; margin-top: 5px; }
+        @media (min-width: 768px) { .stat-item + .stat-item { border-left: 1px solid var(--line); } }
 
-        .hero-desc {
-            color: rgba(255,255,255,0.65);
-            font-size: 1rem;
-            max-width: 440px;
-            line-height: 1.65;
-            margin-bottom: 32px;
+        /* ═════════ SECTION BASE ═════════ */
+        .section { padding: 84px 0; }
+        @media (max-width: 767.98px) { .section { padding: 60px 0; } }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 7px; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+            color: var(--blue); background: var(--sky); border: 1px solid var(--sky-line); padding: 6px 14px; border-radius: 100px; margin-bottom: 16px;
         }
+        .eyebrow.gold { color: var(--gold-dark); background: var(--gold-soft); border-color: rgba(233,168,32,.4); }
+        .eyebrow.light { color: #FFD36B; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.25); }
+        .section-title { font-size: clamp(1.6rem, 3.6vw, 2.35rem); font-weight: 800; color: var(--ink); letter-spacing: -.025em; line-height: 1.2; margin-bottom: 12px; }
+        .section-title .hi { color: var(--blue); }
+        .section-desc { color: var(--text-2); font-size: .97rem; line-height: 1.75; }
+        .link-arrow { font-weight: 700; font-size: .88rem; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; }
+        .link-arrow i { transition: transform .2s ease; }
+        .link-arrow:hover i { transform: translateX(5px); }
 
-        .btn-hero {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            background: var(--bsn-orange);
-            color: var(--ink);
-            font-weight: 700;
-            font-size: 0.9rem;
-            padding: 13px 28px;
-            border-radius: 100px;
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            box-shadow: 0 8px 24px rgba(245,158,11,0.35);
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-        .btn-hero:hover {
-            background: var(--bsn-orange-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(245,158,11,0.45);
-        }
+        /* Why */
+        .why-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); padding: 30px; height: 100%; position: relative; overflow: hidden; transition: all .25s ease; }
+        .why-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--sky-line); }
+        .why-num { position: absolute; right: 22px; top: 14px; font-size: 3.4rem; font-weight: 800; color: var(--sky); line-height: 1; letter-spacing: -.04em; }
+        .why-icon { width: 52px; height: 52px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 1.4rem; position: relative; }
+        .why-card h5 { font-size: 1.05rem; font-weight: 800; color: var(--ink); margin-bottom: 10px; position: relative; }
+        .why-card p { color: var(--text-2); font-size: .9rem; line-height: 1.75; margin: 0; position: relative; }
 
-        /* Hero stat pills */
-        .hero-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 36px;
-        }
-        .hero-stat-pill {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.14);
-            border-radius: 100px;
-            padding: 8px 16px;
-            color: rgba(255,255,255,0.8);
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        .hero-stat-pill svg { flex-shrink: 0; }
+        /* Benefit bento */
+        .benefit-bg { background: var(--card); }
+        .bento { border-radius: var(--r-md); padding: 28px; height: 100%; position: relative; overflow: hidden; transition: all .25s ease; border: 1px solid var(--line); background: var(--bg); }
+        .bento:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); background: #fff; border-color: var(--sky-line); }
+        .bento .ic { width: 54px; height: 54px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; }
+        .bento h5 { font-weight: 800; font-size: 1.05rem; color: var(--ink); margin-bottom: 8px; }
+        .bento p { font-size: .86rem; color: var(--text-2); line-height: 1.7; margin: 0; }
+        .bento-main { background: linear-gradient(150deg, var(--navy) 0%, var(--navy-2) 70%, var(--blue) 100%); border: none; color: #fff; display: flex; flex-direction: column; justify-content: flex-end; min-height: 300px; }
+        .bento-main:hover { background: linear-gradient(150deg, var(--navy) 0%, var(--navy-2) 70%, var(--blue) 100%); }
+        .bento-main h5 { color: #fff; font-size: 1.5rem; }
+        .bento-main p { color: rgba(255,255,255,.75); font-size: .92rem; }
+        .bento-main .ghost { position: absolute; right: -20px; top: -20px; font-size: 11rem; color: rgba(255,255,255,.06); line-height: 1; }
+        .bento-wide { display: flex; gap: 20px; align-items: center; }
+        .bento-wide .ic { margin-bottom: 0; flex-shrink: 0; }
+        @media (max-width: 575.98px) { .bento-wide { flex-direction: column; align-items: flex-start; } .bento-wide .ic { margin-bottom: 4px; } }
 
-        /* SVG Wave container - ASLI DIPERTAHANKAN */
-        .wave-container {
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            z-index: 2;
+        /* Smart: image cards */
+        .smart-card { position: relative; border-radius: var(--r-md); overflow: hidden; min-height: 380px; height: 100%; background: var(--navy); isolation: isolate; box-shadow: var(--shadow-sm); transition: all .3s ease; }
+        .smart-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .smart-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .6s ease; }
+        .smart-card:hover img { transform: scale(1.08); }
+        .smart-card::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(10,31,68,.96) 0%, rgba(10,31,68,.72) 38%, rgba(10,31,68,.05) 75%); }
+        .smart-ov { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px; color: #fff; }
+        .smart-num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 10px; background: var(--gold); color: var(--ink); font-weight: 800; font-size: .85rem; margin-bottom: 12px; }
+        .smart-ov h6 { font-weight: 800; font-size: 1rem; margin-bottom: 6px; }
+        .smart-ov p { font-size: .8rem; color: rgba(255,255,255,.8); line-height: 1.6; margin: 0; }
+
+        /* CTA banner */
+        .cta-banner { background: linear-gradient(120deg, var(--navy) 0%, var(--navy-2) 60%, var(--blue) 100%); border-radius: var(--r-lg); padding: 46px 40px; color: #fff; position: relative; overflow: hidden; }
+        .cta-banner::after { content: ''; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(233,168,32,.3), transparent 70%); }
+        .cta-banner > * { position: relative; z-index: 1; }
+        .cta-banner h3 { font-weight: 800; letter-spacing: -.02em; font-size: clamp(1.35rem, 3vw, 1.9rem); }
+        .cta-banner p { color: rgba(255,255,255,.75); margin: 0; }
+        @media (max-width: 575.98px) { .cta-banner { padding: 32px 22px; } }
+
+        /* ═════════ PAGE HEADER (Katalog & Kunjungi) ═════════ */
+        .page-head { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, var(--blue) 100%); color: #fff; padding: 56px 0 96px; position: relative; overflow: hidden; border-radius: 0 0 36px 36px; }
+        .page-head::after { content: ''; position: absolute; top: -120px; right: -80px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(233,168,32,.25) 0%, transparent 70%); }
+        .page-head .container { position: relative; z-index: 2; }
+        .page-head h2 { font-weight: 800; letter-spacing: -.025em; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+        .page-head h2 .hi { color: #FFD36B; }
+        .page-head p { color: rgba(255,255,255,.75); margin: 0; }
+
+        /* ═════════ KATALOG ═════════ */
+        .toolbar-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--shadow-md); padding: 20px; margin-top: -58px; position: relative; z-index: 5; scroll-margin-top: 90px; }
+        .search-wrap { background: var(--bg); border: 1.5px solid transparent; border-radius: 100px; display: flex; align-items: center; padding: 0 8px 0 18px; transition: all .16s ease; }
+        .search-wrap:focus-within { background: #fff; border-color: var(--blue-2); box-shadow: 0 0 0 4px rgba(59,111,224,.14); }
+        .search-wrap i.bi-search { color: var(--text-3); }
+        .search-wrap .form-control { border: none; background: transparent; padding: 13px 10px; font-size: .9rem; box-shadow: none; min-width: 0; }
+        .search-clear { border: none; background: var(--line); color: var(--text-2); width: 28px; height: 28px; border-radius: 50%; display: none; align-items: center; justify-content: center; font-size: .75rem; flex-shrink: 0; }
+        .search-clear.show { display: inline-flex; }
+        .filter-label { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em; color: var(--text-3); margin-bottom: 8px; display: block; }
+        .nav-pills .nav-link { background: var(--bg); border: 1.5px solid transparent; border-radius: 100px; padding: 8px 16px; font-size: .82rem; font-weight: 600; color: var(--text-2) !important; transition: all .16s ease; display: inline-flex; align-items: center; gap: 8px; }
+        .nav-pills .nav-link:hover { border-color: var(--blue); color: var(--blue) !important; background: #fff; }
+        .nav-pills .nav-link.active { background: var(--navy) !important; border-color: var(--navy); color: #fff !important; box-shadow: 0 6px 14px rgba(10,31,68,.28); }
+        .pill-count { font-size: .68rem; font-weight: 700; background: rgba(0,0,0,.08); padding: 2px 8px; border-radius: 100px; }
+        .nav-pills .nav-link.active .pill-count { background: rgba(255,255,255,.2); }
+        .form-select.filter-select { border-radius: 100px; border: 1.5px solid transparent; background-color: var(--bg); font-size: .85rem; font-weight: 600; color: var(--text-1); padding: 10px 40px 10px 18px; }
+        .form-select.filter-select:focus { background-color: #fff; border-color: var(--blue-2); box-shadow: 0 0 0 4px rgba(59,111,224,.14); }
+
+        .result-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin: 26px 0 20px; }
+        .result-text { font-size: .88rem; color: var(--text-2); }
+        .result-text strong { color: var(--ink); }
+        .chip { display: inline-flex; align-items: center; gap: 6px; background: var(--sky); color: var(--navy-2); border: 1px solid var(--sky-line); border-radius: 100px; font-size: .75rem; font-weight: 600; padding: 5px 8px 5px 12px; }
+        .chip button { border: none; background: rgba(31,79,178,.14); color: var(--navy-2); width: 18px; height: 18px; border-radius: 50%; font-size: .6rem; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+        .btn-reset { border: none; background: transparent; color: var(--gold-dark); font-weight: 700; font-size: .78rem; }
+        .btn-reset:hover { text-decoration: underline; }
+
+        /* Kartu produk */
+        .prod-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; height: 100%; display: flex; flex-direction: column; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; position: relative; }
+        .prod-card:hover, .prod-card:focus-visible { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--sky-line); outline: none; }
+        .prod-media { position: relative; height: 230px; overflow: hidden; background: #E3E8F0; }
+        .prod-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+        .prod-card:hover .prod-media img { transform: scale(1.08); }
+        .prod-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,31,68,.55) 0%, transparent 55%); pointer-events: none; }
+        .prod-kat-label { position: absolute; top: 12px; left: 12px; z-index: 3; font-size: .68rem; font-weight: 700; background: rgba(255,255,255,.94); color: var(--navy-2); padding: 6px 12px; border-radius: 100px; display: inline-flex; align-items: center; gap: 5px; }
+        .prod-kat-label.pangan { color: var(--teal); }
+        .prod-year { position: absolute; bottom: 12px; left: 12px; z-index: 3; font-size: .72rem; font-weight: 800; background: var(--gold); color: var(--ink); padding: 5px 12px; border-radius: 100px; display: inline-flex; align-items: center; gap: 5px; }
+        .prod-zoom { position: absolute; top: 12px; right: 12px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; border: none; background: rgba(255,255,255,.94); color: var(--navy-2); display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(.85); transition: all .2s ease; }
+        .prod-card:hover .prod-zoom { opacity: 1; transform: scale(1); }
+        @media (hover: none) { .prod-zoom { opacity: 1; transform: none; } }
+        .prod-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+        .ukm-label { font-size: .72rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 6px; }
+        .prod-name { font-size: 1.1rem; font-weight: 800; color: var(--ink); margin-bottom: 8px; line-height: 1.3; letter-spacing: -.01em; }
+        .badge-merek { background: var(--sky); color: var(--navy-2); padding: 4px 10px; border-radius: 8px; font-size: .72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 5px; width: fit-content; }
+        .prod-sni { font-size: .8rem; color: var(--text-2); line-height: 1.55; margin: 14px 0 0; display: flex; gap: 8px; }
+        .prod-sni i { color: var(--gold-dark); margin-top: 2px; }
+        .prod-sni span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .prod-foot { margin-top: auto; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; border-top: 1px dashed var(--line); margin-top: 18px; }
+        .prod-more { font-size: .8rem; font-weight: 700; color: var(--blue); display: inline-flex; align-items: center; gap: 6px; }
+        .prod-more i { transition: transform .2s ease; }
+        .prod-card:hover .prod-more i { transform: translateX(4px); }
+        .prod-dots i { color: var(--text-3); font-size: .9rem; }
+
+        .skeleton { background: linear-gradient(90deg, #E8EDF5 25%, #F4F7FB 37%, #E8EDF5 63%); background-size: 400% 100%; animation: shimmer 1.4s ease infinite; border-radius: var(--r-md); height: 380px; }
+        @keyframes shimmer { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+        .empty-state { text-align: center; padding: 70px 20px; background: var(--card); border: 1px dashed var(--sky-line); border-radius: var(--r-md); }
+        .empty-state i { font-size: 3rem; color: var(--blue); opacity: .5; }
+
+        .pagination .page-link { border-radius: 12px !important; border: 1px solid var(--line); color: var(--text-2); font-weight: 700; font-size: .85rem; min-width: 40px; text-align: center; padding: 9px 12px; background: var(--card); }
+        .pagination .page-link:hover { background: var(--sky); border-color: var(--blue); color: var(--blue); }
+        .pagination .page-item.active .page-link { background: var(--navy); border-color: var(--navy); color: #fff; }
+        .pagination .page-item.disabled .page-link { opacity: .45; }
+
+        /* ═════════ MODAL DETAIL (bisa discroll, foto utuh, responsif) ═════════ */
+        @media (min-width: 576px) {
+            #productModal .modal-dialog { max-width: min(960px, calc(100vw - 1.5rem)); width: 100%; }
         }
-        .wave-container svg {
-            position: relative;
-            display: block;
-            width: calc(100% + 1.3px);
-            height: 120px;
-        }
+        #productModal .modal-content { border: none; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 80px rgba(10,31,68,.4); }
+        #productModal .modal-body { padding: 0; overflow-y: auto; overscroll-behavior: contain; }
+        .modal-close-btn { position: absolute; top: 14px; right: 14px; z-index: 20; width: 38px; height: 38px; border-radius: 50%; border: none; background: #fff; color: var(--ink); box-shadow: 0 4px 14px rgba(0,0,0,.2); display: flex; align-items: center; justify-content: center; transition: transform .25s ease; }
+        .modal-close-btn:hover { transform: rotate(90deg); }
+
+        .detail-grid { display: grid; grid-template-columns: 330px minmax(0, 1fr); }
+        .detail-side { padding: 24px; background: var(--bg); border-right: 1px solid var(--line); }
+        @media (min-width: 768px) and (min-height: 620px) { .detail-side { position: sticky; top: 0; align-self: start; } .detail-grid { background: linear-gradient(to right, var(--bg) 330px, #fff 330px); } }
+        .detail-photo { position: relative; aspect-ratio: 1 / 1; border-radius: 18px; overflow: hidden; background: var(--navy); box-shadow: var(--shadow-sm); }
+        .detail-photo .bgblur { position: absolute; inset: -24px; background-size: cover; background-position: center; filter: blur(24px) brightness(.75); }
+        .detail-photo img { position: relative; width: 100%; height: 100%; object-fit: contain; display: block; }
+        .photo-link { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 700; color: var(--blue); text-decoration: none; margin-top: 12px; }
+        .photo-link:hover { text-decoration: underline; }
+        .side-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .tag { display: inline-flex; align-items: center; gap: 6px; font-size: .74rem; font-weight: 700; padding: 6px 12px; border-radius: 100px; background: var(--sky); color: var(--navy-2); }
+        .tag.pangan { background: var(--teal-soft); color: var(--teal); }
+        .tag.year { background: var(--gold-soft); color: var(--gold-dark); }
+
+        .detail-main { padding: 30px 30px 26px; min-width: 0; }
+        .detail-title { font-size: clamp(1.35rem, 3vw, 1.75rem); font-weight: 800; letter-spacing: -.02em; color: var(--ink); margin: 0 44px 8px 0; line-height: 1.25; overflow-wrap: anywhere; }
+        .detail-ukm { color: var(--blue); font-weight: 700; font-size: .88rem; overflow-wrap: anywhere; }
+        .info-list { margin-top: 22px; display: grid; gap: 12px; }
+        .info-item { display: flex; gap: 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+        .info-icon { width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+        .info-item > div:last-child { min-width: 0; }
+        .info-item .k { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--text-3); margin-bottom: 3px; }
+        .info-item .v { font-size: .88rem; color: var(--text-1); line-height: 1.65; font-weight: 500; overflow-wrap: anywhere; white-space: normal; }
+        .btn-maps { font-size: .76rem; font-weight: 700; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; }
+        .btn-maps:hover { text-decoration: underline; }
+
+        /* Kontak: menyesuaikan jumlah platform (1, 2, 3+) */
+        .contact-grid { display: grid; gap: 10px; }
+        .contact-grid.n-1 { grid-template-columns: minmax(0, 1fr); max-width: 400px; }
+        .contact-grid.n-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .contact-grid.n-many { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+        @media (max-width: 479.98px) { .contact-grid.n-2 { grid-template-columns: minmax(0, 1fr); } }
+        .contact-btn { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; text-decoration: none; color: #fff; font-weight: 700; font-size: .88rem; transition: all .18s ease; min-width: 0; }
+        .contact-btn:hover { color: #fff; transform: translateY(-3px); box-shadow: 0 12px 24px rgba(10,31,68,.22); }
+        .contact-btn .ic { width: 38px; height: 38px; border-radius: 11px; background: rgba(255,255,255,.2); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+        .contact-btn .tx { min-width: 0; line-height: 1.25; }
+        .contact-btn small { display: block; font-weight: 500; opacity: .85; font-size: .7rem; }
+        .contact-btn .go { margin-left: auto; opacity: .8; }
+        .contact-btn.ig { background: linear-gradient(45deg, #F09433, #DC2743 55%, #BC1888); }
+        .contact-btn.wa { background: linear-gradient(135deg, #25D366, #128C7E); }
+        .contact-btn.fb { background: linear-gradient(135deg, #1877F2, #0B5BD3); }
+        .contact-btn.web { background: linear-gradient(135deg, var(--navy-2), var(--blue)); }
+
+        #productModal .modal-footer { border-top: 1px solid var(--line); background: #fff; padding: 12px 20px; justify-content: space-between; flex-wrap: nowrap; }
+        .nav-btn { border: 1px solid var(--line); background: #fff; border-radius: 100px; font-size: .78rem; font-weight: 700; color: var(--text-2); padding: 8px 16px; transition: all .15s ease; }
+        .nav-btn:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); background: var(--sky); }
+        .nav-btn:disabled { opacity: .4; }
+        #detailPos { color: var(--text-3); font-weight: 700; font-size: .78rem; }
 
         @media (max-width: 767.98px) {
-            .hero-section {
-                min-height: 480px;
-                background-image: linear-gradient(to bottom, #0b2c4d 45%, rgba(11,44,77,0.8) 75%, rgba(11,44,77,0.3) 100%), url('fotohero.png') !important;
-                background-position: center center;
-                background-size: cover;
-            }
-            .wave-container svg { height: 60px; }
-            .hero-stats { display: none; }
+            .detail-grid { grid-template-columns: minmax(0, 1fr); }
+            .detail-side { border-right: none; border-bottom: 1px solid var(--line); padding: 18px; }
+            .detail-photo { aspect-ratio: 16 / 11; max-height: 280px; width: 100%; }
+            .detail-main { padding: 22px 18px; }
+        }
+        @media (max-width: 575.98px) {
+            #productModal .modal-content { border-radius: 0; }
+            .nav-btn span { display: none; }
         }
 
-        /* ════════════════════════════
-           SECTION BASE
-        ════════════════════════════ */
-        .section-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--bsn-blue);
-            background: #EFF4FF;
-            border: 1px solid #BFDBFE;
-            padding: 6px 14px;
-            border-radius: 100px;
-            margin-bottom: 16px;
-        }
-        .section-title {
-            font-size: clamp(1.6rem, 3.5vw, 2.25rem);
-            font-weight: 800;
-            color: var(--ink);
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 12px;
-        }
-        .section-title .hi { color: var(--bsn-blue); }
-        .section-divider {
-            width: 48px; height: 4px;
-            background: linear-gradient(90deg, var(--bsn-orange), var(--bsn-orange-light));
-            border-radius: 4px;
-            margin: 0 auto 20px;
-        }
-        .section-desc { color: var(--text-2); font-size: 0.95rem; line-height: 1.7; }
+        #imageZoomModal .modal-content { background: transparent; border: none; }
 
-        /* ════════════════════════════
-           WHY SECTION
-        ════════════════════════════ */
-        .why-section {
-            background-color: #F0F4FA;
-            padding: 90px 0;
-        }
+        /* ═════════ KUNJUNGI KAMI ═════════ */
+        .ltspk-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); padding: 24px; height: 100%; transition: all .25s ease; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .ltspk-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, var(--blue), var(--gold)); }
+        .ltspk-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--sky-line); }
+        .ltspk-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+        .ltspk-badge { width: 40px; height: 40px; border-radius: 12px; background: var(--navy); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: .95rem; flex-shrink: 0; }
+        .ltspk-title { font-weight: 800; color: var(--ink); font-size: 1rem; line-height: 1.25; }
+        .ltspk-sub { font-size: .72rem; color: var(--text-3); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+        .ltspk-row { display: flex; gap: 12px; font-size: .84rem; color: var(--text-2); line-height: 1.6; margin-bottom: 12px; }
+        .ltspk-row:last-child { margin-bottom: 0; }
+        .ltspk-row .ri { width: 30px; height: 30px; border-radius: 9px; background: var(--sky); color: var(--blue); display: flex; align-items: center; justify-content: center; font-size: .85rem; flex-shrink: 0; }
+        .ltspk-row .ri.wa { background: #E3F8EB; color: #128C7E; }
+        .ltspk-row > div { min-width: 0; overflow-wrap: anywhere; }
+        .ltspk-row a { color: var(--text-1); font-weight: 600; text-decoration: none; }
+        .ltspk-row a:hover { color: var(--blue); }
+        .ltspk-row .map-link { font-size: .74rem; font-weight: 700; color: var(--blue); display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; }
+        .ltspk-row .lab { font-weight: 800; color: var(--ink); display: block; }
 
-        .why-card {
-            background: var(--bg-card);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-md);
-            padding: 32px;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.22s ease;
-        }
-        .why-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--bsn-orange), #FCD34D);
-            border-radius: 4px 4px 0 0;
-        }
-        .why-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(15,47,98,0.1);
-            border-color: #BFDBFE;
-        }
-        .why-card-icon {
-            width: 48px; height: 48px;
-            border-radius: 13px;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 18px;
-            font-size: 1.4rem;
-        }
-        .why-card-title { font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
-        .why-card p { color: var(--text-2); font-size: 0.875rem; line-height: 1.7; margin: 0; }
+        .pusat-card { background: linear-gradient(145deg, var(--navy) 0%, var(--navy-2) 70%, var(--blue) 100%); border-radius: var(--r-lg); padding: 36px; color: rgba(255,255,255,.82); position: relative; overflow: hidden; height: 100%; }
+        .pusat-card::after { content: ''; position: absolute; top: -70px; right: -70px; width: 260px; height: 260px; background: radial-gradient(circle, rgba(233,168,32,.3), transparent 70%); border-radius: 50%; }
+        .pusat-card > * { position: relative; z-index: 1; }
+        .pusat-card h4 { color: #fff; font-weight: 800; letter-spacing: -.01em; margin-bottom: 20px; }
+        .pusat-row { display: flex; gap: 14px; font-size: .88rem; line-height: 1.65; margin-bottom: 14px; }
+        .pusat-row .ri { width: 36px; height: 36px; border-radius: 11px; background: rgba(255,255,255,.12); color: #FFD36B; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .pusat-row > div { min-width: 0; overflow-wrap: anywhere; }
+        .pusat-row a { color: #fff; text-decoration: none; font-weight: 600; }
+        .pusat-row a:hover { color: #FFD36B; }
+        .map-frame { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow-sm); height: 100%; min-height: 320px; background: #E3E8F0; }
+        .map-frame iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }
+        @media (max-width: 575.98px) { .pusat-card { padding: 26px 20px; } }
 
-        /* ════════════════════════════
-           BENEFIT SECTION
-        ════════════════════════════ */
-        .benefit-section {
-            padding: 90px 0;
-            background: var(--bg-card);
-        }
-        .benefit-card {
-            background: var(--bg-page);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-md);
-            padding: 28px 24px;
-            height: 100%;
-            text-align: center;
-            transition: all 0.22s ease;
-        }
-        .benefit-card:hover {
-            background: var(--bg-card);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(15,47,98,0.09);
-            border-color: #BFDBFE;
-        }
-        .icon-circle {
-            width: 72px; height: 72px;
-            background: var(--bsn-orange-light);
-            color: var(--bsn-orange-dark);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 18px;
-            font-size: 1.75rem;
-            transition: transform 0.22s ease;
-        }
-        .benefit-card:hover .icon-circle { transform: scale(1.08) rotate(-5deg); }
-        .benefit-card h5 { font-weight: 700; font-size: 0.95rem; color: var(--ink); margin-bottom: 8px; }
-        .benefit-card p { font-size: 0.83rem; color: var(--text-2); line-height: 1.65; margin: 0; }
+        .sosmed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+        .sosmed-link { display: flex; align-items: center; gap: 12px; font-size: .86rem; font-weight: 700; color: var(--text-1); text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; transition: all .18s ease; }
+        .sosmed-link .si { width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; background: var(--sky); color: var(--blue); }
+        .sosmed-link small { display: block; font-weight: 500; color: var(--text-3); font-size: .7rem; }
+        .sosmed-link:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: var(--shadow-md); color: var(--blue); }
 
-        /* ════════════════════════════
-           SMART SECTION
-        ════════════════════════════ */
-        .smart-section {
-            background: linear-gradient(135deg, #fffcf7 0%, #fff5e6 100%);
-            padding: 90px 0;
-            border-top: 2px dashed rgba(245,158,11,0.35);
-        }
-        .step-card {
-            background: var(--bg-card);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            height: 100%;
-            transition: all 0.22s ease;
-        }
-        .step-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 36px rgba(15,47,98,0.1);
-        }
-        .step-img-wrapper {
-            height: 180px;
-            overflow: hidden;
-            position: relative;
-            margin-bottom: 0;
-            border-radius: 0;
-        }
-        .step-img-wrapper img {
-            width: 100%;
-            height: 150%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        .step-card:hover .step-img-wrapper img { transform: scale(1.05); }
-        .step-num {
-            position: absolute;
-            top: 12px; left: 12px;
-            width: 30px; height: 30px;
-            background: var(--bsn-blue);
-            color: #fff;
-            border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.8rem; font-weight: 700;
-        }
-        .step-body { padding: 20px; }
-        .step-body h6 { font-weight: 700; font-size: 0.88rem; color: var(--ink); margin-bottom: 8px; }
-        .step-body p { font-size: 0.8rem; color: var(--text-2); line-height: 1.65; margin: 0; }
+        /* ═════════ FOOTER ═════════ */
+        footer { background: var(--ink); color: rgba(255,255,255,.55); font-size: .875rem; border-top: 3px solid var(--gold); }
+        footer h5 { color: #fff; font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 18px; }
+        footer p, footer li { font-size: .82rem; line-height: 1.7; }
+        footer a { color: rgba(255,255,255,.55); text-decoration: none; transition: color .15s ease; }
+        footer a:hover { color: var(--gold); }
+        .social-icons a { width: 38px; height: 38px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); display: inline-flex; align-items: center; justify-content: center; border-radius: 11px; margin-right: 6px; color: rgba(255,255,255,.7); transition: all .16s ease; }
+        .social-icons a:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); transform: translateY(-2px); }
 
-        /* ════════════════════════════
-           PRODUK PAGE
-        ════════════════════════════ */
-        #page-produk {
-            background: var(--bg-page);
-        }
-        #page-produk .py-5 { padding-top: 60px !important; padding-bottom: 60px !important; }
-
-        /* Filter tabs */
-        .nav-pills .nav-link {
-            background: var(--bg-card);
-            border: 1px solid var(--line);
-            border-radius: 100px;
-            padding: 8px 18px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--text-2) !important;
-            transition: all 0.16s ease;
-        }
-        .nav-pills .nav-link:hover { border-color: var(--bsn-blue); color: var(--bsn-blue) !important; }
-        .nav-pills .nav-link.active {
-            background: var(--bsn-blue) !important;
-            border-color: var(--bsn-blue);
-            color: #fff !important;
-            box-shadow: 0 4px 12px rgba(26,79,160,0.25);
-        }
-
-        /* Search input */
-        .search-wrap {
-            background: var(--bg-card);
-            border: 1px solid var(--line);
-            border-radius: 100px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 0 16px;
-            transition: border-color 0.16s ease, box-shadow 0.16s ease;
-            box-shadow: 0 1px 3px rgba(15,47,98,0.04);
-        }
-        .search-wrap:focus-within {
-            border-color: var(--bsn-blue);
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
-        }
-        .search-wrap .input-group-text {
-            background: transparent;
-            border: none;
-            color: var(--text-3);
-            padding: 0 8px 0 0;
-        }
-        .search-wrap .form-control {
-            border: none;
-            background: transparent;
-            padding: 12px 0;
-            font-size: 0.875rem;
-            color: var(--text-1);
-        }
-        .search-wrap .form-control:focus { box-shadow: none; outline: none; }
-        .search-wrap .form-control::placeholder { color: var(--text-3); }
-
-        /* Status bar */
-        .status-bar {
-            background: var(--bg-card);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-sm);
-            padding: 12px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .status-bar-icon {
-            width: 32px; height: 32px;
-            background: #EFF4FF;
-            color: var(--bsn-blue);
-            border-radius: 9px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.85rem;
-        }
-
-        /* Product card */
-        .custom-card {
-            background: var(--bg-card);
-            border: 1px solid var(--line) !important;
-            border-radius: var(--radius-md) !important;
-            box-shadow: none !important;
-            transition: all 0.22s ease;
-        }
-        .custom-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 40px rgba(15,47,98,0.12) !important;
-            border-color: #BFDBFE !important;
-        }
-        .product-card img {
-            height: 220px;
-            object-fit: cover;
-            border-radius: var(--radius-md) var(--radius-md) 0 0;
-        }
-        .badge-sni {
-            position: absolute;
-            top: 15px; right: 15px;
-            background: var(--bsn-orange);
-            color: white;
-            font-weight: bold;
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 0.72rem;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(243,146,35,0.4);
-        }
-
-        /* Kategori label di produk card */
-        .prod-kat-label {
-            position: absolute;
-            top: 0; right: 0;
-            z-index: 10;
-            font-size: 0.68rem;
-            font-weight: 600;
-            background: var(--bsn-blue-dark);
-            color: #fff;
-            padding: 6px 12px;
-            border-bottom-left-radius: 10px;
-            border-top-right-radius: var(--radius-md);
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            letter-spacing: 0.3px;
-        }
-
-        /* Produk card body */
-        .card-body .ukm-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--bsn-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            margin-bottom: 6px;
-        }
-        .card-body .prod-name {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--ink);
-            margin-bottom: 4px;
-        }
-        .badge-merek {
-            background: #EFF4FF;
-            color: var(--bsn-blue-dark);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            font-style: italic;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .prod-detail-box {
-            background: var(--bg-page);
-            border: 1px solid var(--line);
-            border-radius: 10px;
-            padding: 14px 16px;
-            margin-bottom: 14px;
-            font-size: 0.8rem;
-        }
-        .prod-detail-box p { margin-bottom: 8px; color: var(--text-1); }
-        .prod-detail-box p:last-child { margin-bottom: 0; }
-        .prod-detail-box .text-muted { color: var(--text-2) !important; }
-
-        /* Social buttons */
-        .btn-outline-danger, .btn-outline-primary, .btn-outline-success, .btn-outline-secondary {
-            border-radius: 100px !important;
-            font-size: 0.78rem !important;
-            padding: 5px 13px !important;
-            font-weight: 600 !important;
-            transition: all 0.15s ease;
-        }
-
-        /* Pagination */
-        .pagination .page-link {
-            border-radius: 9px !important;
-            border: 1px solid var(--line);
-            color: var(--text-2);
-            font-weight: 600;
-            font-size: 0.85rem;
-            padding: 8px 14px;
-            transition: all 0.15s ease;
-            background: var(--bg-card);
-        }
-        .pagination .page-link:hover { background: #EFF4FF; border-color: var(--bsn-blue); color: var(--bsn-blue); }
-        .pagination .page-item.active .page-link {
-            background: var(--bsn-blue);
-            border-color: var(--bsn-blue);
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(26,79,160,0.25);
-        }
-        .pagination .page-item.disabled .page-link { opacity: 0.45; }
-
-        /* ════════════════════════════
-           KUNJUNGI PAGE
-        ════════════════════════════ */
-        #page-kunjungi { background: var(--bg-page); }
-
-        .ltspk-card {
-            background: var(--bg-card);
-            border: 1px solid var(--line);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            height: 100%;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .ltspk-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--bsn-blue), var(--bsn-blue-mid));
-        }
-        .ltspk-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(15,47,98,0.09);
-        }
-        .ltspk-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 26px; height: 26px;
-            background: var(--bsn-blue);
-            color: #fff;
-            border-radius: 7px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        .ltspk-card h5 {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--ink);
-            margin-bottom: 14px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--line);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .ltspk-card p {
-            font-size: 0.8rem;
-            color: var(--text-2);
-            margin-bottom: 8px;
-            display: flex;
-            gap: 8px;
-            line-height: 1.55;
-        }
-        .ltspk-card p:last-child { margin-bottom: 0; }
-        .ltspk-card i { color: var(--bsn-blue); flex-shrink: 0; margin-top: 1px; }
-
-        /* Kantor pusat BSN */
-        .bsn-pusat-card {
-            background: var(--bsn-blue-dark);
-            border-radius: var(--radius-md);
-            padding: 32px;
-            color: rgba(255,255,255,0.75);
-            position: relative;
-            overflow: hidden;
-        }
-        .bsn-pusat-card::after {
-            content: '';
-            position: absolute;
-            top: -60px; right: -60px;
-            width: 240px; height: 240px;
-            background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        .bsn-pusat-card h5 {
-            color: #fff;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 18px;
-        }
-        .bsn-pusat-card p {
-            font-size: 0.82rem;
-            margin-bottom: 10px;
-            display: flex;
-            gap: 9px;
-            line-height: 1.55;
-        }
-        .bsn-pusat-card p:last-child { margin-bottom: 0; }
-        .bsn-pusat-card i { color: var(--bsn-orange); flex-shrink: 0; margin-top: 1px; }
-
-        .sosmed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        .sosmed-link {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            font-size: 0.8rem;
-            color: var(--text-2);
-            text-decoration: none;
-            background: var(--bg-page);
-            border: 1px solid var(--line);
-            border-radius: 9px;
-            padding: 8px 12px;
-            transition: all 0.15s ease;
-        }
-        .sosmed-link:hover {
-            background: #EFF4FF;
-            border-color: var(--bsn-blue);
-            color: var(--bsn-blue);
-        }
-
-        /* ════════════════════════════
-           MODAL
-        ════════════════════════════ */
-        .modal-content {
-            border: none !important;
-            border-radius: var(--radius-md) !important;
-        }
-        .modal-body { padding: 24px !important; }
-
-        /* ════════════════════════════
-           FOOTER
-        ════════════════════════════ */
-        footer {
-            background: var(--ink);
-            color: rgba(255,255,255,0.55);
-            font-size: 0.875rem;
-            border-top: 3px solid var(--bsn-blue);
-        }
-        footer h5 {
-            color: #fff;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.07em;
-            margin-bottom: 18px;
-        }
-        footer p, footer li { font-size: 0.82rem; line-height: 1.7; }
-        footer a {
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            transition: color 0.15s ease;
-        }
-        footer a:hover { color: var(--bsn-orange); }
-        .social-icons a {
-            width: 36px; height: 36px;
-            background: rgba(255,255,255,0.07);
-            border: 1px solid rgba(255,255,255,0.1);
-            display: inline-flex; align-items: center; justify-content: center;
-            border-radius: 9px;
-            margin-right: 6px;
-            color: rgba(255,255,255,0.6);
-            transition: all 0.16s ease;
-        }
-        .social-icons a:hover {
-            background: var(--bsn-blue);
-            border-color: var(--bsn-blue);
-            color: #fff;
-        }
-
-        /* Accent border left untuk why cards */
-        .accent-border-left { border-left: 3px solid var(--bsn-orange) !important; }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -763,16 +398,12 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#home" onclick="navigateToPage('home')">
-                <img src="logobsn.png" alt="Logo BSN" style="height: 36px; width: auto;">
-                <span class="navbar-brand-text d-none d-md-block">
-                    Badan Standardisasi<br>Nasional
-                </span>
+                <img src="logobsn.png" alt="Logo BSN" style="height: 38px; width: auto;">
+                <span class="navbar-brand-text d-none d-sm-block">Badan Standardisasi<br>Nasional</span>
             </a>
-            
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-center mt-3 mt-lg-0 gap-1">
                     <li class="nav-item"><a class="nav-link active" id="nav-home" onclick="navigateToPage('home')">Beranda</a></li>
@@ -789,375 +420,360 @@
         <div id="page-home">
 
             <!-- HERO -->
-            <section class="hero-section text-center text-md-start d-flex align-items-center position-relative"
-                style="background-image: linear-gradient(to right, #0b2c4d 35%, rgba(11,44,77,0.75) 65%, rgba(11,44,77,0.2) 100%), url('fotohero.png');">
-                
-                <div class="container py-5 hero-content" style="margin-bottom: 50px;">
-                    <div class="row align-items-center">
-                        <div class="col-12 col-md-8 col-lg-7">
-
-                            <div class="hero-badge">
-                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                Direktorat PPSPK BSN
-                            </div>
-
-                            <h1 class="hero-title">
-                                Katalog<br>Produk Ber-SNI<br>
-                                <span class="accent">Binaan BSN</span>
-                            </h1>
-
-                            <p class="hero-desc">
-                                Wujud nyata peningkatan daya saing dan jaminan mutu komoditas produk dalam negeri.
-                            </p>
-
-                            <button class="btn-hero" onclick="navigateToPage('produk')">
-                                Jelajahi Produk
-                                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </button>
-
-                            <div class="hero-stats">
-                                <div class="hero-stat-pill">
-                                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                                    Produk Terstandardisasi
-                                </div>
-                                <div class="hero-stat-pill">
-                                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622C17.176 19.29 21 14.591 21 9c0-1.064-.13-2.1-.382-3.016z"/></svg>
-                                    Berstandar Nasional SNI
-                                </div>
-                                <div class="hero-stat-pill">
-                                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"/><path d="M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
-                                    7 Wilayah LTSPK
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GELOMBANG ASLI — tidak diubah -->
-                <div class="wave-container">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                        <path fill="#f0f4fa" fill-opacity="0.2" d="M0,224L30,213.3C60,203,120,181,180,181C240,181,300,203,360,202.7C420,203,480,181,540,160C600,139,660,117,720,117.3C780,117,840,139,900,165.3C960,192,1020,224,1080,218.7C1140,213,1200,171,1260,149.3C1320,128,1380,128,1410,128L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-                        <path fill="#f0f4fa" fill-opacity="0.4" d="M0,128L30,144C60,160,120,192,180,186.7C240,181,300,139,360,138.7C420,139,480,181,540,197.3C600,213,660,203,720,181C780,160,840,128,900,122.7C960,117,1020,139,1080,138.7C1140,139,1200,117,1260,112C1320,107,1380,117,1410,122.7L1440,128L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-                        <path fill="#f0f4fa" fill-opacity="0.6" d="M0,192L30,192C60,192,120,192,180,176C240,160,300,128,360,112C420,96,480,96,540,117.3C600,139,660,181,720,186.7C780,192,840,160,900,149.3C960,139,1020,149,1080,165.3C1140,181,1200,203,1260,202.7C1320,203,1380,192,1410,186.7L1440,181L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-                        <path fill="#f0f4fa" fill-opacity="1" d="M0,160L30,170.7C60,181,120,203,180,197.3C240,192,300,160,360,160C420,160,480,192,540,208C600,224,660,224,720,202.7C780,181,840,139,900,117.3C960,96,1020,96,1080,122.7C1140,149,1200,203,1260,213.3C1320,224,1380,192,1410,176L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-                    </svg>
-                </div>
-            </section>
-
-            <!-- WHY SECTION -->
-            <section class="why-section">
+            <section class="hero">
                 <div class="container">
-                    <div class="text-center mb-5">
-                        <div class="section-eyebrow mx-auto" style="width:fit-content;">
-                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-                            Tentang Standar
-                        </div>
-                        <h2 class="section-title">Mengapa Harus <span class="hi">SNI?</span></h2>
-                        <div class="section-divider"></div>
-                    </div>
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-md-5">
-                            <div class="why-card">
-                                <div class="why-card-icon" style="background:#EFF4FF; color:var(--bsn-blue);">
-                                    <i class="bi bi-info-circle-fill"></i>
-                                </div>
-                                <div class="why-card-title">Regulasi Nasional</div>
-                                <p><strong>SNI (Standar Nasional Indonesia)</strong> adalah satu-satunya standar yang berlaku secara nasional di Indonesia, dirumuskan oleh Komite Teknis dan ditetapkan oleh <strong>Badan Standardisasi Nasional (BSN)</strong>.</p>
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-7 text-center text-lg-start">
+                            <div class="hero-badge"><i class="bi bi-patch-check-fill"></i> Direktorat PPSPK BSN</div>
+                            <h1 class="hero-title">Katalog<br>Produk Ber-SNI<br><span class="accent">Binaan BSN</span></h1>
+                            <p class="hero-desc mx-auto mx-lg-0">Wujud nyata peningkatan daya saing dan jaminan mutu komoditas produk dalam negeri.</p>
+
+                            <form class="hero-search mx-auto mx-lg-0" onsubmit="heroSearchSubmit(event)">
+                                <i class="bi bi-search"></i>
+                                <input type="text" id="heroSearch" placeholder="Cari produk, merek, atau UKM..." autocomplete="off" aria-label="Cari produk">
+                                <button type="submit" class="btn-gold"><span class="t">Cari Produk</span> <i class="bi bi-arrow-right"></i></button>
+                            </form>
+
+                            <div class="quick-row justify-content-center justify-content-lg-start">
+                                <span class="lbl">Pintasan:</span>
+                                <button type="button" class="quick-chip" onclick="quickCategory('Produk Pangan')"><i class="bi bi-basket2 me-1"></i>Produk Pangan</button>
+                                <button type="button" class="quick-chip" onclick="quickCategory('Produk Non Pangan')"><i class="bi bi-box me-1"></i>Non Pangan</button>
+                                <button type="button" class="quick-chip" onclick="quickCategory('ALL')">Semua Katalog</button>
                             </div>
                         </div>
-                        <div class="col-md-5">
-                            <div class="why-card">
-                                <div class="why-card-icon" style="background:var(--bsn-orange-light); color:var(--bsn-orange-dark);">
-                                    <i class="bi bi-shield-lock-fill"></i>
-                                </div>
-                                <div class="why-card-title">Jaminan Keamanan</div>
-                                <p>Produk yang berlogo <strong>SNI</strong> telah melewati serangkaian pengujian laboratorium dan audit konsistensi mutu yang ketat, guna menjamin keselamatan bagi pengguna.</p>
+
+                        <div class="col-lg-5 d-none d-lg-block">
+                            <div class="hero-glass d-flex align-items-center gap-3">
+                                <div class="ic"><i class="bi bi-box-seam-fill"></i></div>
+                                <div><div class="big" id="heroCount">–</div><div class="sm">Produk bersertifikat SNI</div></div>
+                            </div>
+                            <div class="hero-glass d-flex align-items-center gap-3">
+                                <div class="ic"><i class="bi bi-people-fill"></i></div>
+                                <div><div class="big" id="heroUkm">–</div><div class="sm">UKM binaan di Pusat dan 7 wilayah LTSPK</div></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- BENEFIT SECTION -->
-            <section class="benefit-section">
+            <!-- STATS -->
+            <section class="stats-strip">
+                <div class="container">
+                    <div class="stats-box">
+                        <div class="row g-2">
+                            <div class="col-6 col-md-3 stat-item"><div class="stat-num" id="statProduk">–</div><div class="stat-label">Produk Ber-SNI</div></div>
+                            <div class="col-6 col-md-3 stat-item"><div class="stat-num" id="statUkm">–</div><div class="stat-label">UKM Binaan</div></div>
+                            <div class="col-6 col-md-3 stat-item"><div class="stat-num" id="statTahun">–</div><div class="stat-label">Periode Sertifikasi</div></div>
+                            <div class="col-6 col-md-3 stat-item"><div class="stat-num">7</div><div class="stat-label">Wilayah LTSPK</div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHY -->
+            <section class="section">
+                <div class="container">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-5">
+                            <div class="eyebrow"><i class="bi bi-info-circle"></i> Tentang Standar</div>
+                            <h2 class="section-title">Mengapa Harus <span class="hi">SNI?</span></h2>
+                            <p class="section-desc mb-4">Standar adalah dasar kepercayaan. Dengan SNI, konsumen mendapat kepastian mutu dan keamanan, sementara pelaku usaha mendapat pengakuan yang membuka akses pasar lebih luas.</p>
+                            <a class="link-arrow" onclick="navigateToPage('produk')">Lihat produk ber-SNI <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="why-card">
+                                        <span class="why-num">01</span>
+                                        <div class="why-icon" style="background:var(--sky); color:var(--blue);"><i class="bi bi-bank2"></i></div>
+                                        <h5>Regulasi Nasional</h5>
+                                        <p><strong>SNI (Standar Nasional Indonesia)</strong> adalah satu-satunya standar yang berlaku secara nasional di Indonesia, dirumuskan oleh Komite Teknis dan ditetapkan oleh <strong>Badan Standardisasi Nasional (BSN)</strong>.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="why-card">
+                                        <span class="why-num">02</span>
+                                        <div class="why-icon" style="background:var(--gold-soft); color:var(--gold-dark);"><i class="bi bi-shield-lock-fill"></i></div>
+                                        <h5>Jaminan Keamanan</h5>
+                                        <p>Produk yang berlogo <strong>SNI</strong> telah melewati serangkaian pengujian laboratorium dan audit konsistensi mutu yang ketat, guna menjamin keselamatan bagi pengguna.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BENEFIT -->
+            <section class="section benefit-bg">
                 <div class="container">
                     <div class="text-center mb-5">
-                        <div class="section-eyebrow mx-auto" style="width:fit-content;">
-                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            Keuntungan SNI
-                        </div>
+                        <div class="eyebrow"><i class="bi bi-shield-check"></i> Keuntungan SNI</div>
                         <h2 class="section-title">Manfaat SNI Bagi Konsumen</h2>
-                        <div class="section-divider"></div>
-                        <p class="section-desc">Perlindungan mutlak untuk masyarakat konsumen Indonesia</p>
+                        <p class="section-desc mb-0">Perlindungan mutlak untuk masyarakat konsumen Indonesia</p>
                     </div>
-                    <div class="row g-4">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="benefit-card">
-                                <div class="icon-circle"><i class="bi bi-shield-check"></i></div>
+                    <div class="row g-3">
+                        <div class="col-lg-5">
+                            <div class="bento bento-main">
+                                <i class="bi bi-shield-check ghost"></i>
+                                <div class="ic" style="background:rgba(255,255,255,.14); color:#FFD36B;"><i class="bi bi-shield-check"></i></div>
                                 <h5>Aman</h5>
                                 <p>Meminimalisir risiko penggunaan produk karena telah lolos uji aspek keselamatan dasar.</p>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="benefit-card">
-                                <div class="icon-circle" style="background:#EFF4FF; color:var(--bsn-blue);"><i class="bi bi-star"></i></div>
-                                <h5>Kualitas</h5>
-                                <p>Mutu produk terjamin konsisten karena produsen diawasi secara berkala.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="benefit-card">
-                                <div class="icon-circle" style="background:#ECFDF5; color:#059669;"><i class="bi bi-heart-pulse"></i></div>
-                                <h5>Melindungi</h5>
-                                <p>Melindungi hak-hak konsumen dari kecurangan barang tiruan berbahaya.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="benefit-card">
-                                <div class="icon-circle" style="background:#F5F3FF; color:#7C3AED;"><i class="bi bi-graph-up-arrow"></i></div>
-                                <h5>Daya Saing</h5>
-                                <p>Meningkatkan kepercayaan pasar global terhadap komoditas asli buatan Indonesia.</p>
+                        <div class="col-lg-7">
+                            <div class="row g-3 h-100">
+                                <div class="col-sm-6">
+                                    <div class="bento">
+                                        <div class="ic" style="background:var(--sky); color:var(--blue);"><i class="bi bi-star-fill"></i></div>
+                                        <h5>Kualitas</h5>
+                                        <p>Mutu produk terjamin konsisten karena produsen diawasi secara berkala.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="bento">
+                                        <div class="ic" style="background:var(--teal-soft); color:var(--teal);"><i class="bi bi-heart-pulse-fill"></i></div>
+                                        <h5>Melindungi</h5>
+                                        <p>Melindungi hak-hak konsumen dari kecurangan barang tiruan berbahaya.</p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="bento bento-wide">
+                                        <div class="ic" style="background:var(--gold-soft); color:var(--gold-dark);"><i class="bi bi-graph-up-arrow"></i></div>
+                                        <div><h5>Daya Saing</h5><p>Meningkatkan kepercayaan pasar global terhadap komoditas asli buatan Indonesia.</p></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- SMART SECTION -->
-            <section class="smart-section">
+            <!-- SMART -->
+            <section class="section">
                 <div class="container">
                     <div class="text-center mb-5">
-                        <div class="section-eyebrow mx-auto" style="width:fit-content; background:var(--bsn-orange-light); border-color:rgba(245,158,11,0.35); color:var(--bsn-orange-dark);">
-                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3M6.343 6.343l-.707-.707M12 21v-1"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/></svg>
-                            Panduan Pintar Belanja
-                        </div>
-                        <h2 class="section-title" style="color:var(--bsn-blue-dark);">Yuk, Jadi Konsumen Cerdas!</h2>
-                        <div class="section-divider"></div>
+                        <div class="eyebrow gold"><i class="bi bi-lightbulb"></i> Panduan Pintar Belanja</div>
+                        <h2 class="section-title">Yuk, Jadi Konsumen Cerdas!</h2>
+                        <p class="section-desc mb-0">Empat kebiasaan sederhana agar belanja lebih aman dan terlindungi</p>
                     </div>
+                    <div class="row g-3 g-lg-4">
+                        <div class="col-12 col-sm-6 col-lg-3"><article class="smart-card"><img src="foto_konsumen_cerdas/1.webp" alt="Teliti" loading="lazy"><div class="smart-ov"><span class="smart-num">1</span><h6>Teliti Sebelum Membeli</h6><p>Biasakan mengecek detail kemasan dan deskripsi dengan baik. Jangan terburu-buru mengambil keputusan belanja.</p></div></article></div>
+                        <div class="col-12 col-sm-6 col-lg-3"><article class="smart-card"><img src="foto_konsumen_cerdas/2.webp" alt="Pilih Produk" loading="lazy"><div class="smart-ov"><span class="smart-num">2</span><h6>Pilih Produk Aman &amp; Berstandar</h6><p>Pastikan terdapat logo resmi tanda SNI untuk menjamin kepastian mutu kualitas dan ketahanan barang.</p></div></article></div>
+                        <div class="col-12 col-sm-6 col-lg-3"><article class="smart-card"><img src="foto_konsumen_cerdas/3.webp" alt="Hak Kewajiban" loading="lazy"><div class="smart-ov"><span class="smart-num">3</span><h6>Tahu Hak &amp; Kewajiban</h6><p>Memahami perlindungan hukum yang mengikat sebagai hak konsumen apabila barang tidak sesuai spesifikasi.</p></div></article></div>
+                        <div class="col-12 col-sm-6 col-lg-3"><article class="smart-card"><img src="foto_konsumen_cerdas/4.webp" alt="Harga Murah" loading="lazy"><div class="smart-ov"><span class="smart-num">4</span><h6>Tidak Tergiur Harga Murah</h6><p>Selalu mengutamakan aspek kualitas jangka panjang serta keamanan penggunaan dibanding harga yang miring.</p></div></article></div>
+                    </div>
+                </div>
+            </section>
 
-                    <div class="row g-4">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="step-card">
-                                <div class="step-img-wrapper">
-                                    <span class="step-num">1</span>
-                                    <img src="foto_konsumen_cerdas/1.webp" class="img-fluid" alt="Teliti">
-                                </div>
-                                <div class="step-body">
-                                    <h6 style="color:var(--bsn-blue);">Teliti Sebelum Membeli</h6>
-                                    <p>Biasakan mengecek detail kemasan dan deskripsi dengan baik. Jangan terburu-buru mengambil keputusan belanja.</p>
-                                </div>
-                            </div>
+            <!-- PRODUK TERBARU -->
+            <section class="section pt-0" id="featuredSection" style="display:none;">
+                <div class="container">
+                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
+                        <div>
+                            <div class="eyebrow"><i class="bi bi-stars"></i> Produk Pilihan</div>
+                            <h2 class="section-title mb-0">Produk Binaan Terbaru</h2>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="step-card">
-                                <div class="step-img-wrapper">
-                                    <span class="step-num">2</span>
-                                    <img src="foto_konsumen_cerdas/2.webp" class="img-fluid" alt="Pilih Produk">
-                                </div>
-                                <div class="step-body">
-                                    <h6 style="color:#059669;">Pilih Produk Aman & Berstandar</h6>
-                                    <p>Pastikan terdapat logo resmi tanda SNI untuk menjamin kepastian mutu kualitas dan ketahanan barang.</p>
-                                </div>
+                        <a class="link-arrow" onclick="navigateToPage('produk')">Lihat semua katalog <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="row g-4" id="featuredGrid"></div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="pb-5">
+                <div class="container pb-4">
+                    <div class="cta-banner">
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-8">
+                                <div class="eyebrow light"><i class="bi bi-geo-alt"></i> Layanan Teknis SPK Daerah</div>
+                                <h3 class="mb-2">Ingin produk Anda ber-SNI?</h3>
+                                <p>Hubungi LTSPK di wilayah Anda untuk konsultasi penerapan SNI dan pendampingan sertifikasi.</p>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="step-card">
-                                <div class="step-img-wrapper">
-                                    <span class="step-num">3</span>
-                                    <img src="foto_konsumen_cerdas/3.webp" class="img-fluid" alt="Hak Kewajiban">
-                                </div>
-                                <div class="step-body">
-                                    <h6 style="color:#DC2626;">Tahu Hak & Kewajiban</h6>
-                                    <p>Memahami perlindungan hukum yang mengikat sebagai hak konsumen apabila barang tidak sesuai spesifikasi.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="step-card">
-                                <div class="step-img-wrapper">
-                                    <span class="step-num">4</span>
-                                    <img src="foto_konsumen_cerdas/4.webp" class="img-fluid" alt="Harga Murah">
-                                </div>
-                                <div class="step-body">
-                                    <h6 style="color:var(--bsn-orange-dark);">Tidak Tergiur Harga Murah</h6>
-                                    <p>Selalu mengutamakan aspek kualitas jangka panjang serta keamanan penggunaan dibanding harga yang miring.</p>
-                                </div>
+                            <div class="col-lg-4 text-lg-end">
+                                <a class="btn-gold" onclick="navigateToPage('kunjungi')">Temukan LTSPK <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
         </div><!-- end page-home -->
 
         <!-- ══════════════ PAGE PRODUK ══════════════ -->
-        <div id="page-produk" class="d-none py-5">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <div class="section-eyebrow mx-auto" style="width:fit-content;">
-                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                        Katalog Resmi BSN
-                    </div>
-                    <h2 class="section-title">Katalog Produk Ber-<span class="hi">SNI</span> Binaan BSN</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-desc">Temukan produk berkualitas tinggi bersertifikasi Standar Nasional Indonesia</p>
+        <div id="page-produk" class="d-none">
+            <section class="page-head">
+                <div class="container text-center">
+                    <div class="eyebrow light"><i class="bi bi-patch-check-fill"></i> Katalog Resmi BSN</div>
+                    <h2>Katalog Produk Ber-<span class="hi">SNI</span> Binaan BSN</h2>
+                    <p>Temukan produk berkualitas tinggi bersertifikasi Standar Nasional Indonesia</p>
                 </div>
+            </section>
 
-                <div class="row g-3 mb-4 align-items-center">
-                    <div class="col-md-7">
-                        <div class="nav nav-pills gap-2" id="categoryTabs">
-                            <button class="nav-link active" onclick="filterCategory('ALL', this)">Semua Kategori</button>
-                            <button class="nav-link" onclick="filterCategory('Produk Pangan', this)">Produk Pangan</button>
-                            <button class="nav-link" onclick="filterCategory('Produk Non Pangan', this)">Non Pangan</button>
+            <div class="container pb-5">
+                <div class="toolbar-card" id="productToolbar">
+                    <div class="row g-3 align-items-end">
+                        <div class="col-12">
+                            <label class="filter-label" for="searchInput">Cari produk</label>
+                            <div class="search-wrap">
+                                <i class="bi bi-search"></i>
+                                <input type="text" id="searchInput" class="form-control" placeholder="Cari nama produk, merek, atau nama UKM..." oninput="searchProduct()" autocomplete="off">
+                                <button type="button" class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Hapus pencarian"><i class="bi bi-x-lg"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="filter-label">Kategori</span>
+                            <div class="nav nav-pills gap-2" id="categoryTabs">
+                                <button class="nav-link active" onclick="filterCategory('ALL', this)">Semua <span class="pill-count" id="cnt-ALL">0</span></button>
+                                <button class="nav-link" onclick="filterCategory('Produk Pangan', this)"><i class="bi bi-basket2"></i> Pangan <span class="pill-count" id="cnt-pangan">0</span></button>
+                                <button class="nav-link" onclick="filterCategory('Produk Non Pangan', this)"><i class="bi bi-box"></i> Non Pangan <span class="pill-count" id="cnt-nonpangan">0</span></button>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <label class="filter-label" for="yearFilter">Tahun Tersertifikasi</label>
+                            <select id="yearFilter" class="form-select filter-select" onchange="filterYear(this.value)">
+                                <option value="ALL">Semua Tahun</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-lg-3">
+                            <label class="filter-label" for="sortFilter">Urutkan</label>
+                            <select id="sortFilter" class="form-select filter-select" onchange="sortProducts(this.value)">
+                                <option value="default">Default</option>
+                                <option value="new">Tahun Terbaru</option>
+                                <option value="old">Tahun Terlama</option>
+                                <option value="az">Nama A – Z</option>
+                                <option value="za">Nama Z – A</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <div class="search-wrap">
-                            <span class="input-group-text"><i class="bi bi-search"></i></span>
-                            <input type="text" id="searchInput" class="form-control" placeholder="Ketik kata kunci produk..." onkeyup="searchProduct()">
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Status bar atas -->
-                <div class="status-bar mb-4">
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="status-bar-icon"><i class="bi bi-box-seam-fill"></i></div>
-                        <span class="text-secondary small fw-medium">Status Katalog</span>
-                    </div>
-                    <span id="productRangeCount" class="small fw-medium" style="color:var(--text-2);"></span>
+                <div class="result-bar">
+                    <div class="result-text"><i class="bi bi-box-seam-fill me-1" style="color:var(--blue)"></i> <span id="productRangeCount"></span></div>
+                    <div class="d-flex flex-wrap align-items-center gap-2" id="activeFilters"></div>
                 </div>
 
-                <div class="row g-4" id="productGrid"></div>
-
-                <!-- Status bar bawah -->
-                <div class="status-bar mt-4">
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="status-bar-icon"><i class="bi bi-box-seam-fill"></i></div>
-                        <span class="text-secondary small fw-medium">Status Katalog</span>
-                    </div>
-                    <span id="productRangeCountBottom" class="small fw-medium" style="color:var(--text-2);"></span>
+                <div class="row g-4" id="productGrid">
+                    <div class="col-12 col-sm-6 col-lg-4"><div class="skeleton"></div></div>
+                    <div class="col-12 col-sm-6 col-lg-4 d-none d-sm-block"><div class="skeleton"></div></div>
+                    <div class="col-12 col-sm-6 col-lg-4 d-none d-lg-block"><div class="skeleton"></div></div>
                 </div>
+
+                <div class="text-center mt-4 result-text"><span id="productRangeCountBottom"></span></div>
             </div>
         </div>
 
         <!-- ══════════════ PAGE KUNJUNGI ══════════════ -->
-        <div id="page-kunjungi" class="d-none container py-5">
-            <div class="text-center mb-5">
-                <div class="section-eyebrow mx-auto" style="width:fit-content;">
-                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z"/><path d="M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
-                    Jaringan LTSPK
+        <div id="page-kunjungi" class="d-none">
+            <section class="page-head">
+                <div class="container text-center">
+                    <div class="eyebrow light"><i class="bi bi-geo-alt-fill"></i> Jaringan LTSPK</div>
+                    <h2>Layanan Teknis SPK <span class="hi">Di Daerah</span></h2>
+                    <p class="fst-italic">"LTSPK Mendekatkan SNI Kepada Masyarakat, Untuk Indonesia Lebih Baik"</p>
                 </div>
-                <h2 class="section-title" style="color:var(--bsn-blue-dark);">Layanan Teknis SPK Di Daerah</h2>
-                <div class="section-divider"></div>
-                <p class="section-desc fst-italic">"LTSPK Mendekatkan SNI Kepada Masyarakat, Untuk Indonesia Lebih Baik"</p>
-            </div>
+            </section>
 
-            <div class="row g-4 mb-5">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="ltspk-card">
-                        <h5><span class="ltspk-badge">1</span> LTSPK Sumatera Selatan</h5>
-                        <p><i class="bi bi-geo-alt-fill"></i> Jl. Jend. Basuki Rachmat No.20 Talang Aman, Kemuning, Palembang, Sumatera Selatan 30128</p>
-                        <p><i class="bi bi-envelope-fill"></i> klt_palembang@bsn.go.id</p>
-                        <p><i class="bi bi-telephone-fill"></i> (0711) 5733317</p>
+            <div class="container pb-5">
+                <div class="toolbar-card">
+                    <label class="filter-label" for="ltspkSearch">Cari wilayah LTSPK</label>
+                    <div class="search-wrap">
+                        <i class="bi bi-search"></i>
+                        <input type="text" id="ltspkSearch" class="form-control" placeholder="Ketik nama provinsi atau kota, mis. Riau, Surabaya..." oninput="renderLtspk()" autocomplete="off">
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="ltspk-card">
-                        <h5><span class="ltspk-badge">2</span> LTSPK Riau</h5>
-                        <p><i class="bi bi-geo-alt-fill"></i> Komplek Dinas Perindustrian, Perdagangan, Koperasi dan UMKM Provinsi Riau, Jl. Hang Tuah, Rejosari, Kec. Tenayan Raya, Kota Pekanbaru, Riau 28281</p>
-                        <p><i class="bi bi-envelope-fill"></i> klt_pekanbaru@bsn.go.id</p>
-                        <p><i class="bi bi-telephone-fill"></i> (0761) 8557505 , <i class="bi bi-whatsapp"></i> 0851-6127-9031</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="ltspk-card">
-                        <h5><span class="ltspk-badge">3</span> LTSPK Jabar</h5>
-                        <p><i class="bi bi-geo-alt-fill"></i> <span><strong>DPMPTSP Jabar:</strong> Jl. Windu No.26, Lengkong, Kota Bandung<br><strong>PLUT KUMKM Kab. Bandung:</strong> Jl. Raya Soreang No.Km 17, Soreang, Kab. Bandung</span></p>
-                        <p><i class="bi bi-envelope-fill"></i> klt_jabar@bsn.go.id</p>
-                        <p><i class="bi bi-telephone-fill"></i> (022) 20530828</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="ltspk-card">
-                        <h5><span class="ltspk-badge">4</span> LTSPK Jogja</h5>
-                        <p><i class="bi bi-geo-alt-fill"></i> Jl. HOS Cokroaminoto No.152, Tegalrejo, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="ltspk-card">
-                        <h5><span class="ltspk-badge">5</span> LTSPK Jatim</h5>
-                        <p><i class="bi bi-geo-alt-fill"></i> Jl. Pagesangan II, Pagesangan, Kec. Jambangan, Kota Surabaya, Jawa Timur 60233</p>
-                        <p><i class="bi bi-envelope-fill"></i> klt_surabaya@bsn.go.id</p>
-                        <p><i class="bi bi-telephone-fill"></i> (031) 8287174</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="ltspk-card">
-                        <h5><span class="ltspk-badge">6</span> LTSPK Sulawesi Selatan</h5>
-                        <p><i class="bi bi-geo-alt-fill"></i> Gedung BRMP Sulawesi Selatan, Jl. Perintis Kemerdekaan KM 17.5, Biringkanaya, Kota Makassar, Sulawesi Selatan 90231</p>
-                        <p><i class="bi bi-envelope-fill"></i> klt_makassar@bsn.go.id</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mx-auto">
-                    <div class="ltspk-card">
-                        <h5><span class="ltspk-badge">7</span> LTSPK Nusa Tenggara Barat</h5>
-                        <p><i class="bi bi-geo-alt-fill"></i> Kantor UPTD Balai Kemasan, Promosi dan Pemasaran Produk Daerah, Jl. Langko No.67, Dasan Agung Baru, Kec. Selaparang, Kota Mataram, NTB 83112</p>
-                        <p><i class="bi bi-envelope-fill"></i> snicornerntb@gmail.com</p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- BSN Pusat + Sosmed -->
-            <div class="row g-4 pt-4 border-top">
-                <div class="col-12 col-md-7">
-                    <div class="bsn-pusat-card">
-                        <h5><i class="bi bi-building me-2"></i> BSN Pusat Jakarta</h5>
-                        <p><i class="bi bi-geo-alt-fill"></i> Jl. Kuningan Barat Raya No. 01A, Kuningan, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12710</p>
-                        <p><i class="bi bi-telephone-fill"></i> Telp/Fax : 021 39250007</p>
-                        <p><i class="bi bi-envelope-fill"></i> bsn@bsn.go.id , dokinfo@bsn.go.id</p>
-                        <p><i class="bi bi-whatsapp"></i> WhatsApp Layanan Informasi : 081317761112</p>
+                <div class="d-flex align-items-center justify-content-between my-4 flex-wrap gap-2">
+                    <h5 class="fw-bold mb-0" style="color:var(--ink);"><i class="bi bi-pin-map-fill me-2" style="color:var(--blue);"></i>7 Wilayah LTSPK</h5>
+                    <span class="result-text" id="ltspkCount"></span>
+                </div>
+                <div class="row g-4 mb-5" id="ltspkGrid"></div>
+
+                <div class="mb-3">
+                    <div class="eyebrow gold"><i class="bi bi-building"></i> Kantor Pusat</div>
+                    <h3 class="section-title">BSN Pusat Jakarta</h3>
+                </div>
+                <div class="row g-4 mb-5">
+                    <div class="col-lg-5">
+                        <div class="pusat-card">
+                            <h4>Badan Standardisasi Nasional</h4>
+                            <div class="pusat-row"><span class="ri"><i class="bi bi-geo-alt-fill"></i></span><div>Jl. Kuningan Barat Raya No. 01A, Kuningan, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12710</div></div>
+                            <div class="pusat-row"><span class="ri"><i class="bi bi-telephone-fill"></i></span><div>Telp/Fax : <a href="tel:+622139250007">021 39250007</a></div></div>
+                            <div class="pusat-row"><span class="ri"><i class="bi bi-envelope-fill"></i></span><div><a href="mailto:bsn@bsn.go.id">bsn@bsn.go.id</a> , <a href="mailto:dokinfo@bsn.go.id">dokinfo@bsn.go.id</a></div></div>
+                            <div class="pusat-row"><span class="ri"><i class="bi bi-whatsapp"></i></span><div>WhatsApp Layanan Informasi : <a href="https://wa.me/6281317761112" target="_blank" rel="noopener">081317761112</a></div></div>
+                            <a class="btn-gold mt-2" href="https://www.google.com/maps/search/?api=1&query=Badan+Standardisasi+Nasional+Kuningan+Barat+Jakarta" target="_blank" rel="noopener"><i class="bi bi-map"></i> Buka di Google Maps</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="map-frame">
+                            <iframe title="Peta BSN Pusat" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Badan+Standardisasi+Nasional+Kuningan+Barat+Jakarta&output=embed"></iframe>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-5">
-                    <h5 class="fw-bold text-uppercase mb-3" style="font-size:0.85rem; letter-spacing:0.07em; color:var(--ink);">
-                        <i class="bi bi-share-fill me-2" style="color:var(--bsn-blue);"></i> Media Sosial BSN
-                    </h5>
-                    <div class="sosmed-grid">
-                        <a href="https://instagram.com/bsn_sni" target="_blank" class="sosmed-link"><i class="bi bi-instagram text-danger"></i> @bsn_sni</a>
-                        <a href="https://twitter.com/bsn_sni" target="_blank" class="sosmed-link"><i class="bi bi-twitter-x"></i> @bsn_sni</a>
-                        <a href="https://www.tiktok.com/@bsn_sni" target="_blank" class="sosmed-link"><i class="bi bi-tiktok"></i> @bsn_sni</a>
-                        <a href="https://youtube.com/@snibsn" target="_blank" class="sosmed-link"><i class="bi bi-youtube text-danger"></i> @snibsn</a>
-                        <a href="#" target="_blank" class="sosmed-link" style="grid-column:span 2;"><i class="bi bi-facebook text-primary"></i> BadanStandardisasiNasional</a>
-                        <a href="https://www.bsn.go.id" target="_blank" class="sosmed-link" style="grid-column:span 2; color:var(--bsn-blue); font-weight:600;"><i class="bi bi-globe"></i> www.bsn.go.id</a>
-                    </div>
+
+                <div class="mb-3">
+                    <div class="eyebrow"><i class="bi bi-share-fill"></i> Terhubung</div>
+                    <h3 class="section-title">Media Sosial BSN</h3>
+                </div>
+                <div class="sosmed-grid">
+                    <a href="https://instagram.com/bsn_sni" target="_blank" rel="noopener" class="sosmed-link"><span class="si" style="background:#FDE7EE; color:#DC2743;"><i class="bi bi-instagram"></i></span><span>Instagram<small>@bsn_sni</small></span></a>
+                    <a href="https://twitter.com/bsn_sni" target="_blank" rel="noopener" class="sosmed-link"><span class="si" style="background:#E6E9EF; color:#111;"><i class="bi bi-twitter-x"></i></span><span>X (Twitter)<small>@bsn_sni</small></span></a>
+                    <a href="https://www.tiktok.com/@bsn_sni" target="_blank" rel="noopener" class="sosmed-link"><span class="si" style="background:#E6E9EF; color:#111;"><i class="bi bi-tiktok"></i></span><span>TikTok<small>@bsn_sni</small></span></a>
+                    <a href="https://youtube.com/@snibsn" target="_blank" rel="noopener" class="sosmed-link"><span class="si" style="background:#FDE8E8; color:#DC2626;"><i class="bi bi-youtube"></i></span><span>YouTube<small>@snibsn</small></span></a>
+                    <a href="#" target="_blank" rel="noopener" class="sosmed-link"><span class="si" style="background:#E7F0FE; color:#1877F2;"><i class="bi bi-facebook"></i></span><span>Facebook<small>BadanStandardisasiNasional</small></span></a>
+                    <a href="https://www.bsn.go.id" target="_blank" rel="noopener" class="sosmed-link"><span class="si"><i class="bi bi-globe"></i></span><span>Website<small>www.bsn.go.id</small></span></a>
                 </div>
             </div>
         </div>
 
-    </main><!-- end main -->
+    </main>
 
-    <!-- ══════════════ MODAL PRODUK ══════════════ -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg">
-                <div class="position-relative">
-                    <img id="modalImg" src="" class="w-100" style="height: 250px; object-fit: cover;" alt="">
-                    <button type="button" class="btn-close bg-white p-2 rounded-circle position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+    <!-- ══════════════ MODAL DETAIL PRODUK ══════════════ -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="modalNama" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+                <div class="modal-body">
+                    <div class="detail-grid">
+                        <aside class="detail-side">
+                            <div class="detail-photo">
+                                <div class="bgblur" id="modalImgBg"></div>
+                                <img id="modalImg" src="" alt="">
+                            </div>
+                            <a id="modalImgLink" class="photo-link" href="#" target="_blank" rel="noopener"><i class="bi bi-arrows-fullscreen"></i> Buka foto ukuran penuh</a>
+                            <div class="side-tags" id="modalTags"></div>
+                        </aside>
+                        <section class="detail-main">
+                            <h3 id="modalNama" class="detail-title"></h3>
+                            <div id="modalMerek" class="mb-2"></div>
+                            <div id="modalUkm" class="detail-ukm"></div>
+
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <div class="info-icon" style="background:var(--gold-soft); color:var(--gold-dark);"><i class="bi bi-patch-check-fill"></i></div>
+                                    <div><div class="k">Standar yang Diterapkan</div><div class="v" id="modalSni"></div></div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon" style="background:var(--sky); color:var(--blue);"><i class="bi bi-calendar-check-fill"></i></div>
+                                    <div><div class="k">Tahun Tersertifikasi</div><div class="v" id="modalTahun"></div></div>
+                                </div>
+                                <div class="info-item">
+                                    <div class="info-icon" style="background:#FDE8E8; color:#DC2626;"><i class="bi bi-geo-alt-fill"></i></div>
+                                    <div><div class="k">Alamat Produksi</div><div class="v" id="modalAlamat"></div>
+                                        <a id="modalMaps" class="btn-maps" href="#" target="_blank" rel="noopener"><i class="bi bi-map"></i> Lihat di Google Maps</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="modalMedsosContainer" class="mt-4">
+                                <span class="filter-label">Hubungi Mitra</span>
+                                <div id="modalLinks" class="contact-grid"></div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-                <div class="modal-body p-4">
-                    <span id="modalCat" class="badge bg-secondary mb-2"></span>
-                    <h4 id="modalNama" class="fw-bold mb-1"></h4>
-                    <p id="modalUkm" class="text-primary small fw-semibold mb-2"></p>
-                    <div class="bg-light p-3 rounded-3 mb-3 small">
-                        <p class="mb-1"><strong><i class="bi bi-patch-check-fill text-warning"></i> Standar:</strong> <span id="modalSni"></span></p>
-                        <p class="mb-0"><strong><i class="bi bi-geo-alt-fill text-danger"></i> Alamat:</strong> <span id="modalAlamat"></span></p>
-                    </div>
-                    <div id="modalMedsosContainer" class="border-top pt-3">
-                        <span class="small text-muted d-block mb-2">Hubungi Mitra:</span>
-                        <div id="modalLinks" class="d-flex flex-wrap gap-2"></div>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="nav-btn" id="detailPrev" onclick="navigateDetail(-1)"><i class="bi bi-arrow-left"></i> <span>Sebelumnya</span></button>
+                    <small id="detailPos"></small>
+                    <button type="button" class="nav-btn" id="detailNext" onclick="navigateDetail(1)"><span>Berikutnya</span> <i class="bi bi-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -1169,7 +785,7 @@
             <div class="modal-content bg-transparent border-0">
                 <div class="modal-body p-0 position-relative text-center">
                     <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3 shadow-sm" data-bs-dismiss="modal" aria-label="Close" style="z-index: 1060;"></button>
-                    <img src="" id="modalZoomImage" class="img-fluid rounded-3 shadow-lg" alt="Zoom Produk" style="max-height: 85vh; object-fit: contain;">
+                    <img src="" id="modalZoomImage" class="img-fluid rounded-4 shadow-lg" alt="Zoom Produk" style="max-height: 85vh; object-fit: contain;">
                     <div id="modalZoomCaption" class="text-white text-center mt-3 p-2 bg-dark bg-opacity-75 rounded-pill d-inline-block small px-4"></div>
                 </div>
             </div>
@@ -1181,13 +797,13 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-5 col-md-12">
-                    <h5 style="color:var(--bsn-blue);">Badan Standardisasi Nasional</h5>
-                    <p class="small" style="color:rgba(255,255,255,0.45);">Lembaga Pemerintah Non-Kementerian (LPNK) Indonesia yang mempunyai tugas melaksanakan tugas pemerintahan di bidang standardisasi dan penilaian kesesuaian.</p>
+                    <h5 style="color:var(--gold);">Badan Standardisasi Nasional</h5>
+                    <p class="small" style="color:rgba(255,255,255,.5);">Lembaga Pemerintah Non-Kementerian (LPNK) Indonesia yang mempunyai tugas melaksanakan tugas pemerintahan di bidang standardisasi dan penilaian kesesuaian.</p>
                     <div class="social-icons mt-3">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="https://twitter.com/bsn_sni"><i class="bi bi-twitter-x"></i></a>
-                        <a href="https://instagram.com/bsn_sni"><i class="bi bi-instagram"></i></a>
-                        <a href="https://youtube.com/@snibsn"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/bsn_sni" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com/bsn_sni" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://youtube.com/@snibsn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -1200,54 +816,135 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h5>Kontak Hubung</h5>
-                    <ul class="list-unstyled small" style="color:rgba(255,255,255,0.45);">
-                        <li class="mb-2"><i class="bi bi-telephone me-2" style="color:var(--bsn-blue);"></i> 021 39250007</li>
-                        <li class="mb-2"><i class="bi bi-envelope me-2" style="color:var(--bsn-blue);"></i> bsn@bsn.go.id , dokinfo@bsn.go.id</li>
-                        <li><i class="bi bi-geo-alt me-2" style="color:var(--bsn-blue);"></i> Jl. Kuningan Barat Raya No. 01A, Kuningan, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12710</li>
+                    <ul class="list-unstyled small" style="color:rgba(255,255,255,.5);">
+                        <li class="mb-2"><i class="bi bi-telephone me-2" style="color:var(--gold);"></i> 021 39250007</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2" style="color:var(--gold);"></i> bsn@bsn.go.id , dokinfo@bsn.go.id</li>
+                        <li><i class="bi bi-geo-alt me-2" style="color:var(--gold);"></i> Jl. Kuningan Barat Raya No. 01A, Kuningan, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12710</li>
                     </ul>
                 </div>
             </div>
-            <hr class="my-4" style="border-color:rgba(255,255,255,0.08);">
+            <hr class="my-4" style="border-color:rgba(255,255,255,.08);">
             <div class="row align-items-center text-center text-md-start">
-                <div class="col-md-6 small" style="color:rgba(255,255,255,0.35);">
-                    &copy; <span id="currentYear"></span> Badan Standardisasi Nasional (BSN). All Rights Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end small mt-2 mt-md-0" style="color:rgba(255,255,255,0.35);">
-                    Direktorat PPSPK BSN
-                </div>
+                <div class="col-md-6 small" style="color:rgba(255,255,255,.35);">&copy; <span id="currentYear"></span> Badan Standardisasi Nasional (BSN). All Rights Reserved.</div>
+                <div class="col-md-6 text-center text-md-end small mt-2 mt-md-0" style="color:rgba(255,255,255,.35);">Direktorat PPSPK BSN</div>
             </div>
         </div>
     </footer>
 
-    <!-- ══════════════ SCRIPT — TIDAK DIUBAH SAMA SEKALI ══════════════ -->
+    <!-- ══════════════ SCRIPT (JS biasa) ══════════════ -->
     <script>
         let productsData = [];
         let filteredProducts = [];
+        let featuredProducts = [];
+        let detailList = [];
         let currentCategory = "ALL";
+        let currentYear = "ALL";
+        let currentSort = "default";
         let currentPage = 1;
-        const itemsPerPage = 6;
+        let detailIndex = -1;
+        const itemsPerPage = 9;
+
+        /* ---------- Data LTSPK ---------- */
+        const ltspkData = [
+            { nama: 'LTSPK Sumatera Selatan', kota: 'Palembang',
+              alamat: [{ teks: 'Jl. Jend. Basuki Rachmat No.20 Talang Aman, Kemuning, Palembang, Sumatera Selatan 30128' }],
+              email: 'klt_palembang@bsn.go.id', telp: '(0711) 5733317' },
+            { nama: 'LTSPK Riau', kota: 'Pekanbaru',
+              alamat: [{ teks: 'Komplek Dinas Perindustrian, Perdagangan, Koperasi dan UMKM Provinsi Riau, Jl. Hang Tuah, Rejosari, Kec. Tenayan Raya, Kota Pekanbaru, Riau 28281' }],
+              email: 'klt_pekanbaru@bsn.go.id', telp: '(0761) 8557505', wa: '0851-6127-9031' },
+            { nama: 'LTSPK Jabar', kota: 'Bandung Jawa Barat',
+              alamat: [{ label: 'DPMPTSP Jabar', teks: 'Jl. Windu No.26, Lengkong, Kota Bandung' },
+                       { label: 'PLUT KUMKM Kab. Bandung', teks: 'Jl. Raya Soreang No.Km 17, Soreang, Kab. Bandung' }],
+              email: 'klt_jabar@bsn.go.id', telp: '(022) 20530828' },
+            { nama: 'LTSPK Jogja', kota: 'Yogyakarta',
+              alamat: [{ teks: 'Jl. HOS Cokroaminoto No.152, Tegalrejo, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244' }] },
+            { nama: 'LTSPK Jatim', kota: 'Surabaya Jawa Timur',
+              alamat: [{ teks: 'Jl. Pagesangan II, Pagesangan, Kec. Jambangan, Kota Surabaya, Jawa Timur 60233' }],
+              email: 'klt_surabaya@bsn.go.id', telp: '(031) 8287174' },
+            { nama: 'LTSPK Sulawesi Selatan', kota: 'Makassar',
+              alamat: [{ teks: 'Gedung BRMP Sulawesi Selatan, Jl. Perintis Kemerdekaan KM 17.5, Biringkanaya, Kota Makassar, Sulawesi Selatan 90231' }],
+              email: 'klt_makassar@bsn.go.id' },
+            { nama: 'LTSPK Nusa Tenggara Barat', kota: 'Mataram NTB',
+              alamat: [{ teks: 'Kantor UPTD Balai Kemasan, Promosi dan Pemasaran Produk Daerah, Jl. Langko No.67, Dasan Agung Baru, Kec. Selaparang, Kota Mataram, NTB 83112' }],
+              email: 'snicornerntb@gmail.com' }
+        ];
+
+        /* ---------- Helper ---------- */
+        function esc(s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+        function safeUrl(u) {
+            u = String(u || '').trim();
+            return /^https?:\/\//i.test(u) ? u : '';
+        }
+        function isPangan(kat) { return kat === 'Produk Pangan'; }
+        function digits(t) { return String(t).replace(/[^\d]/g, ''); }
+        function telHref(t) { let d = digits(t); if (d.startsWith('0')) d = '62' + d.slice(1); return 'tel:+' + d; }
+        function waHref(t) { let d = digits(t); if (d.startsWith('0')) d = '62' + d.slice(1); return 'https://wa.me/' + d; }
+        function mapsHref(q) { return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q); }
 
         function getNavbarCollapseInstance() {
             const navbarCollapse = document.getElementById('navbarNav');
             return bootstrap.Collapse.getOrCreateInstance(navbarCollapse, { toggle: false });
         }
 
+        /* ---------- Load data ---------- */
         async function loadProductsData() {
             try {
                 const response = await fetch('produk.json');
                 if (!response.ok) throw new Error(`Gagal memuat file JSON (Status: ${response.status})`);
                 productsData = await response.json();
                 filteredProducts = [...productsData];
+                buildFilterOptions();
+                updateHomeStats();
+                renderFeatured();
                 const hash = window.location.hash;
                 if (hash === '#produk') executeFilterAndSearch();
                 checkUrlHash();
             } catch (error) {
                 console.error("Waduh, terjadi masalah saat memuat data:", error);
                 const grid = document.getElementById('productGrid');
-                if(grid) grid.innerHTML = `<div class="col-12 text-center text-danger py-5"><h5>Gagal memuat data produk eksternal.</h5></div>`;
+                if (grid) grid.innerHTML = `<div class="col-12"><div class="empty-state"><i class="bi bi-wifi-off"></i><h5 class="mt-3 text-danger">Gagal memuat data produk.</h5><p class="text-muted small mb-0">Pastikan file produk.json tersedia dan halaman dibuka lewat web server.</p></div></div>`;
             }
         }
 
+        function buildFilterOptions() {
+            const years = [...new Set(productsData.map(p => String(p.tahun || '').trim()).filter(Boolean))].sort((a, b) => b - a);
+            const sel = document.getElementById('yearFilter');
+            sel.innerHTML = `<option value="ALL">Semua Tahun</option>` + years.map(y => {
+                const n = productsData.filter(p => String(p.tahun).trim() === y).length;
+                return `<option value="${esc(y)}">${esc(y)} (${n})</option>`;
+            }).join('');
+            document.getElementById('cnt-ALL').textContent = productsData.length;
+            document.getElementById('cnt-pangan').textContent = productsData.filter(p => p.kategori === 'Produk Pangan').length;
+            document.getElementById('cnt-nonpangan').textContent = productsData.filter(p => p.kategori === 'Produk Non Pangan').length;
+        }
+
+        function updateHomeStats() {
+            const ukmSet = new Set(productsData.map(p => (p.ukm || '').trim().toLowerCase()).filter(Boolean));
+            const years = productsData.map(p => parseInt(p.tahun)).filter(n => !isNaN(n));
+            ['statProduk', 'heroCount'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = productsData.length; });
+            ['statUkm', 'heroUkm'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = ukmSet.size; });
+            if (years.length) {
+                const mn = Math.min(...years), mx = Math.max(...years);
+                document.getElementById('statTahun').textContent = mn === mx ? mn : `${mn}–${mx}`;
+            }
+        }
+
+        /* Produk terbaru di beranda */
+        function renderFeatured() {
+            featuredProducts = [...productsData]
+                .sort((a, b) => (parseInt(b.tahun) || 0) - (parseInt(a.tahun) || 0) || (b.id || 0) - (a.id || 0))
+                .slice(0, 3);
+            const grid = document.getElementById('featuredGrid');
+            const sec = document.getElementById('featuredSection');
+            if (!grid || !featuredProducts.length) return;
+            grid.innerHTML = featuredProducts.map((p, i) =>
+                `<div class="col-12 col-md-6 col-lg-4">${productCardHTML(p, `openFeaturedDetail(${i})`)}</div>`).join('');
+            sec.style.display = '';
+        }
+
+        /* ---------- Navigasi halaman ---------- */
         function navigateToPage(pageId) {
             document.getElementById('page-home').classList.add('d-none');
             document.getElementById('page-produk').classList.add('d-none');
@@ -1257,78 +954,84 @@
             document.getElementById('nav-kunjungi').classList.remove('active');
             const pageNode = document.getElementById('page-' + pageId);
             const navNode = document.getElementById('nav-' + pageId);
-            if(pageNode) pageNode.classList.remove('d-none');
-            if(navNode) navNode.classList.add('active');
+            if (pageNode) pageNode.classList.remove('d-none');
+            if (navNode) navNode.classList.add('active');
             window.location.hash = pageId;
+            window.scrollTo({ top: 0 });
             const navbarCollapse = document.getElementById('navbarNav');
             if (navbarCollapse && navbarCollapse.classList.contains('show')) getNavbarCollapseInstance().hide();
-            if(pageId === 'produk') { currentPage = 1; executeFilterAndSearch(); }
+            if (pageId === 'produk') { currentPage = 1; executeFilterAndSearch(); }
+            if (pageId === 'kunjungi') renderLtspk();
+        }
+
+        /* Pencarian cepat dari hero */
+        function heroSearchSubmit(e) {
+            e.preventDefault();
+            document.getElementById('searchInput').value = document.getElementById('heroSearch').value;
+            navigateToPage('produk');
+            searchProduct();
+        }
+        function quickCategory(cat) {
+            document.getElementById('searchInput').value = '';
+            navigateToPage('produk');
+            const idx = cat === 'Produk Pangan' ? 1 : (cat === 'Produk Non Pangan' ? 2 : 0);
+            filterCategory(cat, document.querySelectorAll('#categoryTabs .nav-link')[idx]);
+        }
+
+        /* ---------- Kartu produk ---------- */
+        function productCardHTML(prod, openJs) {
+            const panganCls = isPangan(prod.kategori) ? 'pangan' : '';
+            const katIcon = isPangan(prod.kategori) ? 'bi-basket2-fill' : 'bi-box-fill';
+            const caption = (prod.nama || '') + (prod.merek ? ' (' + prod.merek + ')' : '');
+            const nMed = (prod.medsos || []).length;
+            return `
+            <div class="prod-card" role="button" tabindex="0" onclick="${openJs}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();${openJs};}" aria-label="Lihat detail ${esc(prod.nama)}">
+                <div class="prod-media">
+                    <span class="prod-kat-label ${panganCls}"><i class="bi ${katIcon}"></i> ${esc(prod.kategori)}</span>
+                    <button type="button" class="prod-zoom" title="Perbesar foto" data-src="${esc(prod.image || '')}" data-cap="${esc(caption)}" onclick="event.stopPropagation(); zoomImage(this.dataset.src, this.dataset.cap)"><i class="bi bi-arrows-fullscreen"></i></button>
+                    <img src="${esc(prod.image || '')}" alt="${esc(prod.nama)}" loading="lazy">
+                    ${prod.tahun ? `<span class="prod-year"><i class="bi bi-calendar-check"></i> ${esc(prod.tahun)}</span>` : ''}
+                </div>
+                <div class="prod-body">
+                    <p class="ukm-label mb-1"><i class="bi bi-building me-1"></i>${esc(prod.ukm)}</p>
+                    <h4 class="prod-name">${esc(prod.nama)}</h4>
+                    ${prod.merek ? `<span class="badge-merek"><i class="bi bi-tag-fill"></i> ${esc(prod.merek)}</span>` : ''}
+                    <p class="prod-sni"><i class="bi bi-patch-check-fill"></i><span>${esc((prod.judulSni || '-').trim())}</span></p>
+                    <div class="prod-foot">
+                        <span class="prod-more">Lihat Detail <i class="bi bi-arrow-right"></i></span>
+                        <span class="prod-dots">${nMed ? '<i class="bi bi-chat-dots"></i>' : ''}</span>
+                    </div>
+                </div>
+            </div>`;
         }
 
         function renderProducts(data) {
             const rangeSpan = document.getElementById('productRangeCount');
             const rangeSpanBottom = document.getElementById('productRangeCountBottom');
-            if (rangeSpan || rangeSpanBottom) {
-                if (data.length === 0) {
-                    rangeSpan.innerHTML = `Menampilkan <span class="fw-bold">0</span> produk`;
-                    rangeSpanBottom.innerHTML = `Menampilkan <span class="fw-bold">0</span> produk`;
-                } else {
-                    const fromItem = ((currentPage - 1) * itemsPerPage) + 1;
-                    const toItem = Math.min(currentPage * itemsPerPage, data.length);
-                    rangeSpan.innerHTML = `Menampilkan <strong>${fromItem} - ${toItem}</strong> dari <strong>${data.length}</strong> produk`;
-                    rangeSpanBottom.innerHTML = `Menampilkan <strong>${fromItem} - ${toItem}</strong> dari <strong>${data.length}</strong> produk`;
-                }
+            if (data.length === 0) {
+                rangeSpan.innerHTML = `Menampilkan <strong>0</strong> produk`;
+                rangeSpanBottom.innerHTML = '';
+            } else {
+                const fromItem = ((currentPage - 1) * itemsPerPage) + 1;
+                const toItem = Math.min(currentPage * itemsPerPage, data.length);
+                const txt = `Menampilkan <strong>${fromItem} - ${toItem}</strong> dari <strong>${data.length}</strong> produk`;
+                rangeSpan.innerHTML = txt;
+                rangeSpanBottom.innerHTML = txt;
             }
+            renderActiveFilters();
+
             const grid = document.getElementById('productGrid');
-            if(!grid) return;
+            if (!grid) return;
             grid.innerHTML = "";
-            if(data.length === 0) {
-                grid.innerHTML = `<div class="col-12 text-center text-muted py-5"><h5>Produk tidak ditemukan.</h5></div>`;
+            if (data.length === 0) {
+                grid.innerHTML = `<div class="col-12"><div class="empty-state"><i class="bi bi-search"></i><h5 class="mt-3 fw-bold">Produk tidak ditemukan</h5><p class="text-muted small mb-3">Coba ubah kata kunci atau longgarkan filter kategori/tahun.</p><button class="btn btn-primary rounded-pill px-4" onclick="resetFilters()">Reset Filter</button></div></div>`;
                 renderPagination(0);
                 return;
             }
             const startIndex = (currentPage - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-            const paginatedData = data.slice(startIndex, endIndex);
-
-            paginatedData.forEach(prod => {
-                let medsosButtonsHTML = "";
-                if (prod.medsos && prod.medsos.length > 0) {
-                    prod.medsos.forEach(item => {
-                        let iconClass = "bi-globe";
-                        let btnClass = "btn-outline-secondary";
-                        let platformName = item.platform.charAt(0).toUpperCase() + item.platform.slice(1);
-                        switch (item.platform.toLowerCase()) {
-                            case 'instagram': case 'ig': iconClass = "bi-instagram"; btnClass = "btn-outline-danger"; break;
-                            case 'facebook':  case 'fb': iconClass = "bi-facebook";  btnClass = "btn-outline-primary"; break;
-                            case 'website':   case 'web': iconClass = "bi-globe";    btnClass = "btn-outline-success"; break;
-                            case 'whatsapp':  case 'wa': iconClass = "bi-whatsapp";  btnClass = "btn-outline-success"; break;
-                        }
-                        if(item.url) medsosButtonsHTML += `<a href="${item.url}" target="_blank" class="btn btn-sm ${btnClass} d-inline-flex align-items-center"><i class="bi ${iconClass} me-1"></i> ${platformName}</a>`;
-                    });
-                }
-                const namaAman = prod.nama.replace(/'/g, "\\'");
-                const merekAman = prod.merek ? prod.merek.replace(/'/g, "\\'") : '';
-                grid.innerHTML += `
-                <div class="col-12 col-sm-6 col-lg-4 mb-4">
-                    <div class="card h-100 custom-card product-card position-relative bg-white d-flex flex-column">
-                        <span class="prod-kat-label">
-                            <i class="bi bi-layers-fill" style="font-size:0.65rem;"></i> ${prod.kategori}
-                        </span>
-                        <img src="${prod.image}" class="card-img-top" alt="${prod.nama}" style="cursor:pointer;" onclick="zoomImage('${prod.image}', '${namaAman}${merekAman ? ' (' + merekAman + ')' : ''}')" title="Klik untuk memperbesar">
-                        <div class="card-body d-flex flex-column p-4">
-                            <p class="ukm-label mb-2"><i class="bi bi-building me-1"></i>${prod.ukm}</p>
-                            <h4 class="prod-name">${prod.nama}</h4>
-                            ${prod.merek ? `<div class="mb-3 mt-1"><span class="badge-merek"><i class="bi bi-tag-fill" style="font-style:normal;"></i> ${prod.merek}</span></div>` : ''}
-                            <div class="prod-detail-box flex-grow-1">
-                                <p class="mb-2"><strong><i class="bi bi-patch-check-fill text-warning me-1"></i> Menerapkan:</strong><br><span class="text-muted">${prod.judulSni || "-"}</span></p>
-                                <p class="mb-0"><strong><i class="bi bi-geo-alt-fill text-danger me-1"></i> Alamat:</strong><br><span class="text-muted">${prod.alamat || "-"}</span></p>
-                            </div>
-                            ${medsosButtonsHTML ? `<div class="border-top pt-3 mt-auto"><span class="small text-muted d-block mb-2">Hubungi Mitra:</span><div class="d-flex flex-wrap gap-2">${medsosButtonsHTML}</div></div>` : ''}
-                        </div>
-                    </div>
-                </div>`;
-            });
+            const paginatedData = data.slice(startIndex, startIndex + itemsPerPage);
+            grid.innerHTML = paginatedData.map((prod, i) =>
+                `<div class="col-12 col-sm-6 col-lg-4">${productCardHTML(prod, `openProductDetail(${startIndex + i})`)}</div>`).join('');
             renderPagination(data.length);
         }
 
@@ -1336,7 +1039,7 @@
             let paginationContainer = document.getElementById('paginationContainer');
             if (!paginationContainer) {
                 const grid = document.getElementById('productGrid');
-                if(!grid) return;
+                if (!grid) return;
                 paginationContainer = document.createElement('div');
                 paginationContainer.id = 'paginationContainer';
                 paginationContainer.className = 'd-flex justify-content-center mt-4';
@@ -1344,20 +1047,20 @@
             }
             const totalPages = Math.ceil(totalItems / itemsPerPage);
             if (totalPages <= 1) { paginationContainer.innerHTML = ""; return; }
-            let paginationHTML = `<nav aria-label="Navigasi Halaman"><ul class="pagination mb-0 gap-1">`;
-            paginationHTML += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><button class="page-link rounded-3" onclick="changePage(${currentPage - 1})" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button></li>`;
+            let paginationHTML = `<nav aria-label="Navigasi Halaman"><ul class="pagination mb-0 gap-1 flex-wrap justify-content-center">`;
+            paginationHTML += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}"><button class="page-link" onclick="changePage(${currentPage - 1})" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button></li>`;
             const range = 1;
             let renderEllipsis = true;
             for (let i = 1; i <= totalPages; i++) {
                 if (i === 1 || i === totalPages || (i >= currentPage - range && i <= currentPage + range)) {
-                    paginationHTML += `<li class="page-item ${currentPage === i ? 'active' : ''}"><button class="page-link rounded-3 fw-semibold" onclick="changePage(${i})">${i}</button></li>`;
+                    paginationHTML += `<li class="page-item ${currentPage === i ? 'active' : ''}"><button class="page-link" onclick="changePage(${i})">${i}</button></li>`;
                     renderEllipsis = true;
                 } else if (renderEllipsis) {
                     paginationHTML += `<li class="page-item disabled"><span class="page-link border-0 bg-transparent text-muted">...</span></li>`;
                     renderEllipsis = false;
                 }
             }
-            paginationHTML += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}"><button class="page-link rounded-3" onclick="changePage(${currentPage + 1})" aria-label="Selanjutnya"><i class="bi bi-chevron-right"></i></button></li>`;
+            paginationHTML += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}"><button class="page-link" onclick="changePage(${currentPage + 1})" aria-label="Selanjutnya"><i class="bi bi-chevron-right"></i></button></li>`;
             paginationHTML += `</ul></nav>`;
             paginationContainer.innerHTML = paginationHTML;
         }
@@ -1365,35 +1068,178 @@
         function changePage(pageNumber) {
             currentPage = pageNumber;
             renderProducts(filteredProducts);
-            const productPage = document.getElementById('page-produk');
-            if(productPage) productPage.scrollIntoView({ behavior: 'smooth' });
+            const toolbar = document.getElementById('productToolbar');
+            if (toolbar) toolbar.scrollIntoView({ behavior: 'smooth' });
         }
 
+        /* ---------- Filter, search, sort ---------- */
         function filterCategory(category, element) {
             currentCategory = category;
             const buttons = document.querySelectorAll('#categoryTabs .nav-link');
             buttons.forEach(btn => btn.classList.remove('active'));
-            element.classList.add('active');
+            if (element) element.classList.add('active');
             currentPage = 1;
             executeFilterAndSearch();
         }
-
+        function filterYear(year) { currentYear = year; currentPage = 1; executeFilterAndSearch(); }
+        function sortProducts(mode) { currentSort = mode; currentPage = 1; executeFilterAndSearch(); }
         function searchProduct() {
             currentPage = 1;
+            const v = document.getElementById('searchInput').value;
+            document.getElementById('searchClear').classList.toggle('show', v.length > 0);
+            executeFilterAndSearch();
+        }
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            searchProduct();
+            document.getElementById('searchInput').focus();
+        }
+        function resetFilters() {
+            currentCategory = "ALL"; currentYear = "ALL"; currentSort = "default"; currentPage = 1;
+            document.getElementById('searchInput').value = '';
+            document.getElementById('searchClear').classList.remove('show');
+            document.getElementById('yearFilter').value = 'ALL';
+            document.getElementById('sortFilter').value = 'default';
+            document.querySelectorAll('#categoryTabs .nav-link').forEach((b, i) => b.classList.toggle('active', i === 0));
             executeFilterAndSearch();
         }
 
         function executeFilterAndSearch() {
             const searchInput = document.getElementById('searchInput');
-            const searchValue = searchInput ? searchInput.value.toLowerCase() : "";
+            const searchValue = searchInput ? searchInput.value.toLowerCase().trim() : "";
             filteredProducts = productsData.filter(prod => {
                 const matchCategory = (currentCategory === "ALL" || prod.kategori === currentCategory);
-                const matchSearch = prod.nama.toLowerCase().includes(searchValue) || prod.ukm.toLowerCase().includes(searchValue)|| prod.merek.toLowerCase().includes(searchValue);
-                return matchCategory && matchSearch;
+                const matchYear = (currentYear === "ALL" || String(prod.tahun).trim() === currentYear);
+                const matchSearch =
+                    (prod.nama || '').toLowerCase().includes(searchValue) ||
+                    (prod.ukm || '').toLowerCase().includes(searchValue) ||
+                    (prod.merek || '').toLowerCase().includes(searchValue);
+                return matchCategory && matchYear && matchSearch;
             });
+            if (currentSort === 'new') filteredProducts.sort((a, b) => (parseInt(b.tahun) || 0) - (parseInt(a.tahun) || 0));
+            else if (currentSort === 'old') filteredProducts.sort((a, b) => (parseInt(a.tahun) || 0) - (parseInt(b.tahun) || 0));
+            else if (currentSort === 'az') filteredProducts.sort((a, b) => (a.nama || '').localeCompare(b.nama || '', 'id'));
+            else if (currentSort === 'za') filteredProducts.sort((a, b) => (b.nama || '').localeCompare(a.nama || '', 'id'));
             renderProducts(filteredProducts);
         }
 
+        function renderActiveFilters() {
+            const box = document.getElementById('activeFilters');
+            if (!box) return;
+            const q = document.getElementById('searchInput').value.trim();
+            let chips = '';
+            if (q) chips += `<span class="chip"><i class="bi bi-search"></i> "${esc(q)}" <button onclick="clearSearch()" aria-label="Hapus"><i class="bi bi-x-lg"></i></button></span>`;
+            if (currentCategory !== 'ALL') chips += `<span class="chip">${esc(currentCategory)} <button onclick="filterCategory('ALL', document.querySelector('#categoryTabs .nav-link'))" aria-label="Hapus"><i class="bi bi-x-lg"></i></button></span>`;
+            if (currentYear !== 'ALL') chips += `<span class="chip"><i class="bi bi-calendar-check"></i> ${esc(currentYear)} <button onclick="document.getElementById('yearFilter').value='ALL'; filterYear('ALL')" aria-label="Hapus"><i class="bi bi-x-lg"></i></button></span>`;
+            if (chips) chips += `<button class="btn-reset" onclick="resetFilters()"><i class="bi bi-arrow-counterclockwise"></i> Reset</button>`;
+            box.innerHTML = chips;
+        }
+
+        /* ---------- Detail produk (modal) ---------- */
+        function openProductDetail(idx) {
+            detailList = filteredProducts;
+            showDetail(idx);
+        }
+        function openFeaturedDetail(idx) {
+            detailList = featuredProducts;
+            showDetail(idx);
+        }
+        function showDetail(idx) {
+            const prod = detailList[idx];
+            if (!prod) return;
+            detailIndex = idx;
+            fillDetail(prod);
+            bootstrap.Modal.getOrCreateInstance(document.getElementById('productModal')).show();
+        }
+
+        function platformInfo(name) {
+            switch ((name || '').toLowerCase()) {
+                case 'instagram': case 'ig': return { icon: 'bi-instagram', cls: 'ig', sub: 'Lihat profil', label: 'Instagram' };
+                case 'facebook': case 'fb': return { icon: 'bi-facebook', cls: 'fb', sub: 'Kunjungi halaman', label: 'Facebook' };
+                case 'whatsapp': case 'wa': return { icon: 'bi-whatsapp', cls: 'wa', sub: 'Chat sekarang', label: 'WhatsApp' };
+                case 'website': case 'web': return { icon: 'bi-globe', cls: 'web', sub: 'Buka situs', label: 'Website' };
+                default: { const n = (name || 'Tautan'); return { icon: 'bi-link-45deg', cls: 'web', sub: 'Buka tautan', label: n.charAt(0).toUpperCase() + n.slice(1) }; }
+            }
+        }
+
+        function fillDetail(prod) {
+            const src = prod.image || '';
+            const img = document.getElementById('modalImg');
+            img.src = src; img.alt = prod.nama || '';
+            document.getElementById('modalImgBg').style.backgroundImage = src ? `url(${JSON.stringify(src)})` : 'none';
+            document.getElementById('modalImgLink').href = src || '#';
+
+            document.getElementById('modalTags').innerHTML =
+                `<span class="tag ${isPangan(prod.kategori) ? 'pangan' : ''}"><i class="bi ${isPangan(prod.kategori) ? 'bi-basket2-fill' : 'bi-box-fill'}"></i> ${esc(prod.kategori)}</span>` +
+                (prod.tahun ? `<span class="tag year"><i class="bi bi-calendar-check"></i> ${esc(prod.tahun)}</span>` : '');
+
+            document.getElementById('modalNama').textContent = prod.nama || '-';
+            document.getElementById('modalMerek').innerHTML = prod.merek ? `<span class="badge-merek"><i class="bi bi-tag-fill"></i> ${esc(prod.merek)}</span>` : '';
+            document.getElementById('modalUkm').innerHTML = `<i class="bi bi-building me-1"></i>${esc(prod.ukm)}`;
+            document.getElementById('modalSni').textContent = (prod.judulSni || '-').trim();
+            document.getElementById('modalTahun').textContent = prod.tahun || '-';
+            const alamat = (prod.alamat || '').trim();
+            document.getElementById('modalAlamat').textContent = alamat || '-';
+            const maps = document.getElementById('modalMaps');
+            if (alamat) { maps.style.display = ''; maps.href = mapsHref(alamat); } else maps.style.display = 'none';
+
+            // Tombol kontak: tata letak menyesuaikan jumlah platform (1, 2, atau lebih)
+            const links = (prod.medsos || []).filter(m => safeUrl(m.url));
+            const box = document.getElementById('modalLinks');
+            box.className = 'contact-grid ' + (links.length === 1 ? 'n-1' : (links.length === 2 ? 'n-2' : 'n-many'));
+            box.innerHTML = links.map(m => {
+                const p = platformInfo(m.platform);
+                return `<a href="${esc(safeUrl(m.url))}" target="_blank" rel="noopener" class="contact-btn ${p.cls}">
+                    <span class="ic"><i class="bi ${p.icon}"></i></span>
+                    <span class="tx">${esc(p.label)}<small>${esc(p.sub)}</small></span>
+                    <i class="bi bi-box-arrow-up-right go"></i></a>`;
+            }).join('');
+            document.getElementById('modalMedsosContainer').style.display = links.length ? '' : 'none';
+
+            document.getElementById('detailPrev').disabled = detailIndex <= 0;
+            document.getElementById('detailNext').disabled = detailIndex >= detailList.length - 1;
+            document.getElementById('detailPos').textContent = `${detailIndex + 1} / ${detailList.length}`;
+            const body = document.querySelector('#productModal .modal-body');
+            if (body) body.scrollTop = 0;
+        }
+
+        function navigateDetail(step) {
+            const n = detailIndex + step;
+            if (n < 0 || n >= detailList.length) return;
+            detailIndex = n;
+            fillDetail(detailList[n]);
+        }
+
+        /* ---------- Kunjungi Kami: render LTSPK + pencarian ---------- */
+        function renderLtspk() {
+            const grid = document.getElementById('ltspkGrid');
+            if (!grid) return;
+            const input = document.getElementById('ltspkSearch');
+            const q = input ? input.value.toLowerCase().trim() : '';
+            const items = ltspkData.map((d, i) => ({ d, no: i + 1 })).filter(({ d }) => {
+                const hay = (d.nama + ' ' + d.kota + ' ' + d.alamat.map(a => (a.label || '') + ' ' + a.teks).join(' ')).toLowerCase();
+                return hay.includes(q);
+            });
+            document.getElementById('ltspkCount').textContent = `${items.length} dari ${ltspkData.length} wilayah`;
+            if (!items.length) {
+                grid.innerHTML = `<div class="col-12"><div class="empty-state"><i class="bi bi-geo-alt"></i><h5 class="mt-3 fw-bold">Wilayah tidak ditemukan</h5><p class="text-muted small mb-0">Coba kata kunci lain, misalnya nama provinsi atau kota.</p></div></div>`;
+                return;
+            }
+            grid.innerHTML = items.map(({ d, no }) => {
+                const addr = d.alamat.map(a => `
+                    <div class="ltspk-row"><span class="ri"><i class="bi bi-geo-alt-fill"></i></span>
+                    <div>${a.label ? `<span class="lab">${esc(a.label)}</span>` : ''}${esc(a.teks)}<br>
+                    <a class="map-link" href="${mapsHref(a.teks)}" target="_blank" rel="noopener"><i class="bi bi-map"></i> Lihat peta</a></div></div>`).join('');
+                const email = d.email ? `<div class="ltspk-row"><span class="ri"><i class="bi bi-envelope-fill"></i></span><div><a href="mailto:${esc(d.email)}">${esc(d.email)}</a></div></div>` : '';
+                const telp = d.telp ? `<div class="ltspk-row"><span class="ri"><i class="bi bi-telephone-fill"></i></span><div><a href="${telHref(d.telp)}">${esc(d.telp)}</a></div></div>` : '';
+                const wa = d.wa ? `<div class="ltspk-row"><span class="ri wa"><i class="bi bi-whatsapp"></i></span><div><a href="${waHref(d.wa)}" target="_blank" rel="noopener">${esc(d.wa)}</a></div></div>` : '';
+                return `<div class="col-12 col-md-6 col-xl-4"><div class="ltspk-card">
+                    <div class="ltspk-head"><span class="ltspk-badge">${no}</span><div><div class="ltspk-title">${esc(d.nama)}</div><div class="ltspk-sub">Layanan Teknis SPK</div></div></div>
+                    ${addr}${email}${telp}${wa}</div></div>`;
+            }).join('');
+        }
+
+        /* ---------- Hash & init ---------- */
         function checkUrlHash() {
             const hash = window.location.hash;
             if (hash === '#produk') navigateToPage('produk');
@@ -1403,6 +1249,7 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('currentYear').innerText = new Date().getFullYear();
+            renderLtspk();
             loadProductsData();
             window.addEventListener('hashchange', checkUrlHash);
             document.addEventListener('click', function (event) {
